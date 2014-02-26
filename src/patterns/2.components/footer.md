@@ -12,7 +12,7 @@ description: |
     <div class="columns ten twelve--tablet column--center">
       <footer class="tapestry__footer">
         <p>Designed and built by the folks at</p>
-        <p><a href="http://pebbleroad.com"><img src="../assets/images/logo.png" alt="" width="187"/></a></p>
+        <p><a href="http://pebbleroad.com"><img src="assets/images/logo.png" alt="" width="187"/></a></p>
         <p>Code licensed under MIT, documentation under CC BY 3.0.<br/>Version<span tapestry-version="tapestry-version"></span>. Last Updated on<span last-updated="last-updated"></span>.<a href="#/changelog">Changelog</a></p>
       </footer>
     </div>
