@@ -4,7 +4,9 @@
   "dependencies": {
     "modernizr": "~2.6.2",
     "jquery": "~1.9.1",
-    "font-awesome": "latest"
+    "font-awesome": "latest",
+    "tipsy": "~0.1.7",
+    "Selecter": "~3.0.12"
   },
   "devDependencies": {
     "jQuery-Autocomplete": "https://github.com/devbridge/jQuery-Autocomplete.git#1.2.7",
@@ -12,6 +14,11 @@
     "js-yaml": "~3.0.1",
     "prism": "gh-pages",
     "marked": "~0.3.1",
-    "angular-once": "~0.1.5"
+    "angular-once": "~0.1.5",
+    "dropzone": "~3.8.4",
+    "owlcarousel": "~1.3.2",
+    "bootstrap-datepicker": "~1.3.0",
+    "fancybox": "~2.1.5",
+    "seiyria-bootstrap-slider": "~1.9.5"
   }
 }
