@@ -12,6 +12,6 @@
     "js-yaml": "~3.0.1",
     "prism": "gh-pages",
     "marked": "~0.3.1",
-    "angular-once": "~0.1.5",    
+    "angular-once": "~0.1.5"
   }
 }
