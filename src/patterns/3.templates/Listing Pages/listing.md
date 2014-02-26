@@ -1,7 +1,7 @@
 ---
 name: Article listing
 url: templateurl
-preview: patterns/templates/Listing Pages/listing.png
+preview: patterns/3.templates/Listing Pages/listing.png
 description: |
     ## Landing page
 ---

@@ -9,7 +9,7 @@
                 "slug": "landing.md",
                 "meta": {
                     "url": "templateurl",
-                    "preview": "patterns/templates/Landing Pages/landing.png"
+                    "preview": "patterns/3.templates/Landing Pages/landing.png"
                 }
             }
         ]
@@ -24,7 +24,7 @@
                 "slug": "listing.md",
                 "meta": {
                     "url": "templateurl",
-                    "preview": "patterns/templates/Listing Pages/listing.png"
+                    "preview": "patterns/3.templates/Listing Pages/listing.png"
                 }
             }
         ]
