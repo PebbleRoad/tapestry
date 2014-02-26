@@ -41,7 +41,7 @@
     "gulp-rename": "~1.1.0",
     "gulp-tree": "0.1.1",
     "gulp-prune-html": "0.0.1",
-    "gulp-script-inject": "0.0.4"
+    "gulp-script-inject": "0.0.6"
   },
   "dependencies": {}
 }
