@@ -41,5 +41,11 @@ An app for creating and managing your front-end pattern library.
 
 ## How it works
 
-1. Patterns folder is watched by Gulp and nodeJS `tree.js` script is used to generate JSON files for immediate `children` folders
+1. Patterns folder is watched by Gulp and JSON files are generated for each root pattern
 2. AngularJS uses these JSON documents to show a browseable interface of the patterns
+3. Inject your own CSS by editing `index.html` and add your own patterns
+
+## Todo
+
+1. Unit testing gulp plugins - gulp-tree and gulp-script-inject
+2. Unit testing of the Angular app
