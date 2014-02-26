@@ -1,10 +1,12 @@
 [
     {
         "name": "Landing Pages",
+        "slug": "Landing Pages",
         "children": [
             {
-                "path": "patterns/templates/Landing Pages/landing.md",
+                "path": "patterns/3.templates/Landing Pages/landing.md",
                 "name": "Article landing",
+                "slug": "landing.md",
                 "meta": {
                     "url": "templateurl",
                     "preview": "patterns/templates/Landing Pages/landing.png"
@@ -14,10 +16,12 @@
     },
     {
         "name": "Listing Pages",
+        "slug": "Listing Pages",
         "children": [
             {
-                "path": "patterns/templates/Listing Pages/listing.md",
+                "path": "patterns/3.templates/Listing Pages/listing.md",
                 "name": "Article listing",
+                "slug": "listing.md",
                 "meta": {
                     "url": "templateurl",
                     "preview": "patterns/templates/Listing Pages/listing.png"

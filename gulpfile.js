@@ -119,6 +119,12 @@ gulp.task('cleaner', function(){
         .pipe(clean({force: true}))
 })
 
+gulp.task('cleanJSON', function(){
+
+    return gulp.src('./src/json/*.json', {read: false})
+        .pipe(clean())
+})
+
 /**
  * Watch
  */
@@ -178,4 +184,4 @@ gulp.task('server', function(){
  */
 
 //gulp.task('build', ['sass', 'jade', 'copy'])
-gulp.task('patterns', ['jade', 'sass', 'watch', 'injecter', 'server']);
+gulp.task('patterns', ['cleanJSON', 'jade', 'sass', 'watch', 'injecter', 'server']);
