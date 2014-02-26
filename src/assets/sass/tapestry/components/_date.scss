@@ -1,0 +1,49 @@
+/*------------------------------------*\
+		DATE.CSS
+\*------------------------------------*/
+
+.ui-module-date{
+
+	display: inline-block;
+	vertical-align: top;
+	background: $color-primary;
+	color: #fff;
+	border-radius: $base-radius;
+	line-height: 1;
+	text-align: center;
+
+	/* Title */
+
+	.date__title{
+		text-transform: uppercase;
+		background: $color-dark;
+		border-radius: $base-radius $base-radius 0 0;
+		padding: 0.5em 1em;
+	}
+
+
+	/* Body */
+
+	.date__body{
+		font-weight: 300;
+		padding: 0.2em 0.5em;
+		@include font-size(30px, false);
+	}
+}
+
+
+/**
+ * Small date module
+ */
+
+.ui-module-date--small{
+
+	.date__title{
+		@include font-size($milli-size, false);
+	}
+
+	.date__body{
+		@include font-size(20px, false);
+		padding: 0.4em 0.5em;
+	}
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Tapestry",
+  "version": "1.0.0",
+  "description": "An app for creating and managing your front-end pattern library",
+  "homepage": "https://github.com/pebbleRoad/tapestry",
+  "author": {
+    "name": "Vinay M",
+    "url": "https://github.com/pebbleRoad/tapestry"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:PebbleRoad/tapestry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PebbleRoad/tapestry"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-util": "~2.2.14",
+    "gulp-jade": "~0.4.2",
+    "gulp-sass": "~0.7.1",
+    "gulp-cssmin": "~0.1.0",
+    "gulp-clean": "~0.2.4",
+    "tiny-lr": "0.0.5",
+    "path": "~0.4.9",
+    "http": "0.0.0",
+    "ecstatic": "~0.4.13",
+    "gulp-embedlr": "~0.5.2",
+    "gulp-prettify": "~0.1.2",
+    "js-yaml": "~3.0.1",
+    "marked": "~0.3.1",
+    "gulp-rename": "~1.1.0",
+    "gulp-tree": "0.1.0",
+    "gulp-prune-html": "0.0.1",
+    "gulp-script-inject": "0.0.1"
+  },
+  "dependencies": {}
+}

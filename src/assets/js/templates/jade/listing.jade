@@ -1,0 +1,24 @@
+.tapestry-wrapper
+	
+	.container
+
+		.tapestry-menu-side
+			ul(once-show="patterns.children.length > 1")
+				li(ng-repeat="pattern in patterns.children")
+					a(data-target="#{{pattern.name | anchor}}", ng-href="#/{{rootSection}}/{{sectionSlug}}/{{pattern.name | anchor}}", once-text="pattern.name", ng-class="{active: anchor(pattern.name) == subSection}")
+
+		.main-content
+
+			div(preview-and-markup patterns="patterns")
+
+			ul.pattern-list
+				li(ng-repeat="pattern in patterns.children")
+					
+					h3(id="{{pattern.name | anchor}}", once-text="pattern.name")
+					
+					div(preview-and-markup patterns="pattern")
+
+					div.pattern-variation(ng-repeat="variation in pattern.children")
+						h4(id="{{variation.name | anchor}}", once-text="variation.name")
+						
+						div(preview-and-markup patterns="variation")

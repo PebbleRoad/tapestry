@@ -1,0 +1,92 @@
+/*------------------------------------*\
+    ACCORDION.CSS
+\*------------------------------------*/
+
+%accordion-arrow{
+    content: "\f107";
+    font-family: FontAwesome;
+    float: right;
+    font-size: 18px;
+}
+
+%accordion-arrow-active{
+    content: "\f106";
+}
+
+.ui-accordion{
+    list-style: none;
+    margin-left: 0;    
+    @include rem(margin-bottom);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Header */
+
+.accordion__header{
+    border-bottom: 1px $base-ui-color solid;
+    padding: 0.5em 1em 0.5em 0;
+    font-weight: 600;
+    cursor: pointer;    
+    @include user-select(none);
+
+    &:after{
+        @extend %accordion-arrow;
+    }
+
+
+    &:first-child{
+        border-top: 1px $base-ui-color solid;
+    }
+}
+
+
+
+/* Active Content */
+
+.accordion__active{
+
+    color: $color-primary;
+    
+    &:after{
+        @extend %accordion-arrow-active;
+    }
+}
+
+/* Content */
+
+.accordion__content{
+    padding: 1em 1em 1em 0;
+    border-bottom: 1px $base-ui-color solid;
+    display: none;
+}
+
+
+/**
+ * Bordered Accordion
+ */
+
+.ui-accordion--bordered{
+
+    border: 1px $base-ui-color solid;
+    border-bottom-width: 0;
+
+    .accordion__header, .accordion__content{
+        padding-left: 1em;
+    }
+
+    /* Content */
+
+    .accordion__content{
+        border-bottom: 1px $base-ui-color solid;
+    }
+
+   
+
+    /* First child */
+
+    .accordion__header:first-child{
+        border-top-style: none;
+    }
+
+    
+}

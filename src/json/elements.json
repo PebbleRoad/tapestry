@@ -1,0 +1,251 @@
+[
+    {
+        "name": "Colors",
+        "children": [
+            {
+                "path": "patterns/elements/1.Colors/palette.md",
+                "name": "Color palette",
+                "meta": {
+                    "hidecode": true
+                }
+            }
+        ]
+    },
+    {
+        "name": "Typography",
+        "children": [
+            {
+                "name": "Emphasis",
+                "children": [
+                    {
+                        "path": "patterns/elements/2.Typography/Emphasis/bold-text.md",
+                        "name": "Bold"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Emphasis/italics-text.md",
+                        "name": "Italics"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Emphasis/small-text.md",
+                        "name": "Small"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Emphasis/text-sizes.md",
+                        "name": "Text size variations"
+                    }
+                ]
+            },
+            {
+                "name": "Lists",
+                "children": [
+                    {
+                        "path": "patterns/elements/2.Typography/Lists/list-block.md",
+                        "name": "Block list"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Lists/list-definition.md",
+                        "name": "Definition list"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Lists/list-inline.md",
+                        "name": "Inline list"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Lists/list-ordered.md",
+                        "name": "Ordered list"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Lists/list-unordered.md",
+                        "name": "Unordered list"
+                    },
+                    {
+                        "path": "patterns/elements/2.Typography/Lists/list-unstyled.md",
+                        "name": "Unstyled list"
+                    }
+                ]
+            },
+            {
+                "path": "patterns/elements/2.Typography/blockquote.md",
+                "name": "Blockquote"
+            },
+            {
+                "path": "patterns/elements/2.Typography/body-copy.md",
+                "name": "Body copy"
+            },
+            {
+                "path": "patterns/elements/2.Typography/headings.md",
+                "name": "Headings"
+            },
+            {
+                "path": "patterns/elements/2.Typography/lead-copy.md",
+                "name": "Lead copy"
+            },
+            {
+                "path": "patterns/elements/2.Typography/links.md",
+                "name": "Links"
+            },
+            {
+                "path": "patterns/elements/2.Typography/rules.md",
+                "name": "Horizontal rule"
+            },
+            {
+                "path": "patterns/elements/2.Typography/summary-copy.md",
+                "name": "Summary copy"
+            },
+            {
+                "path": "patterns/elements/2.Typography/text-alignment.md",
+                "name": "Text alignment"
+            }
+        ]
+    },
+    {
+        "name": "Grids",
+        "children": [
+            {
+                "path": "patterns/elements/3.Grids/grid-desktop.md",
+                "name": "Gird desktop"
+            },
+            {
+                "path": "patterns/elements/3.Grids/grid-mobile.md",
+                "name": "Grid mobile"
+            },
+            {
+                "path": "patterns/elements/3.Grids/grid-tablet.md",
+                "name": "Grid tablet"
+            }
+        ]
+    },
+    {
+        "name": "Buttons",
+        "children": [
+            {
+                "path": "patterns/elements/Buttons/buttons-dark.md",
+                "name": "Buttons dark"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-groups.md",
+                "name": "Button groups"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-icons.md",
+                "name": "Buttons with icons"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-light.md",
+                "name": "Buttons light"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-primary.md",
+                "name": "Buttons primary"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-secondary.md",
+                "name": "Buttons secondary"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-sizes.md",
+                "name": "Buttons sizes"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-variations.md",
+                "name": "Button variations"
+            },
+            {
+                "path": "patterns/elements/Buttons/buttons-warning.md",
+                "name": "Buttons warning"
+            }
+        ]
+    },
+    {
+        "name": "Forms",
+        "children": [
+            {
+                "path": "patterns/elements/Forms/1.fields.md",
+                "name": "Form fields"
+            },
+            {
+                "path": "patterns/elements/Forms/field-sizes.md",
+                "name": "Field sizes"
+            },
+            {
+                "path": "patterns/elements/Forms/form-error.md",
+                "name": "Form error message"
+            },
+            {
+                "path": "patterns/elements/Forms/form-horizontal.md",
+                "name": "Horizontal form"
+            },
+            {
+                "path": "patterns/elements/Forms/form-login.md",
+                "name": "Login form"
+            },
+            {
+                "path": "patterns/elements/Forms/form-subscribe.md",
+                "name": "Subscribe form"
+            }
+        ]
+    },
+    {
+        "name": "Icons",
+        "children": [
+            {
+                "path": "patterns/elements/Icons/icons.md",
+                "name": "Icons"
+            }
+        ]
+    },
+    {
+        "name": "Media",
+        "children": [
+            {
+                "path": "patterns/elements/Media/images-thumbnail.md",
+                "name": "Thumbnail Images"
+            },
+            {
+                "path": "patterns/elements/Media/images.md",
+                "name": "Image"
+            },
+            {
+                "path": "patterns/elements/Media/media-grid.md",
+                "name": "Media grid"
+            },
+            {
+                "path": "patterns/elements/Media/media-listing.md",
+                "name": "Media listing"
+            },
+            {
+                "path": "patterns/elements/Media/video.md",
+                "name": "Video"
+            }
+        ]
+    },
+    {
+        "name": "Table",
+        "children": [
+            {
+                "path": "patterns/elements/Table/table-bordered.md",
+                "name": "Table bordered"
+            },
+            {
+                "path": "patterns/elements/Table/table-condensed.md",
+                "name": "Table condensed"
+            },
+            {
+                "path": "patterns/elements/Table/table-default.md",
+                "name": "Table"
+            },
+            {
+                "path": "patterns/elements/Table/table-responsive.md",
+                "name": "Responsive table"
+            },
+            {
+                "path": "patterns/elements/Table/table-zebra.md",
+                "name": "Zebra table"
+            },
+            {
+                "path": "patterns/elements/Table/table.md",
+                "name": "Table"
+            }
+        ]
+    }
+]

@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    PANEL.CSS
+\*------------------------------------*/
+
+$panel-title-background: $color-light-grey;
+$panel-border: $panel-title-background;
+
+.ui-panel{
+
+    border: 1px $panel-border solid;
+    border-radius: $base-radius;
+    @include rem(margin-bottom);
+    
+    /* Panel Title */
+
+    .panel__title{
+        background: $panel-title-background;        
+        padding: 1em;
+
+        h1, h2, h3, h4, h5, h6{
+            margin: 0;
+        }
+    }
+
+    /* Panel body */
+
+    .panel__body{
+        padding: 1em;
+    }
+}

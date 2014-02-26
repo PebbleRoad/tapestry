@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    NAVIGATION.CSS
+\*------------------------------------*/
+
+@mixin nav{
+    ul{
+        list-style: none;
+        margin: 0;
+    }
+
+    > ul > li{
+        display: inline-block;
+        margin: 0 0 0 1em;
+    }
+
+    /* Links */
+
+    > ul > li >a{
+        display: inline-block;
+        padding: $input-padding;
+    }
+
+    /* Forms */
+
+    form, .text-input, .form-control{
+        display: inline-block;
+        margin: 0;
+    }
+
+    /* Buttons */
+
+    .btn{
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * Nav Primary
+ */
+
+.nav-primary{
+
+    @include nav;    
+    float: left;
+
+    display: none;
+
+
+    /**
+     * Show on tablet
+     */
+    
+    @include media-query(tablet-desktop){
+        display: block;
+    }
+
+}
+
+/**
+ * Nav Secondary
+ */
+
+.nav-secondary{
+    @include nav;
+
+    float: right;
+    display: none;
+
+
+    /**
+     * Show on tablet
+     */
+    
+    @include media-query(desktop){
+        display: block;
+    }
+}

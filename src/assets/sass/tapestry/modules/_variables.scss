@@ -1,0 +1,227 @@
+/*------------------------------------*\
+    $DEBUG
+\*------------------------------------*/
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+
+$debug-mode : false;
+
+
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS FROM INUIT CSS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+
+$use-beautons     : true;
+$use-rules: true;
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+$base-color       : #444;
+$base-font-family : 'Open Sans', Helvetica, Arial;
+$base-font-size   : 14px;
+$base-line-height : 24px;
+$base-spacing-unit: $base-line-height;
+$base-ui-color    : #BFBFBF;
+$base-radius: 2px;
+$base-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+
+/*------------------------------------*\
+    $UI ELEMENTS
+\*------------------------------------*/
+
+$ui-radius: 2px;
+
+
+/*------------------------------------*\
+    $TEXT DIRECTION
+\*------------------------------------*/
+
+$dir-default : "left";
+$dir-reverse : "right";
+$direction   : "LTR";
+
+@if $direction == "RTL" {
+    $dir-default : "right";
+    $dir-reverse : "left";
+}
+
+/*------------------------------------*\
+    $COLOR SWATCHES
+\*------------------------------------*/
+
+$color-warning: #E74C3C;
+$color-primary: #1ABC9C;
+
+
+$color-dark: #1F253D;
+$color-light-blue: #272F4D;
+
+$color-nice-blue: #394264;
+
+$color-light-grey: #EDEEF1;
+
+$color-dark-grey: #BDC3C7;
+
+
+/*------------------------------------*\
+    $GRID SETTINGS
+\*------------------------------------*/
+
+$grid-columns : 12;
+$grid-spacing : 30px;
+$site-width   : 960px;
+
+
+/*------------------------------------*\
+    $BREAKPOINTS
+\*------------------------------------*/
+
+$phone-breakpoint-end        : 480px;
+$tablet-breakpoint-start     : 600px;
+$desktop-breakpoint-start    : $site-width;
+$widescreen-breakpoint-start : 1300px;
+
+
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+
+
+$heading-font-family: $base-font-family;
+
+    /**
+     * Mobile Sizes     
+     */
+    
+    $h1-size: 30px; //.alpha
+    $h2-size: 24px; //.beta
+    $h3-size: 20px; //.gamma
+    $h4-size: 18px; //.delta
+    $h5-size: 16px; //.epsilon
+    $h6-size: 14px; //.zeta
+
+
+    /**
+     * Desktop font size
+     * Both tablets and desktops
+     */
+    
+    $h1-size-desktop: 48px;
+    $h2-size-desktop: 36px;
+    $h3-size-desktop: 24px;
+    $h4-size-desktop: 20px;
+    $h5-size-desktop: 18px;
+    $h6-size-desktop: 16px;
+
+
+/**
+ * Optional font sizes
+ */
+
+$giga-size  : 96px;
+$mega-size  : 72px;
+$kilo-size  : 48px;
+$milli-size : 13px;
+$micro-size : 12px;
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+$link-color              : $color-primary;
+$link-hover-color        : $color-primary;
+$link-visited-color      : $link-color;
+$link-underline          : false;
+$link-underline-on-hover : true;
+
+
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+
+$input-border-color  : $base-ui-color;
+$input-background    : #FAFAFA;
+$input-padding       : 0.6em 1em; 
+$input-padding-medium       : 0.8em 1em; 
+$input-padding-large       : 1em 1em; 
+$input-border-radius : $base-radius;
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+$button-padding            : 0.6em 1.2em;
+$button-padding-desktop    : 0.6em 1.2em;
+$button-border-radius      : $base-radius;
+
+    /**
+     * Button default
+     */
+    
+    $button-default-background : #EDEEF1;
+    $button-default-color: #888;
+
+    /**
+     * Button Primary
+     */
+    
+    $button-primary-background      : $color-primary;
+    $button-primary-border: $color-primary;
+    
+    /**
+     * Button Secondary
+     */
+    
+    $button-secondary-background: #9DA6AF;
+    $button-secondary-border: #9DA6AF;
+
+    /**
+     * Button Light
+     */
+    
+    $button-light-background: #fff;
+    $button-light-color: lighten($base-color, 10%);
+    $button-light-border: darken($base-ui-color,10%);
+
+    /**
+     * Button Dark
+     */
+    
+    $button-dark-background: #323A45;
+    $button-dark-border: #323A45;
+
+    /**
+     * Button Warning
+     */
+    
+    $button-warning-background: $color-warning;
+    $button-warning-border: $color-warning;
+
+
+    /**
+     * Button facebook
+     */
+    
+    $button-facebook-background: #5970B3;
+    $button-facebook-border: #5970B3;
+
+    /**
+     * Button google
+     */
+    
+    $button-google-background: #EF2213;
+    $button-google-border: #EF2213;
+
+
+
+$button-inverted-background     : #000;
+$button-inactive-background     : #ddd;

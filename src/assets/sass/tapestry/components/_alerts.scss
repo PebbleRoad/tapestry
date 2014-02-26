@@ -1,0 +1,59 @@
+/*------------------------------------*\
+    ALERT.CSS
+\*------------------------------------*/
+
+.ui-alert{
+    
+    padding: 0.5em 1em;
+    @include rem(margin-bottom);
+    border-radius: $base-radius;  
+    background: $color-primary;
+    color: #fff;  
+    position: relative;
+
+    /**
+     * Alert close
+     */
+    
+    .alert_close{
+
+        &:after{
+            position: absolute;
+            content: "\f00d";
+            font-family: FontAwesome;
+            right: 10px;
+            top: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        &:hover:after{
+            opacity: 0.8;
+        }
+    }
+}
+
+
+/**
+ * Error alert
+ */
+
+.ui-alert--error{
+    background: $color-warning;    
+}
+
+/**
+ * Info alert
+ */
+
+.ui-alert--info{
+    background: #50597B;
+}
+
+/**
+ * Success alert
+ */
+
+.ui-alert--success{
+    background: $color-primary;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "tapestry",
+  "version": "1.0.0",
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.9.1",
+    "font-awesome": "latest"
+  },
+  "devDependencies": {
+    "jQuery-Autocomplete": "https://github.com/devbridge/jQuery-Autocomplete.git#1.2.7",
+    "angular-route": "~1.2.13",
+    "js-yaml": "~3.0.1",
+    "prism": "gh-pages",
+    "marked": "~0.3.1",
+    "angular-once": "~0.1.5",    
+  }
+}

@@ -1,0 +1,36 @@
+/*------------------------------------*\
+	VENDOR.CSS    
+\*------------------------------------*/
+
+
+/**
+ * Select replacement
+ */
+
+
+/* Replaced element */
+
+.selecter{
+    margin: 0;
+    @include rem(margin-bottom);
+}
+
+
+/**
+ * Multiple select
+ */
+
+.selecter.multiple .selecter-item.selected{
+
+    position: relative;
+    
+    &:after{
+        content: "\f058";
+        font-family: FontAwesome;
+        color: $color-primary;
+        position: absolute;
+        right: 1em;
+        font-size: 18px;
+        top: 6px;
+    }
+}

@@ -1,0 +1,160 @@
+/*------------------------------------*\
+    DROPDOWN.CSS
+\*------------------------------------*/
+
+.ui-dropdown{
+    position: absolute; 
+    z-index: 2;
+    left: 0;
+    top: 100%;
+    width: 160px;
+    min-width: 100%;
+    max-width: 200px;
+    border: 1px $base-ui-color solid;
+    background: #fff;
+    padding: 0.5em 0;
+    margin: 0;
+    border-radius: $base-radius;
+    list-style: none;
+    display: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+    li{
+        margin: 0;
+    }
+
+    a{
+        display: block;
+        padding: 3px 1em;
+        text-decoration: none;
+    }
+
+    a:hover, li:hover > a{
+        background: $color-primary;
+        color: #fff;
+    }
+
+    /* Caret */
+
+    li:hover:after{
+        color: #fff;
+    }
+
+    .seperator{
+        border-bottom: 1px $base-ui-color solid;
+        height: 1px;
+        margin: 0.5em 0;
+    }
+
+
+    /**
+     * Nested dropdown
+     */
+    
+    .ui-dropdown{
+        top: 0;
+        margin-top: -0.55em;
+        left: 100%;
+    }
+
+    /**
+     * Nested Has dropdown
+     */
+    
+    .dropdown{
+        display: block;
+
+        &:after{
+            content: "\f0da";
+            position: absolute;
+            right: 10px;
+            top: 3px;
+            margin-top: 0;
+            font-family: FontAwesome;
+        }
+    }
+    
+}
+
+
+
+
+/**
+ * Dropdown hover
+ */
+
+.dropdown--hover{
+
+    &:hover > .ui-dropdown{
+        display: block;
+    }
+}
+
+/**
+ * Inverted dropdown
+ */
+
+.has-dropdown--inverted{
+    &:hover > a, &:hover{
+        background: $color-primary;
+        border-radius: $base-radius $base-radius 0 0;
+    }
+
+    &:after{
+        color: #fff;
+    }
+}
+
+/**
+ * Caret
+ */
+
+.caret{
+    font-style: normal;
+
+    &:after{
+        content: "\f0d7";
+        font-family: FontAwesome;        
+        font-size: 14px;
+    }
+
+    a + &{
+        margin-left: 0.5em;
+    }
+}
+
+
+/**
+ * Opens dropdown
+ */
+
+.dropdown-active > .ui-dropdown{
+    display: block;
+}
+
+/**
+ * Click Dropdown
+ */
+
+.dropdown{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding-right: 10px;
+    @include rem(margin-bottom);
+
+    > a{
+        //padding-right: 5px;
+    }
+
+    .dropdown{
+        padding-right: 0;
+    }
+
+    .btn{
+        margin-bottom: 0;
+    }
+
+    
+
+}

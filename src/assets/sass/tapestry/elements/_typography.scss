@@ -1,0 +1,126 @@
+/*------------------------------------*\
+	TYPOGRAPHY.CSS
+\*------------------------------------*/
+
+/**
+ * Headings 1 to 6
+ */
+
+@include headings(1,6){
+	@include rem(margin-bottom, 0.5);
+	font-family: $heading-font-family;    
+	font-weight: normal;
+	line-height: 1.25;
+}
+
+
+/**
+ * Font sizes
+ */
+
+
+h1,.alpha{
+    @include font-size-adapt($h1-size, $h1-size-desktop);
+}
+h2,.beta{
+    @include font-size-adapt($h2-size, $h2-size-desktop);
+}
+h3,.gamma{
+    @include font-size-adapt($h3-size, $h3-size-desktop);
+}
+h4,.delta{
+    @include font-size-adapt($h4-size, $h4-size-desktop);
+}
+h5,.epsilon{
+    @include font-size-adapt($h5-size, $h5-size-desktop);
+}
+h6,.zeta{
+    @include font-size-adapt($h6-size, $h6-size-desktop);
+}
+
+
+/**
+ * Strong styles
+ */
+
+strong, b{
+    font-weight: 600;
+}
+
+
+/**
+ * Body Copy
+ */
+
+.section-body{    
+    @include font-size-adapt(16px);
+}
+
+
+/**
+ * Leading text
+ */
+
+.text--lead{
+    
+    @include font-size-adapt(20px, 30px);
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/**
+ * Sub text
+ */
+
+.text--sub{
+    font-weight: 300;
+    @include font-size-adapt(18px, 22px);
+    
+}
+
+/**
+ * Summary text
+ */
+
+.text--summary{
+
+    @include font-size-adapt(16px, 20px);
+    
+}
+
+/**
+ * Summary text
+ */
+
+.text--summary{
+
+    @include font-size-adapt(16px, 20px);
+    
+}
+
+/**
+ * Secondary text
+ */
+
+.text--secondary{
+    @include font-size(14px, false);
+}
+
+/**
+ * Tertiary text
+ */
+
+.text--tertiary{
+    @include font-size(12px, false);
+}
+
+
+/**
+ * Blockquote
+ */
+
+blockquote{
+    @extend .text--summary;
+    font-style: italic;
+    padding: 1em;
+}

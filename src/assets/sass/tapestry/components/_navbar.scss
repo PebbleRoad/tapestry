@@ -1,0 +1,135 @@
+/*------------------------------------*\
+    NAVBAR.CSS
+\*------------------------------------*/
+
+/**
+ * Nav bar
+ */
+
+.nav-bar{
+    
+    padding: 1em 0;
+    border-bottom: 1px $base-ui-color solid;
+    position: relative;
+
+    @include clearfix;
+
+
+    /**
+     * Logo
+     */
+    
+    .brand-logo{
+        float: left;
+        box-shadow: 0 0 0px 1px $base-ui-color inset;
+        padding: 0.6em 1em;
+    }
+
+    /**
+     * Image
+     */
+    
+    img{
+        vertical-align: top;
+    }
+    
+
+    /**
+     * Toggle button
+     */
+    
+    
+    
+    @include media-query(desktop){
+        .btn--toggle{
+            display: none;
+        }
+    }
+
+    /**
+     * Dropdowns
+     */
+    
+    .dropdown{
+
+        > a{
+            padding-right: 0;
+        }
+    }
+    
+}
+
+
+/**
+ * Inverted Nav bar
+ */
+
+.nav-bar--inverted{
+
+    background: $color-dark;
+
+    a{
+        color: #fff;
+    }
+
+    /**
+     * Icon colors
+     */
+    
+    .fa, .caret{
+        color: #fff;
+    }
+
+    /**
+     * Inverted Inputs
+     */
+    
+    .text-input{
+        @extend .input-inverted;
+    }
+
+    /**
+     * Inverted button
+     */
+    
+    .btn{
+        @extend .btn--inverted;
+    }
+
+
+    /**
+     * Inverted dropdowns
+     */
+    
+    .dropdown{
+
+        &:hover > a, &:hover{
+            background: $color-primary;
+            border-radius: $base-radius $base-radius 0 0;
+        }
+
+        &:after{
+            color: #fff;
+        }
+    }
+    
+    /**
+     * Dropdown
+     */
+    
+    .ui-dropdown{
+        background: $color-primary;
+        border: none;
+        border-top-left-radius: 0;
+
+        a:hover{
+            background-color: darken($color-primary, 5%);
+        }
+
+        /* Divider */
+
+        .seperator{
+            border-bottom-color: lighten($color-primary, 10%);
+        }
+    }
+}

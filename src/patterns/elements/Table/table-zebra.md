@@ -1,0 +1,44 @@
+---
+name: Zebra table
+---
+<table class="table table--bordered table--zebra">
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Microsoft</td>
+      <td>20</td>
+      <td>30</td>
+      <td>40</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Microsoft</td>
+      <td>20</td>
+      <td>30</td>
+      <td>40</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Microsoft</td>
+      <td>20</td>
+      <td>30</td>
+      <td>40</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Microsoft</td>
+      <td>20</td>
+      <td>30</td>
+      <td>40</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>

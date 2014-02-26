@@ -1,0 +1,322 @@
+/*------------------------------------*\
+    FORM ELEMENT STYLES    
+\*------------------------------------*/
+
+/**
+ * Forms
+ */
+
+form{
+    @include rem(margin-bottom);
+}
+
+/**
+ * Add border box for input search
+ */
+
+input[type="search"]{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/**
+ * Input Elements
+ */
+
+.text-input,
+textarea{
+    border: 1px $input-border-color solid;
+    padding: $input-padding;
+    background: $input-background;
+    transition: all 0.1s ease-in;   
+    vertical-align: middle;
+    outline: none;  
+    width: 100%;    
+    border-radius: $input-border-radius;    
+    @include font-size(14px, false);
+
+    &:focus{
+        @extend %focus-style;
+    }
+}
+
+
+/**
+ * Disabled Input
+ */
+
+.text-input[disabled], textarea[disabled]{
+    opacity: 0.5;
+}
+
+/**
+ * Input inverted
+ */
+
+.input-inverted{
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+/**
+ * Medium input
+ */
+
+.input-medium{
+    padding: $input-padding-medium;    
+}
+
+/**
+ * Large input
+ */
+
+.input-large{
+    padding: $input-padding-large;
+    @include font-size(16px, false);
+}
+
+/**
+ * Input with icons
+ */
+
+.form-control{
+    position: relative;
+    @include rem(margin-bottom, 0.75);
+
+    .text-input{
+        padding-right: 35px;
+        margin-bottom: 0;
+    }
+
+    .fa{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin: 0;
+        margin-top: -6px;
+        height: 15px;
+        color: $base-ui-color;
+    }
+
+    
+    /* Icon on the left side */
+
+    &.icon-left {
+        
+        .text-input{
+            padding-left: 35px;
+            padding-right: inherit;
+        }
+
+        .fa{
+            left: 10px;
+            right: auto;
+        }
+    }
+
+    /* Button unstyled */
+
+    .btn--unstyled{
+        padding: 0;
+        margin: 0;
+        vertical-align: top;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+    }
+}
+
+
+/**
+ * Form control Inline
+ */
+
+.form-control--inline{
+    
+
+    
+    .text-input{
+        width: auto;
+        padding: $input-padding;
+        @include rem(margin-right,-0.2);
+    }
+
+    /* Button */
+
+    .btn{
+        margin-bottom: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+
+/**
+ * Round text input
+ */
+
+.input-soft{
+    border-radius: 200px;
+}
+
+/**
+ * Margins for Select, File
+ */
+
+select, 
+input[type="file"], 
+input[type="color"],
+input[type="range"],
+.label-checkbox,
+.label-radio,
+textarea,
+.text-input
+{
+    @include rem(margin-bottom, 0.75);    
+}
+
+
+/**
+ * Wide select
+ */
+
+.select-wide{
+    width: 100%;
+}
+
+/**
+ * Checkbox, Radio
+ */
+
+input[type="checkbox"],
+input[type="radio"]{
+    margin-right: 0.5em;
+}
+
+/**
+ * Label
+ */
+
+label{
+    @include rem(margin-bottom, 0.1);
+    font-weight: 600;
+}
+
+
+/**
+ * Checkbox Display
+ */
+
+.label-checkbox, .label-radio{
+    
+    $spacing: 20px;
+    font-weight: normal;
+
+    input{
+        float: left;
+        margin-left: -($spacing);
+        margin-top: 5px/$base-font-size * 1em;
+        margin-top: 1px \9; /* Internet Explorer 8 Fix */
+        margin-right: 0;
+    }
+    padding-left: $spacing;
+}
+
+
+/**
+ * Checkbox Replacement
+ */
+
+
+
+/**
+ * Inline Input
+ */
+
+.input-inline{
+    width: auto;
+}
+
+
+
+/**
+ * Inline Label
+ */
+
+.label-inline{
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    @include rem(margin-right, 0.5);
+}
+
+/**
+ * Fieldset
+ */
+
+
+fieldset{
+    border-color: $input-border-color;
+    padding: $grid-spacing/2;
+}
+
+/**
+ * Error Input
+ */
+
+.input-error{
+    border-color: $color-warning;
+}
+
+/**
+ * Error Label
+ */
+
+.label-error{
+    color: $color-warning;
+    display: inline-block;
+    @include rem(margin-bottom, 0.5);
+    @include font-size($milli-size, false);
+    font-weight: normal;
+    margin-top: -0.5em;
+    overflow-y: hidden;
+}
+
+
+/**
+ * Input groups
+ */
+
+.input-group{
+
+    @include rem(margin-bottom);
+
+    .text-input, textarea{
+        margin-bottom: 0;
+        border-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+
+        &:first-child{
+            border-top-left-radius: $base-radius;
+            border-top-right-radius: $base-radius;
+            margin-bottom: -1px;
+        }
+
+        &:last-child{
+            border-bottom-left-radius: $base-radius;
+            border-bottom-right-radius: $base-radius;   
+        }
+
+        &:focus{
+            position: relative;
+        }
+    }
+
+
+}

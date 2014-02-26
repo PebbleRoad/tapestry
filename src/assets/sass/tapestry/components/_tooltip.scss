@@ -1,0 +1,93 @@
+/*------------------------------------*\
+	TOOLTIP.CSS
+\*------------------------------------*/
+
+.ui-tooltip, .tipsy, .tooltip{
+	
+	position: relative;
+	background: $color-dark;
+	color: #fff;
+	max-width: 200px;
+	display: block;
+	padding: 0.5em 1em;
+	border: 1px solid $color-dark;   
+	border-radius: $base-radius;
+	position: absolute;
+	margin-left: 15px;
+	line-height: 1.4;
+	z-index: 10;
+
+	@include font-size($milli-size, false);
+
+
+	&:after, &:before {
+		right: 100%;
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	&:after {
+		border-color: rgba(31, 37, 61, 0);
+		border-right-color: #1F253D;
+		border-width: 10px;
+		margin-top: -10px;
+	}
+	
+	&:before {
+		border-color: rgba(31, 37, 61, 0);
+		border-right-color: #1F253D;
+		border-width: 11px;
+		margin-top: -11px;
+	}
+}
+
+/**
+ * Bottom arrow tooltip
+ */
+
+.tooltip.top{
+
+	margin-left: 0;
+	margin-top: -12px;
+
+	&:after, &:before {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	&:after {
+		border-color: rgba(31, 37, 61, 0);
+		border-top-color: #1F253D;
+		border-width: 6px;
+		margin-top: 0;
+		margin-left: -7px;
+	}
+	
+	&:before {
+		border-color: rgba(31, 37, 61, 0);
+		border-top-color: #1F253D;
+		border-width: 7px;
+		margin-top: 0;
+		margin-left: -7px;
+	}
+}
+
+
+/**
+ * On Focus Tooltip
+ */
+
+.ui-tooltip-on-focus{
+	display: none;	
+}

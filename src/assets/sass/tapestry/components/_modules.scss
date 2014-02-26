@@ -1,0 +1,72 @@
+/*------------------------------------*\
+    MODULES.CSS
+\*------------------------------------*/
+
+.ui-module{
+
+    @include rem(margin-bottom, 2);
+
+    
+    /* Inside carousel module */
+    
+    .ui-carousel &{
+        margin: 0;
+    }
+}
+
+
+/**
+ * Dark Module
+ */
+
+.ui-module--dark{
+
+    background: $color-dark;
+    color: #fff;
+    padding: 1em;
+    position: relative;
+
+    /**
+     * Input elements
+     */
+    
+    .text-input{
+        border-color: #fff;
+        background: transparent;
+        color: #fff;
+    }
+
+}
+
+/**
+ * Hero Module
+ */
+
+.ui-module-hero{
+    
+    background: $color-dark url(../images/module_hero.png) top no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 10%;    
+}
+
+
+/**
+ * This or That
+ */
+
+.ui-this-that{
+
+    border-bottom: 1px $base-ui-color solid;
+    text-align: center;
+    @include rem(margin-bottom);
+
+    span{
+        background: #fff;
+        padding: 0px 10px;
+        display: inline-block;
+        position: relative;
+        bottom: -0.8em;
+        color: $base-ui-color;
+    }
+}

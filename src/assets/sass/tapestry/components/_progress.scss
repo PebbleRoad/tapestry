@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    PROGRESS.CSS
+\*------------------------------------*/
+
+$progress-background: $color-light-grey;
+$progress-bar-background: $color-primary;
+
+.ui-progress{
+
+    max-width: 100%;
+    width: 300px;
+    height: 10px;
+    background: $progress-background;
+    border-radius: $base-radius;
+    @include rem(margin-bottom);
+    position: relative;
+
+
+    /* Bar */
+
+    > .progress__bar{
+        
+        background: $progress-bar-background;
+        height: 100%;        
+        position: absolute;
+        left: 0;
+        border-radius: $base-radius;
+        @include transition(width 0.2s ease-in);
+    }
+
+
+    /* Value */
+    
+    .progress__value{
+                
+        position: absolute;
+        right: 0;
+        top: 10px;    
+
+        @include media-query(tablet-desktop){
+            top: -7px;
+            right: -45px;
+        }
+    }
+}

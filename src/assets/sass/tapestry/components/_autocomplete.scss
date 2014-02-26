@@ -1,0 +1,44 @@
+/*------------------------------------*\
+    AUTOCOMPLETE.CSS
+\*------------------------------------*/
+
+.autocomplete-suggestions { 
+    border: 1px solid $base-ui-color; 
+    background: #fff; 
+    @include base-box-shadow;
+    border-radius: $base-radius;
+    overflow: auto; 
+}
+
+.autocomplete-suggestion { 
+    padding: 0.3em 1em; 
+    white-space: nowrap; 
+    overflow: hidden;
+    cursor: pointer; 
+    border-bottom: 1px $base-ui-color solid;
+
+    &:last-child{
+        border-bottom: none;
+    }
+}
+
+.autocomplete-selected { 
+    background: $color-light-grey; 
+}
+
+.autocomplete-suggestions strong { 
+    font-weight: normal; 
+    color: $color-primary; 
+    font-weight: 600;
+}
+
+/**
+ * Description
+ */
+
+.ac__desc{
+    display: block;
+    font-size: 12px;
+    padding: 5px 0;
+    text-transform: capitalize;
+}

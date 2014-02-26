@@ -1,0 +1,380 @@
+/*------------------------------------*\
+    BUTTONS.CSS
+\*------------------------------------*/
+
+
+@mixin buildButton($background, $border, $hover:5%, $focus: 10%){
+
+    &:hover, &:active, &{
+        background: $background;
+        border-color: $border;
+        color: #fff;
+    }
+
+    &:hover{
+        background: lighten($background, $hover);
+        border-color: lighten($border, $hover);
+    }
+
+    &:active, &:focus{
+        background: darken($background, $focus);
+        border-color: darken($border, $focus);
+    }
+}
+
+
+@mixin buttonGroupBorder($bg, $border){
+
+    @if $bg == $border{
+
+        border-left-color: darken($bg,10%);
+    }
+
+}
+
+/**
+ * Base button extend
+ */
+
+.btn{     
+    line-height: normal;
+    padding: $button-padding;    
+    border: 1px solid transparent;    
+    background: $button-default-background;
+    @include rem(margin-bottom, 0.5);
+    border-radius: $button-border-radius;
+    text-decoration: none;    
+    @include transition(all 0.1s ease-in);    
+    
+    
+    /* Disabled */
+
+    &[disabled], &[disabled]:hover, &[disabled]:active{
+        background: lighten($button-default-background, 1%);
+        border-color: lighten($button-default-background, 1%);    
+        color: lighten($button-default-color, 20%);        
+    }
+
+    /* Caret */
+
+    .caret{
+        margin-left: 0.3em;
+    }
+
+}
+
+/**
+ * Adjacent buttons
+ */
+
+.btn + .btn, .btn-group + .btn-group{
+    @include rem(margin-left, 0.5);
+}
+
+
+/**
+ * Button Primary
+ */
+
+.btn--primary{    
+
+    @include buildButton($button-primary-background, $button-primary-border);
+}
+
+/**
+ * Button Secondary
+ */
+
+.btn--secondary{    
+
+    @include buildButton($button-secondary-background, $button-secondary-border);
+}
+
+/**
+ * Button Secondary
+ */
+
+.btn--warning{    
+
+    @include buildButton($button-warning-background, $button-warning-border, 10%, 10%);
+}
+
+/**
+ * Dark button
+ */
+
+.btn--dark{
+
+    @include buildButton($button-dark-background, $button-dark-border, 10%, 10%);
+}
+
+/**
+ * Button Facebook
+ */
+
+.btn--facebook{
+    @include buildButton($button-facebook-background, $button-facebook-border, 10%, 10%);   
+}
+
+/**
+ * Button Google
+ */
+
+.btn--google{
+    @include buildButton($button-google-background, $button-google-border, 10%, 10%);   
+}
+
+/**
+ * Button light
+ */
+
+.btn--light{    
+
+    @include buildButton($button-light-background, $button-light-border);
+    
+    &, &:hover, &:active{
+        color: $base-color;    
+    }
+
+    &:hover{
+        border-color: lighten($button-light-border, 10%);
+    }
+    
+}
+
+
+/**
+ * Button unstyled
+ */
+
+.btn--unstyled, .btn--unstyled:hover{
+    background: transparent;
+    border-color: transparent !important;
+}
+
+/**
+ * Toggle button
+ */
+
+.btn--toggle{
+    font-size: 30px;
+    float: right;
+    margin: 0;
+    padding: 0 15px;    
+
+    .fa{
+        margin: 0;
+    }
+}
+
+
+/**
+ * Button group
+ */
+
+.btn-group{
+    position: relative;
+    display: inline-block;
+    @include rem(margin-bottom, 0.5);
+    vertical-align: middle;
+    @include clearfix;
+
+
+    > .btn{
+        float: left;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: -1px;
+    }
+
+    > .btn:not(:first-child):not(:last-child):not(.btn--dropdown) {
+        border-radius: 0;
+    }
+    
+
+    > .btn:first-child {
+        margin-left: 0;
+      &:not(:last-child):not(.btn--dropdown) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+      }
+    }
+
+    > .btn:last-child:not(:first-child),
+    > .btn--dropdown:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+
+    /**
+     * Primary button
+     */
+    
+    .btn--primary{
+        @include buttonGroupBorder($button-primary-background, $button-primary-border);
+
+        &:first-child{
+            border-left-color: transparent;
+        }
+    }
+
+    /**
+     * Secondary button
+     */
+    
+    .btn--secondary{
+        @include buttonGroupBorder($button-secondary-background, $button-secondary-border);
+
+        &:first-child{
+            border-left-color: transparent;
+        }
+    }
+
+    /**
+     * Warning button
+     */
+    
+    .btn--warning{
+        @include buttonGroupBorder($button-warning-background, $button-warning-border);
+
+        &:first-child{
+            border-left-color: transparent;
+        }
+    }
+
+    /**
+     * Warning button
+     */
+    
+    .btn--dark{
+        @include buttonGroupBorder($button-dark-background, $button-dark-border);
+
+        &:first-child{
+            border-left-color: transparent;
+        }
+    }
+}
+
+
+    /**
+     * Dropdown button
+     */
+    
+    .btn--dropdown{
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+
+        .caret{
+            margin: 0;
+        }
+        
+    }
+
+
+
+/**
+ * Button Sizes
+ */
+
+    /**
+     * Alpha Button
+     */
+    
+    .btn--alpha{
+        @include font-size(16px, false)
+    }
+
+    /**
+     * Beta Button
+     */
+    
+    .btn--beta{
+        @include font-size(14px, false)
+    }
+
+    /**
+     * Gamma Button
+     */
+    
+    .btn--gamma{
+        @include font-size(12px, false)
+    }
+
+    /**
+     * Hard Button
+     */
+    
+    .btn--hard{
+        border-radius: 0;   
+    }
+
+    /**
+     * Soft button
+     */
+    
+    .btn--soft{
+        border-radius: 200px;        
+    }
+
+
+    /**
+     * Button round
+     */
+    
+    .btn--round{
+        border-radius: 200px;
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+    }
+    
+
+    /**
+     * Fixed width
+     */
+    
+    .btn--fix{
+        min-width: 100px;
+        text-align: center;
+    }
+
+    /**
+     * Button large
+     */
+    
+    .btn--large{
+        padding: 0.8em 2em;
+    }
+
+
+
+/**
+ * Button with icons aligned to the left
+ */
+
+.btn--icon-left{
+
+    position: relative;
+
+    .fa{
+        position: absolute;
+        left: 15px;
+        top: 12px;        
+    }
+}
+
+
+/**
+ * Button with icons aligned to the right
+ */
+
+.btn--icon-right{
+
+    position: relative;
+
+    .fa{
+        position: absolute;
+        right: 15px;
+        top: 12px;        
+    }
+}

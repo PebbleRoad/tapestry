@@ -1,0 +1,220 @@
+/*------------------------------------*\
+		DATEPICKER.CSS
+\*------------------------------------*/
+
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+.datepicker {
+	border: 1px $color-nice-blue solid;
+	@include rem(margin-bottom);
+	direction: ltr;
+	clear: both; 
+}
+
+
+.datepicker.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	float: left;
+	display: none;
+	min-width: 160px;
+	list-style: none;
+	background-color: #ffffff;
+	
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+
+	
+	color: #333333;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+}
+
+
+
+
+
+/**
+ * Overrides
+ */
+
+.datepicker{
+		&.dropdown-menu{
+				padding: 0;
+				border: none;
+				border-radius: 0;
+				border: 1px $color-nice-blue solid;
+		}
+
+		table{
+				//border-collapse: separate;
+				margin: 0;
+		}
+
+		td, th{
+				text-align: center;
+				padding: 4px 5px;
+		}
+
+		/* Tbody */
+
+		tbody{
+				font-size: 13px;
+		}
+
+		/* Header */
+
+		th{
+				padding: 6px 5px;
+		}
+
+		thead tr:first-child > th{
+				background: $color-nice-blue;
+				color: #fff;        
+		}
+
+		&:after, &:before{
+				display: none;
+		}
+
+		/* Day of the week */
+
+		.dow{
+				color: darken($base-ui-color, 20%);
+				font-weight: normal;
+				font-size: 12px;
+		}
+
+		.day{
+
+				width: 30px;
+				height: 30px;
+
+			 
+				&:hover, &.focused{
+						background: #eee;
+				}
+		}
+
+		
+		tbody{
+
+				td{
+						border: 1px lighten($base-ui-color, 10%) solid;
+				}
+
+				td:last-child{
+						border-right: none;
+				}
+
+				tr:last-child > td{
+						border-bottom: none;
+				}
+
+				td:first-child{
+						border-left: none;
+				}
+		}
+
+
+		/**
+		 * Datepicker switch
+		 */
+		
+		.datepicker-switch, .prev, .next, .day, .month, .year, .today{
+				cursor: pointer;    
+		}
+		
+		
+		.datepicker-switch{
+
+
+		}
+
+		/**
+		 * Month select
+		 */
+		
+		.month, .year{
+				display: block;
+				float: left;
+				vertical-align: top;
+				width: 24%;
+				max-width: 60px;
+				margin: 0 0.5%;
+				margin-bottom: 1%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				border-radius: $base-radius;
+				background: #eee;
+
+
+				&:hover{
+						background: #ddd;
+				}
+
+		}
+
+		/* Prev */
+
+		.prev, .next{
+			
+			font-size: 0;
+			@include user-select(none);
+
+			&:after{
+				content: "\f104";
+				font-family: FontAwesome;
+				font-size: 18px;	
+			}
+			
+
+		}
+
+		/* Next */
+
+		.next:after{
+			content: "\f105";
+		}
+	
+
+		/* Old dates */
+
+		.old, .new{
+			color: $base-ui-color;
+		}
+
+		/* Active */
+
+		.active, .active:hover, .selected, .selected:hover{
+				background: $color-primary;
+				color: #fff;
+		}
+
+		.range{
+				background: #eee;
+		}
+
+		/* Today button */
+
+		.today{
+				border-top: 1px $base-ui-color solid;
+
+				&:hover{
+						background: #eee;
+				}
+		}
+
+}

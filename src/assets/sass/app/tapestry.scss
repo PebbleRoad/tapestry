@@ -1,0 +1,809 @@
+/**
+ * Import
+ */
+
+@import "../bourbon/bourbon";
+@import "modules/variables";
+@import "modules/mixins";
+$fa-font-path: "../../../bower_components/font-awesome/fonts";
+@import "./src/bower_components/font-awesome/scss/font-awesome.scss";
+
+/*
+Variables
+ */
+
+$bg: #ecf0f3;
+$link-color: $color-primary;
+$base-ui-color : #BFBFBF;
+$border: lighten($base-ui-color, 10%);
+$fontfamily: 'Open Sans', Helvetica, Arial;
+$color-dark: #1F253D;
+
+body{
+    margin: 0;
+}
+
+html[ng-app]{
+    background: $bg;
+}
+
+/**
+ * Box sizing
+ */
+
+*{
+    box-sizing: border-box;
+}
+
+/**
+ * Header
+ */
+
+.tapestry-header{
+    background: $color-dark;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    @include clearfix;
+    position: relative;
+    min-height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+
+    .text-input,
+    textarea{
+        border: 1px $input-border-color solid;
+        padding: $input-padding;
+        background: $input-background;
+        transition: all 0.1s ease-in;   
+        vertical-align: middle;
+        outline: none;  
+        width: 100%;    
+        border-radius: $input-border-radius;    
+        @include font-size(14px, false);
+        background: transparent;
+        border-color: #fff;
+        color: #fff;
+
+        &:focus{
+            @extend %focus-style;
+        }
+    }
+
+    .form-control{
+        position: relative;
+        @include rem(margin-bottom, 0.75);
+
+        .text-input{
+            padding-right: 35px;
+            margin-bottom: 0;
+        }
+
+        .fa{
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin: 0;
+            margin-top: -8px;
+            height: 15px;
+            color: $base-ui-color;
+        }
+
+        
+        /* Icon on the left side */
+
+        &.icon-left {
+            
+            .text-input{
+                padding-left: 35px;
+                padding-right: inherit;
+            }
+
+            .fa{
+                left: 10px;
+                right: auto;
+            }
+        }
+
+        /* Button unstyled */
+
+        .btn--unstyled{
+            padding: 0;
+            margin: 0;
+            vertical-align: top;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+        }
+    }
+    
+    
+    /* Form */
+
+    .form-control{
+        position: absolute;
+        right: 1em;
+        top: 15px;
+        margin: 0;
+        width: 230px;
+        display: none;
+
+        @include media-query(tablet-desktop){
+            display: block;
+        }
+
+        @include media-query(tablet){
+            // position: relative;
+            // top: 5px;
+            // left: auto;
+            // right: auto;
+            // margin: 10px;
+            // width: auto;
+        }
+    }
+
+        /* Text input */
+
+        .text-input{
+            
+        }
+    
+
+    .menu__opened &{
+        @include transform(translate3d(250px, 0, 0));
+    }
+
+    
+    /* Links */
+
+    @include links-light;
+
+    a{
+        text-decoration: none;
+
+    }
+
+    /* Icon */
+
+    .fa{
+        color: #fff;
+    }
+
+    /* Toggle button */
+
+    .btn--toggle{
+        position: absolute;
+        padding: 0;
+        left: 0px;
+        top: 0px;  
+        background: none;
+        border: none;  
+        padding-left: 20px;
+        font-size: 30px;
+        display: block;
+
+        .fa{
+            vertical-align: top;
+            line-height: 70px;
+        }
+
+        /* menu opened */
+
+        .menu__opened &{
+            .fa:before{
+                content: "\f00d"
+            }
+        }
+    }
+}
+
+/*------------------------------------*\
+        AUTOCOMPLETE.CSS
+    \*------------------------------------*/
+
+    .autocomplete-suggestions { 
+        border: 1px solid $base-ui-color; 
+        background: #fff; 
+        @include base-box-shadow;
+        border-radius: $base-radius;
+        overflow: auto; 
+        font-family: $fontfamily;
+    }
+
+    .autocomplete-suggestion { 
+        padding: 0.3em 1em; 
+        //white-space: nowrap; 
+        overflow: hidden;
+        cursor: pointer; 
+        border-bottom: 1px $base-ui-color solid;
+
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+
+    .autocomplete-selected { 
+        background: $color-light-grey; 
+    }
+
+    .autocomplete-suggestions strong { 
+        font-weight: normal; 
+        color: $color-primary; 
+        font-weight: 600;
+    }
+
+    /**
+     * Description
+     */
+
+    .ac__desc{
+        display: block;
+        font-size: 12px;
+        padding: 5px 0;
+        text-transform: capitalize;
+    }
+
+
+
+/**
+ * Sidemenu
+ */
+
+.tapestry-menu-side{
+    line-height: 1.4;
+    display: none;
+    font-family: $fontfamily;
+    
+    ul{
+        list-style: none;        
+        margin: 0 0 20px 10px;
+        padding: 0;
+        word-wrap: break-word;
+
+        @include media-query(widescreen){
+            position: fixed;
+            max-width: 180px;
+        }
+    }
+
+    li{
+        display: inline-block;
+        width: 33%;
+        margin: 0;
+        vertical-align: top;
+        position: relative;
+    }
+
+    a{
+        color: darken($base-ui-color, 20%);
+        text-decoration: none;
+        padding: 5px 0;
+        display: block;
+    }
+
+
+    a:hover{
+        
+        color: $base-color;
+        
+        
+    }
+
+    .active, .active:hover, .active >a{
+        color: $color-primary;
+        //font-weight: 600;
+    }
+
+    @include media-query(tablet-desktop){
+        display: block;
+        position: relative;
+    }
+
+    @include media-query(widescreen){
+        position: absolute;
+        left: -200px;
+        top: 5px;
+        width: 200px;
+        li{
+            display: block;
+            width: auto;
+        }
+    }
+}
+
+
+
+/**
+ * Menu
+ */
+
+$menu-spacing: 20px;
+
+.tapestry-menu{
+    font-family: $fontfamily;
+    background: $color-light-grey;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1;
+    padding: 20px $menu-spacing;        
+    @include font-size(16px, false);
+    @include transform(translate3d(-250px, 0, 0));
+    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    font-size: 16px;
+    line-height: 1.6;
+    //border-right: 1px $base-ui-color solid;    
+
+
+    .menu__opened &{
+        display: block;
+        @include transform(translate3d(0px, 0, 0));
+        box-shadow: 0px 0 6px 1px rgba(0,0,0,0.1);
+    }
+
+    /* heading */
+
+    .menu__header{
+
+        @include font-size(16px, false);
+        text-transform: capitalize;
+        margin: 0;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+
+    /* UL */
+
+    ul{
+        list-style: none;
+        margin: 0 (-($menu-spacing)) ($menu-spacing) (-($menu-spacing));
+        padding: 0;
+        padding-bottom: 15px;
+        border-bottom: 1px $base-ui-color solid;
+
+        
+    }
+
+    li{
+        margin: 0;
+    }
+
+    a{
+        display: block;
+        color: $color-primary;
+        padding: 3px $menu-spacing;
+        text-decoration: none;
+    }
+
+    a:hover, .active > a{
+        background: lighten($color-dark-grey,10%);
+
+        background: $color-primary;color: #fff;
+    }
+}
+
+
+/* Heading */
+
+.tapestry__heading{
+    margin: 8px 0 0 0;     
+    font-family: $fontfamily;
+
+    @include media-query(tablet-desktop){
+        margin-top: 5px;
+    }
+}
+
+
+/**
+ * Static Content
+ */
+
+.tapestry-wrapper{
+    padding-top: 15px;
+
+    .container{
+        position: relative;
+    }
+    
+    @include media-query(desktop){
+        > .container{
+            width: 990px;
+            margin: 0 auto;
+        }    
+    }
+    
+
+    @include media-query(tablet-desktop){
+        padding-top: 30px;
+    }
+}
+
+
+/* Menu opened */
+
+.menu__opened{
+    overflow-x: hidden;
+
+}
+
+/**
+ * Tapestry content
+ */
+
+.tapestry-content{
+    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    position: relative;    
+    
+    padding-top: 70px;
+
+    .menu__opened &{
+        @include transform(translate3d(250px, 0, 0));
+    }
+}
+
+
+/**
+ * Tapestry Hero Module
+ */
+
+.ui-module-hero-tapestry{
+    color: #fff;
+    padding: 30px 0 30px 0;
+    background: $color-primary;
+    text-align: center;
+    
+
+    @include media-query(desktop){
+
+        .container{
+            width: 800px; 
+            margin: 0 auto;   
+        }
+        
+    }
+
+    h1, .text--lead{
+        
+        font-family: $fontfamily;
+    }
+
+    .text--lead{
+        font-size: 24px;
+        font-weight: 300;
+        margin: 0 0 30px 0;
+    }
+
+    hr{
+        background: transparent;        
+        border-top: 1px #fff solid;
+        border-bottom-width: 0;
+        margin-top: 20px;
+        color: transparent;
+    }
+}
+
+
+
+/**
+ * Dark button
+ */
+
+.btn-view, .btn-download{
+    line-height: normal;
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  background: #EDEEF1;
+  margin-bottom: 12px;
+  margin: 0 0.5em;
+  font-size: 14px;
+  margin-bottom: 0.85714rem;
+  border-radius: 2px;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  text-decoration: none;
+  font-family: $fontfamily;
+  vertical-align: middle;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.btn-download:hover, .btn-download:active, .btn-download {
+  background: #323A45;
+  border-color: #323A45;
+  color: #fff; }
+.btn-download:hover {
+  background: #475363;
+  border-color: #475363;
+  text-decoration: none; }
+.btn-download:active, .btn-download:focus {
+  background: #1d2127;
+  border-color: #1d2127; }
+
+
+/**
+ * Unstyled button
+ */
+
+.btn-unstyled{
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.btn-view, .btn-view:hover{
+    background: transparent;
+    border: 1px $color-dark solid;
+    color: $color-dark;
+    text-decoration: none;
+}
+
+.btn-view:hover{
+    opacity: 0.8;
+}
+
+
+
+/**
+ * Features
+ */
+
+.tapestry-features{
+    list-style: none;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+    font-family: $fontfamily;
+    font-size: 0;
+
+    @include media-query(desktop){
+        width: 800px;
+    }
+
+    > li{
+        
+        font-size: 16px;
+        vertical-align: top;
+        
+        margin: 0;
+        padding: 0 0 10px 0;
+
+        @include media-query(tablet-desktop){
+            display: inline-block;
+            width: 33%;
+            padding-right: 20px;
+        }
+    }
+
+    h3{
+        font-weight: 600;
+    }
+}
+
+
+/**
+ * Footer
+ */
+
+.tapestry__footer{
+    text-align: center;
+    margin-top: 2em;
+    border-top: 1px lighten($base-ui-color, 10%) solid;
+    padding-top: 20px;
+    font-family: $fontfamily;
+    font-size: 12px;
+
+    p{
+        margin-bottom: 15px;
+    }
+}
+
+
+
+/**
+ * Pattern listing
+ */
+
+.pattern-list{
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+
+    > li{
+        @include rem(margin-bottom);
+        background: #fff;
+        border-radius: 5px;
+    }
+
+    > li > h3{
+        padding: 0.5em 15px;
+        margin: 0;        
+        font-family: $fontfamily;        
+        border-bottom: 1px $border solid;
+    }
+
+    > li > div > h4{
+        padding: 0.5em 15px;
+        margin: 0;
+        font-weight: 600;
+        background: #fff;
+        font-family: $fontfamily;
+        border-bottom: 1px $border solid;
+    }
+
+    
+
+
+   
+
+   
+    .block--description{
+        //margin: 0 -15px 0 -15px ;
+        background: #f9fbfc;
+        border-radius: 0 0 5px 5px;
+        border-top: 1px $border solid;
+        
+    }
+    
+}
+    .pattern-variation{
+        margin-bottom: 15px;
+    }
+
+    .block--preview{
+        padding: 15px;
+        padding-bottom: 40px;
+    }
+
+    .block--example{
+        background: #fff;
+        //padding: 15px;
+        
+        border-radius: 5px;
+        //border: 1px $base-ui-color solid;
+    }
+
+     pre{
+        margin: 0 !important;
+        background: lighten($bg, 3%) !important;
+        border-radius: 0 0 5px 5px;
+        padding: 1em;
+        font-size: 16px;
+        white-space: wrap !important;
+        border-top: 1px $border solid;
+    }
+    
+    code{
+        white-space: pre-wrap !important;
+    }
+
+
+    /**
+     * Code
+     */
+    
+    .example-code{
+        position: relative;
+    }
+
+    .toggle-code{
+        position: absolute;
+        right: 10px;
+        top: -40px;
+        text-decoration: none;
+        cursor: pointer;
+        color: #888;
+        @include user-select(none);
+    }
+
+    .toggle-code.active{
+        color: $color-primary;
+    }
+
+    /**
+     * Description
+     */
+    
+    .block--description{
+        padding: 20px 15px 10px 15px;        
+        background: darken($color-light-grey, 5%);
+        
+        h3{
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+
+
+/**
+ * Palette
+ */
+
+.palette{
+    list-style: none;
+    margin-left: 0;
+    font-size: 0;
+
+    > li{
+        
+        margin-right: 1%;
+        @include font-size($milli-size, false);        
+        color: #fff;
+        text-align: center;
+
+        @include media-query(tablet-desktop){
+            display: inline-block;
+            width: 19%;
+        }
+    }
+
+    span{
+        display: block;
+    }
+
+    .color{
+        border-radius: 5px 5px 0 0;
+        height: 80px;
+        padding-top: 1.5em;
+
+        @include media-query(tablet-desktop){
+            height: 120px;
+        }
+    }
+
+    .color:last-child{
+        border-radius: 0 0 5px 5px;
+    }
+
+    h3{
+        color: #333;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+
+/**
+ * Row demo
+ */
+
+.row--demo{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    > .columns{
+        background: #eee;
+        border: 1px #ddd solid;
+    }
+}
+
+
+/**
+ * Template listing
+ */
+
+.tapestry-template-list{
+    list-style: none;
+    margin: 0 0 20px 0;
+
+    li{
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+    }
+}

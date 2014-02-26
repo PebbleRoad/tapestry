@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    BREADCRUMBS.CSS
+\*------------------------------------*/
+
+.ui-breadcrumbs{
+    list-style: none;
+    margin-left: 0;    
+
+    > li{
+        display: inline;
+
+        @include rem(margin-right, 1/3);
+
+        &:before{
+            font-family: "FontAwesome";
+            content: "\f105";           
+            @include rem(padding-right, 1/3);
+            color: $base-ui-color;
+        }
+    }
+
+    > li:first-child:before{
+        content: '';
+        padding-right: 0;
+    }
+
+    /* Icon Home */
+
+    .fa{
+        @include font-size($base-font-size, false);
+    }
+}

@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Landing Pages",
+        "children": [
+            {
+                "path": "patterns/templates/Landing Pages/landing.md",
+                "name": "Article landing",
+                "meta": {
+                    "url": "templateurl",
+                    "preview": "patterns/templates/landing/landing.png"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Listing Pages",
+        "children": [
+            {
+                "path": "patterns/templates/Listing Pages/listing.md",
+                "name": "Article listing",
+                "meta": {
+                    "url": "templateurl",
+                    "preview": "patterns/templates/landing/landing.png"
+                }
+            }
+        ]
+    }
+]

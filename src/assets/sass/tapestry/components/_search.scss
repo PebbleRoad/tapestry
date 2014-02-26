@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    SEARCH.CSS
+\*------------------------------------*/
+
+.ui-search-facets{
+
+    dt, dd{
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 0.5em;
+    }
+
+    /* Remove facet */
+
+    .remove-facet{
+        margin-left: 0.5em;
+    }
+}

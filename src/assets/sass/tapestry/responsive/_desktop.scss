@@ -1,0 +1,70 @@
+/*------------------------------------*\
+	DESKTOP.CSS
+\*------------------------------------*/
+
+
+/*
+ * Show Hide Sections
+ */
+ 
+.show-for-desktop{
+  display:inherit;
+}
+
+.hide-for-desktop{
+  display:none;
+}
+
+
+/*
+ * Container
+ */
+
+.container{
+  width: $site-width;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+	/**
+	 * Container Small
+	 */
+	
+	.container--small{
+		width: 700px;
+	}
+
+/**
+ * Floated Media
+ */
+
+.ui-media--grid{
+    
+    > li{
+        display: inline-block;
+        width: 25%;
+        padding-right: 1em;
+    }
+    
+    /* Media item */
+
+    .media__item{
+        @include rem(margin-bottom, 0.5);
+    }
+    
+}
+
+
+/**
+ * Media grid Four
+ */
+
+$count: 4;
+.ui-media-grid--four{
+
+	> .ui-media{
+		width: 100/$count * 1%;
+	}
+}

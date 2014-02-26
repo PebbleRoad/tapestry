@@ -1,0 +1,247 @@
+/*------------------------------------*\
+	MIXINS
+\*------------------------------------*/
+
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+@mixin font-size($font-size, $line-height:true){
+    font-size:$font-size;
+    font-size:($font-size / $base-font-size)*1rem;
+    @if $line-height == true{
+        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+}
+
+
+/**
+ * Font size mixin
+ */
+
+@mixin font-size-adapt($mobile: false, $tablet: false, $desktop: false){
+
+		@if $mobile{
+
+				@include font-size($mobile, false);
+
+		}
+
+
+		@if $tablet{
+				
+				@include media-query(tablet-desktop){
+						@include font-size($tablet, false);
+				}
+		}
+
+		@if $desktop{
+				
+				@include media-query(desktop){
+						@include font-size($desktop, false);
+				}
+		}
+}
+
+
+/**
+ * Media Query Mixin
+ */
+
+@mixin media-query($media-query){
+
+		@if $media-query == "tablet-desktop"{
+
+				@media only screen and (min-width: $tablet-breakpoint-start) { @content; }
+
+		}
+
+		@if $media-query == tablet{
+
+				@media only screen and (min-width: $tablet-breakpoint-start) 
+		and (max-width: $desktop-breakpoint-start) { @content; }
+
+		}
+
+		@if $media-query == desktop{
+
+				@media only screen and (min-width: $desktop-breakpoint-start) { @content; }
+
+		}
+
+		@if $media-query == phone{
+
+				@media only screen and (max-width: $tablet-breakpoint-start) { @content; }
+
+		}
+
+		@if $media-query == phone-landscape{
+
+				@media only screen and (min-width: $phone-breakpoint-end) and (orientation: landscape){
+						@content;
+				}
+		}
+
+		@if $media-query == tablet-landscape{
+
+				@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape){
+						@content;
+				}
+		}
+
+		@if $media-query == widescreen{
+				@media only screen and (min-width: $widescreen-breakpoint-start){
+						@content;
+				}
+		}
+
+		@if $media-query == retina{
+				@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5){
+						@content;
+				}
+		}
+
+		
+}
+
+
+/**
+ * Box Shadow Base
+ */
+
+@mixin base-box-shadow{
+
+	box-shadow: $base-box-shadow;
+}
+
+
+/**
+ * Light Links
+ */
+
+@mixin links-light {
+
+	a{
+		@include link-colors(#fff, #fff, #fff)
+	}
+}
+
+/**
+ * Link Colors: Part of Compass
+ */
+
+@mixin link-colors($normal, $hover: false, $active: false, $visited: false, $focus: false) {
+	color: $normal;
+	@if $visited {
+	&:visited {
+		color: $visited; } }
+	@if $focus {
+	&:focus {
+		color: $focus; } }
+	@if $hover {
+	&:hover {
+		color: $hover; } }
+	@if $active {
+	&:active {
+		color: $active; } } }
+
+
+/**
+ * Focus Styles
+ */
+
+%focus-style{
+	box-shadow :  0 1px 2px rgba(0,0,0,0.075) inset, 
+									0 0 5px rgba(81,167,232,0.5);
+	border-color: #51A7E8;
+}
+
+
+/**
+ * Rem Units
+ * Converts properties to both REM and Pixel Values. Based on line-height
+ * @include rem(margin-bottom, 0.5)
+ * @include rem(padding, 1, 20px);
+ */
+
+@mixin rem($property, $multiplier: 1, $unit: $base-spacing-unit){
+
+	@if type-of($multiplier) != "number"{
+
+		$unit: $multiplier;
+		$multiplier: 1;
+	}
+
+	@include rem-full($multiplier, $property, $unit);
+}
+
+
+/**
+ * Helper function for REM
+ * @include rem-full(padding, 10px 20px 10px 30px);
+ */
+
+@mixin rem-full($multiplier, $property, $px-values) {
+	// Convert the baseline into rems
+	$baseline-rem: $base-font-size / 1rem * 1;
+	// Print the first line in pixel values
+
+	// If there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == "number" {
+		#{$property}: $px-values * $multiplier;
+		#{$property}: $px-values / $baseline-rem * $multiplier; 
+	}
+	@else {
+		// Create an empty list that we can dump values into
+		$rem-values: ();
+		$pixel-values: ();
+		@each $value in $px-values {
+			// If the value is zero or not a number, return it
+			@if $value == 0 or type-of( $value ) != "number" {
+				$rem-values: append($rem-values, $value); 
+				$pixel-values: append($pixel-values, $value);
+			}
+			@else {
+				$rem-values: append($rem-values, $value / $baseline-rem * $multiplier); 
+				$pixel-values: append($pixel-values, $value * $multiplier);
+			} 
+		}
+		// Return the property and its list of converted values
+		#{$property}: $pixel-values;
+		#{$property}: $rem-values; 
+	} 
+}
+
+
+/**
+ * Grids
+ */
+
+/**
+ * Calculates Percentage for each column
+ */
+
+@function gridCalc($colNumber, $grid-columns) {
+	@return percentage(($colNumber / $grid-columns));
+}
+
+/**
+ * Convert numbers to words
+ * 1 => 'one'
+ */
+
+@function convert-number-to-word($num) {
+	$count:1;
+	@each $word in one,two,three,four,five,six,seven,eight,nine,ten,eleven,
+		twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,
+		twenty,twentyone,twentytwo,twentythree,twentyfour{
+		@if ($count == $num) { @return $word; }
+		$count: $count + 1;
+	}
+	@return "invalid";
+}

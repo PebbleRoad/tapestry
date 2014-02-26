@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    TABLET-DESKTOPS.CSS
+    For tablets and desktops and Up
+\*------------------------------------*/
+
+/*
+ * Add Grids for tablets and desktops
+ */
+
+@import "../grids/grid";
+
+
+/*
+ * Show Hide Sections
+ */
+ 
+.show-for-desktop-above{
+  display: inherit;
+}
+
+.hide-for-tablet-above{
+  display:none;
+}
+
+/* ---- */
+
+
+
+
+/**
+ * Container
+ */
+
+.container{
+
+    .row{
+        margin-left: -($grid-spacing/2);
+        margin-right: -($grid-spacing/2);
+    }
+}

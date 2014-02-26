@@ -1,0 +1,276 @@
+[
+    {
+        "name": "Accordion",
+        "children": [
+            {
+                "path": "patterns/components/Accordion/1.accordion.md",
+                "name": "Accordion"
+            },
+            {
+                "path": "patterns/components/Accordion/2.accordion-alternate.md",
+                "name": "Accordion bordered"
+            }
+        ]
+    },
+    {
+        "name": "Alerts",
+        "children": [
+            {
+                "path": "patterns/components/Alerts/1.alert-success.md",
+                "name": "Alert success"
+            },
+            {
+                "path": "patterns/components/Alerts/2.alert-error.md",
+                "name": "Alert error"
+            },
+            {
+                "path": "patterns/components/Alerts/3.alert-info.md",
+                "name": "Alert info"
+            }
+        ]
+    },
+    {
+        "name": "Autocomplete",
+        "children": [
+            {
+                "path": "patterns/components/Autocomplete/1.autocomplete.md",
+                "name": "Autocomplete field"
+            },
+            {
+                "path": "patterns/components/Autocomplete/autocomplete-categories.md",
+                "name": "Autocomplete with categories"
+            },
+            {
+                "path": "patterns/components/Autocomplete/autocomplete-noresults.md",
+                "name": "Autocomplete - no result"
+            }
+        ]
+    },
+    {
+        "name": "Date",
+        "children": [
+            {
+                "path": "patterns/components/Date/date-display.md",
+                "name": "Date display module"
+            },
+            {
+                "path": "patterns/components/Date/datepicker-inline.md",
+                "name": "Inline datepicker"
+            },
+            {
+                "path": "patterns/components/Date/datepicker-start-end.md",
+                "name": "Datepicker with start/end dates"
+            },
+            {
+                "path": "patterns/components/Date/datepicker.md",
+                "name": "Datepicker"
+            }
+        ]
+    },
+    {
+        "name": "Dropdown",
+        "children": [
+            {
+                "path": "patterns/components/Dropdown/dropdown-buttons.md",
+                "name": "Dropdown buttons"
+            },
+            {
+                "path": "patterns/components/Dropdown/dropdown-click.md",
+                "name": "Dropdown on click"
+            },
+            {
+                "path": "patterns/components/Dropdown/dropdown-hover.md",
+                "name": "Dropdown on hover"
+            },
+            {
+                "path": "patterns/components/Dropdown/dropdown-split.md",
+                "name": "Dropdown split button"
+            }
+        ]
+    },
+    {
+        "name": "Hero Content",
+        "children": [
+            {
+                "path": "patterns/components/Hero Content/carousel.md",
+                "name": "Carousel"
+            },
+            {
+                "path": "patterns/components/Hero Content/hero.md",
+                "name": "Hero content"
+            }
+        ]
+    },
+    {
+        "name": "Modal",
+        "children": [
+            {
+                "path": "patterns/components/Modal/modal-ajax.md",
+                "name": "Modal Ajax"
+            },
+            {
+                "path": "patterns/components/Modal/modal-image.md",
+                "name": "Modal Image"
+            },
+            {
+                "path": "patterns/components/Modal/modal-inline.md",
+                "name": "Modal Inline"
+            }
+        ]
+    },
+    {
+        "name": "Navigation",
+        "children": [
+            {
+                "name": "Pagination",
+                "children": [
+                    {
+                        "path": "patterns/components/Navigation/Pagination/pagination-variations.md",
+                        "name": "Pagination variations"
+                    },
+                    {
+                        "path": "patterns/components/Navigation/Pagination/pagination.md",
+                        "name": "Pagination"
+                    }
+                ]
+            },
+            {
+                "path": "patterns/components/Navigation/breadcrumbs.md",
+                "name": "Breadcrumbs"
+            },
+            {
+                "path": "patterns/components/Navigation/navbar-dark.md",
+                "name": "Navigation dark"
+            },
+            {
+                "path": "patterns/components/Navigation/navbar-light.md",
+                "name": "Navigation light"
+            }
+        ]
+    },
+    {
+        "name": "Page",
+        "children": [
+            {
+                "path": "patterns/components/Page/page.md",
+                "name": "Page title and description"
+            }
+        ]
+    },
+    {
+        "name": "Panels",
+        "children": [
+            {
+                "path": "patterns/components/Panels/panel-light.md",
+                "name": "Panel light"
+            },
+            {
+                "path": "patterns/components/Panels/panel.md",
+                "name": "Panel"
+            }
+        ]
+    },
+    {
+        "name": "Progress bar",
+        "children": [
+            {
+                "path": "patterns/components/Progress bar/progress-bar.md",
+                "name": "Progress bar"
+            }
+        ]
+    },
+    {
+        "name": "Search",
+        "children": [
+            {
+                "path": "patterns/components/Search/search-facets.md",
+                "name": "Search breadcrumbs"
+            },
+            {
+                "path": "patterns/components/Search/search-listing.md",
+                "name": "Search listing"
+            },
+            {
+                "path": "patterns/components/Search/search.md",
+                "name": "Keyword search"
+            }
+        ]
+    },
+    {
+        "name": "Slider",
+        "children": [
+            {
+                "path": "patterns/components/Slider/slider-range.md",
+                "name": "Range slider"
+            },
+            {
+                "path": "patterns/components/Slider/slider.md",
+                "name": "Slider"
+            }
+        ]
+    },
+    {
+        "name": "Tabs",
+        "children": [
+            {
+                "path": "patterns/components/Tabs/tabs-simple.md",
+                "name": "Tabs"
+            },
+            {
+                "path": "patterns/components/Tabs/tabs.md",
+                "name": "Tabs box"
+            }
+        ]
+    },
+    {
+        "name": "Tags",
+        "children": [
+            {
+                "path": "patterns/components/Tags/tags-pointer.md",
+                "name": "Tags pointer"
+            },
+            {
+                "path": "patterns/components/Tags/tags-soft.md",
+                "name": "Tags soft"
+            },
+            {
+                "path": "patterns/components/Tags/tags.md",
+                "name": "Tags default"
+            }
+        ]
+    },
+    {
+        "name": "Tooltip",
+        "children": [
+            {
+                "path": "patterns/components/Tooltip/tooltip.md",
+                "name": "Tooltip"
+            }
+        ]
+    },
+    {
+        "name": "Wizard",
+        "children": [
+            {
+                "path": "patterns/components/Wizard/wizard-line-inverted.md",
+                "name": "Wizard inverted"
+            },
+            {
+                "path": "patterns/components/Wizard/wizard-line.md",
+                "name": "Wizard line"
+            },
+            {
+                "path": "patterns/components/Wizard/wizard-vertical.md",
+                "name": "Wizard vertical"
+            },
+            {
+                "path": "patterns/components/Wizard/wizard.md",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "path": "patterns/components/footer.md",
+        "name": "Site footer"
+    }
+]

@@ -1,0 +1,31 @@
+/*------------------------------------*\
+	FONTS.CSS    
+\*------------------------------------*/
+
+
+$fa-font-path: "../../bower_components/font-awesome/fonts";
+
+@import "./src/bower_components/font-awesome/scss/font-awesome.scss";
+
+/** Add some margin to the icons */
+
+.fa{
+	margin-right: 0.3em;
+}
+
+/**
+ * Lone icons
+ */
+
+.fa-lone{
+    margin-right: 0;
+}
+
+/**
+ * Lone icons
+ */
+
+.fa-right{
+    margin-left: 0.3em;
+    margin-right: 0;
+}

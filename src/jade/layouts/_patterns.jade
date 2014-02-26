@@ -1,0 +1,116 @@
+doctype
+html.no-js(lang='en', ng-app="tapestry", class="tapestry")
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		block variables 
+		title(ng-bind="'Tapestry - ' + section") Tapestry
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		// Your CSS File	
+		link(rel='stylesheet', href='assets/css/main.css')
+		// / Your CSS File
+		link(rel='stylesheet', href='assets/css/app/tapestry.css')
+		link(rel='stylesheet', href='bower_components/prism/themes/prism.css') 
+		//link(rel='stylesheet', href='bower_components/dropzone/downloads/css/basic.css')       
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700', rel='stylesheet')
+
+		block meta        
+		script(src='bower_components/modernizr/modernizr.js')
+
+	body
+
+		// Menu
+		
+		nav.tapestry-menu
+			h3.menu__header Introduction
+			ul
+				li(ng-class="{active: section=='Overview'}"): a(href="#/") Overview
+
+			div(ng-repeat="style in styles")
+				h3.menu__header(once-text="style.name")
+				ul
+					li(ng-repeat="element in style.data", ng-class="{'active': element.slug == sectionSlug}") 
+						a(once-href="'#/'+style.slug+'/'+element.slug", once-text="element.name")
+					
+
+		// / Menu
+
+		header.tapestry-header(ng-controller="headerController")                
+
+			h3.tapestry__heading(ng-bind="section")
+
+			button.btn.btn--unstyled.btn--toggle(ng-click="toggleMenu($event)")
+				em.fa.fa-bars
+
+			.form-control.icon-left(action="")
+				input.text-input.input-inverted.js-pattern-search(type='text', placeholder="Search patterns", name="section")
+				em.fa.fa-search.fa-lg
+
+		// Content
+		.tapestry-content
+
+			block content
+
+
+			.container
+				.row
+					.columns.ten.twelve--tablet.column--center
+
+						footer.tapestry__footer
+							p Designed and built by the folks at
+							p
+								a(href="http://pebbleroad.com")
+									img(src="assets/images/logo.png", alt="", width="187")
+
+							p 
+								| Code licensed under MIT, documentation under CC BY 3.0. <br>Version 
+								span(tapestry-version)
+								| . Last Updated on 
+								span(last-updated) 
+								| . 
+								a(href="#/changelog") Changelog
+
+		block footer
+		// jQuery
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js")
+		// jQuery
+
+		// Autocomplete
+		script(src="bower_components/jQuery-Autocomplete/src/jquery.autocomplete.js")
+		// Autocomplete
+
+		// Parsers
+		script(src="bower_components/js-yaml/js-yaml.js")
+		script(src="bower_components/marked/lib/marked.js")
+
+		// PrismJS code highlighter
+		script(src="bower_components/prism/prism.js")
+
+		// Patterns
+		script(src="bower_components/angular/angular.min.js")
+		script(src="bower_components/angular-route/angular-route.min.js")
+		script(src="bower_components/angular-once/once.js")
+		script(src="assets/js/app/controllers.js")
+		script(src="assets/js/app/directives.js")
+		script(src="assets/js/app/filters.js")
+		script(src="assets/js/app/services.js")
+		script(src="assets/js/app/scrollspy.js")
+		script(src="assets/js/app/app.js")
+		// / Patterns
+
+		// Your JS Files
+		script(src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.11/fastclick.min.js")
+		script(src="external/js/components/tapestry.ui.tabs.js")
+		script(src="external/js/components/tapestry.ui.dropdown.js")
+		script(src="external/js/components/tapestry.ui.accordion.js")
+		script(src="bower_components/Selecter/jquery.fs.selecter.js")
+		script(src="bower_components/dropzone/downloads/dropzone.js")
+		script(src="bower_components/jQuery-Autocomplete/src/jquery.autocomplete.js")
+		script(src="bower_components/tipsy/src/javascripts/jquery.tipsy.js")
+		script(src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js")
+		script(src="bower_components/owlcarousel/owl-carousel/owl.carousel.js")
+		script(src="bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js")
+		script(src="bower_components/fancybox/source/jquery.fancybox.pack.js")
+		script(src="external/js/app.js")
+		// / Your JS Files

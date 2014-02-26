@@ -1,0 +1,105 @@
+/*------------------------------------*\
+    LIST.CSS    
+\*------------------------------------*/
+
+/**
+ * List
+ */
+
+ul, ol{
+    margin-left: 2em;
+}
+
+/**
+ * List item
+ */
+
+li{
+  @include rem(margin-bottom, 0.5);
+}
+
+/**
+ * Definition List
+ */
+
+dd{
+    margin-left: 0;
+}
+
+/**
+ * Definition title
+ */
+
+dt{
+    font-weight: 600;
+}
+
+/**
+ * Inline List
+ */
+
+.list--inline{
+    list-style: none;
+    margin-left: 0;
+
+    > li{
+        display: inline;
+        @include rem(margin-right, 0.5);
+    }
+}
+
+/**
+ * Inline List
+ */
+
+.list--unstyled{
+    list-style: none;
+    margin-left: 0;
+
+    > li{
+        
+    }
+}
+
+
+/**
+ * Block list
+ */
+
+.list--block{
+    list-style: none;
+    margin-left: 0;
+
+    > li{
+        border-bottom: 1px $base-ui-color solid;
+        @include rem(padding-bottom, 0.5);
+    }
+}
+
+/**
+ * Grid list
+ */
+
+.list--grid{
+
+    list-style: none;
+    margin-left: 0;
+    font-size: 0;
+
+    > li{
+        @include font-size($base-font-size);
+    }
+
+
+    @include media-query(tablet-desktop){
+        margin-left: -($grid-spacing/2);
+        margin-right: -($grid-spacing/2);
+
+        > li{
+            display: inline-block;
+            vertical-align: top;
+            width: 33%;            
+            padding: 0 $grid-spacing/2;
+        }
+    }
+}

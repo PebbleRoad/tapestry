@@ -1,0 +1,156 @@
+/*------------------------------------*\
+    TABS.CSS
+\*------------------------------------*/
+
+/**
+ * Variables
+ */
+
+$tab-padding: 0.5em 1em;
+$tab-border: $base-ui-color;
+$tab-radius: 0;
+$tab-border-color: true;
+
+
+/**
+ * Tabs
+ */
+
+.ui-tabs{
+    list-style: none;
+    margin-left: 0;
+    @include rem(margin-bottom);
+    
+    nav{
+        border-bottom: 1px $tab-border solid;
+        @include rem(margin-bottom);
+        display: none;
+
+        @include media-query(tablet-desktop){
+            display: block;
+        }
+    }
+
+    /* Active tab */
+    
+    .active{
+        border-bottom: 2px $color-primary solid;        
+    }
+
+
+    /* Hide tabs */
+
+    .tab{
+        display: none;
+    }
+
+    .tab.active{
+        display: block;
+    }
+
+    
+}
+
+/* Tab Handle */
+
+.tab__handle{
+    color: $base-ui-color;
+    display: inline-block;
+    padding: $tab-padding;
+    text-decoration: none;   
+
+    &:hover{
+        color: $base-color;
+        text-decoration: none;
+    }     
+
+    &.active{
+         color: $base-color;
+    }
+}
+
+
+/* Mobile */
+
+.tab__handle--mobile {         
+    display: none;
+    cursor: pointer;
+    @include user-select(none);
+    @extend .accordion__header;
+    
+    @include media-query(phone){
+        display: block;
+    }
+
+
+    /* Arrow */
+
+    &:after{
+        @extend %accordion-arrow;
+    }
+
+
+    /*
+    Active
+     */
+    
+    &.active{
+        
+        color: $color-primary;
+        border-bottom: 1px $base-ui-color solid;
+        
+        @include rem(margin-bottom, 0.5);
+
+        &:after{
+            @extend %accordion-arrow-active;
+        }
+
+    }
+}
+
+
+/**
+ * ui-tabs--bordered
+ * Alternate Version with bordered tab link
+ */
+
+.ui-tabs--bordered{
+    padding: 0 1px;
+
+    .active{
+        border: 1px $tab-border solid;
+        border-radius: $tab-radius;
+        margin: 0 -1px;
+        border-bottom-color: #fff;
+        position: relative;
+        top: 1px;        
+    }
+
+    @if $tab-border-color{
+
+        .active{
+            border-top: 2px $color-primary solid;
+            margin-top: -1px;        
+        }
+    }
+
+
+    /**
+     * Mobile tabs
+     */
+    
+    .tab__handle--mobile{
+        border-left: none;
+        border-right: none;
+        border-top-width: 0px;
+        margin: 0;
+        top: 0;
+        border-top-color: $base-ui-color;
+        
+
+        &.active{
+            @include rem(margin-bottom, 0.5);
+            border-bottom-color: $base-ui-color;
+        }
+    }
+}

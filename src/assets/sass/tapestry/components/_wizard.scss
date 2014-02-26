@@ -1,0 +1,301 @@
+/*------------------------------------*\
+    WIZARD.CSS
+\*------------------------------------*/
+
+$arrow-width: 21px;
+$step-dimension: 20px;
+$number-of-steps: 4;
+
+.ui-wizard{
+    list-style: none;
+    margin-left: 0;    
+    border: 1px $base-ui-color solid;
+    border-radius: $ui-radius;    
+    width: 100%;
+    font-size: 0;
+
+    > li{        
+        margin: 0;        
+        text-align: center;
+        padding: 10px 20px;
+        position: relative;
+        display: inline-block;
+        @include font-size($base-font-size, false);
+        width: 100/$number-of-steps * 1%;
+    }
+
+
+    /**
+     * Arrows
+     */
+
+    > li:after, li:before{        
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    > li:after {
+        border-color: transparent;
+        border-left-color: #fff;
+        border-width: $arrow-width;
+        margin-top: -($arrow-width);
+    }
+
+    > li:before{
+        border-color: transparent;
+        border-left-color: $base-ui-color;
+        border-width: $arrow-width + 1px;
+        margin-top: -($arrow-width + 1px);
+    }
+
+
+    /**
+     * Last Child
+     */
+    
+    > li:last-child:after, > li:last-child:before{
+        border: none;
+    }
+
+
+    /**
+     * Active
+     */
+    
+    > .wizard__active{
+        background: $color-primary;
+        color: #fff;
+
+        /* Step number */
+
+        .wizard__step{
+            background: #fff;
+            color: $color-primary;
+        }
+
+        &:after{
+            border-left-color: $color-primary;
+        }
+    }
+
+
+
+    /**
+     * Number
+     */
+    
+    .wizard__step{
+        background: $base-ui-color;
+        color: #fff;
+        border-radius: 50%;
+        display: inline-block;        
+        width: $step-dimension;
+        line-height: $step-dimension;
+        height: $step-dimension;
+        font-weight: 600;
+        margin-right: 0.5em;
+        text-align: center;
+    }
+
+
+    /**
+     * Status
+     */
+    
+    .wizard__status{
+        display: inline-block;
+        vertical-align: middle;
+        height: $step-dimension;
+        width: $step-dimension;
+        margin-right: 0.5em;
+        margin-top: -6px;
+        display: none;
+
+        &:before{
+            content: "\f058";
+            font-family: "FontAwesome";
+            font-size: 22px;
+            color: $base-ui-color;            
+            display: inline-block;
+            margin-top: -6px;
+        }
+    }
+
+    /**
+     * Completed Step
+     */
+    
+    .wizard__done{
+    
+        /* Hide the step number */
+
+        .wizard__step{
+            display: none;
+        }
+
+        /* Show completed status */
+
+        .wizard__status{
+            display: inline-block;
+        }
+
+        /* Show Arrow */
+
+        &:before, &:after{
+            z-index: 1;
+        }
+
+    }
+}
+
+
+
+
+/**
+ * Vertical Wizard
+ */
+
+.ui-wizard--vertical{
+
+    display: inline-block;
+    width: 250px; /* Set a width */
+
+    > li{
+        display: block;
+        width: auto;
+        text-align: left;
+    }
+
+    > li:before, > li:after{
+        display: none;
+    }
+
+
+    /**
+     * Active step
+     */
+    
+    > .wizard__active:before, > .wizard__active:after{
+        display: block;
+    }
+}
+
+
+
+/**
+ * Wizard Line Interface
+ */
+
+.ui-wizard--line{
+
+    border: none;
+
+    /* Step Number */
+
+    .wizard__step, .wizard__done .wizard__status{
+        display: block;
+        margin: 0 auto 0.5em auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Remove arrows */
+
+    > li:before, li:after{
+        display: none;
+    }
+
+    
+    /* Display Line */
+
+
+    > li:after{
+        display: block;
+        width: 100%;
+        border: none;
+        border-top: 1px $base-ui-color dashed;
+        left: 50%;
+        z-index: 0;
+        top: $step-dimension;
+        margin-top: 0;
+    }
+
+    > .wizard__done:after{
+        border-top-style: solid;        
+    }
+    
+    /* Remove overlapping */
+
+    > .wizard__done:after, > .wizard__done:before{
+        z-index: 0;
+    }
+
+    /* Add a background color to wizard done */
+
+    .wizard__status:before{
+        background-color: #fff;
+    }
+
+    /* Style Done step */
+
+    .wizard__active{
+        
+        background: transparent;
+        color: $base-color;
+
+        .wizard__step{
+            background: $color-primary;
+            color: #fff;
+        }
+    }
+}
+
+
+
+/**
+ * Wizard Inverted
+ */
+
+.ui-wizard--inverted{
+
+    background: $color-primary;
+    color: #fff;
+
+
+    > li:after{
+        border-top-color: #fff;
+    }
+
+    /* Step Number */
+
+    .wizard__step{
+        background-color: darken($color-primary, 10%);
+        color: lighten($color-primary, 5%);
+    }
+
+    /* Active step */
+
+    .wizard__active{
+
+        color: #fff;
+
+        .wizard__step{
+            background-color: #fff;
+            color: $color-primary;
+        }
+    }
+
+
+    /* Completed Step */
+
+    .wizard__status:before{
+        background-color: $color-primary;
+        color: #fff;
+    }
+}

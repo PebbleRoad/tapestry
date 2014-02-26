@@ -1,0 +1,143 @@
+/*------------------------------------*\
+    MEDIA.CSS
+\*------------------------------------*/
+
+.ui-media{
+    
+    list-style: none;
+    margin-left: 0;
+    @include clearfix;
+
+    > li{
+        @include clearfix;
+        @include rem(margin-bottom);
+    }
+
+   
+
+    .media__content{
+        overflow: auto;
+    }
+
+    /* Align Images, video */
+
+    img, video, object{
+        vertical-align: top;
+    }
+}
+
+
+/**
+ * Figure
+ */
+
+figure{
+    
+    text-align: center;
+    @include rem(margin-bottom);
+
+    img, video, object{        
+        margin: 0 auto;
+        @include rem(margin-bottom, 0.5);
+    }
+}
+
+
+
+
+
+/**
+ * Media item
+ */
+
+.media-item{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 300;
+    text-align: left;
+
+    /* Caption */
+
+    figcaption{
+
+        position: absolute;
+        bottom: 0;
+        padding: 1.5em;
+        width: 100%;        
+    }
+
+    /* Image */
+
+    img{
+        vertical-align: top;
+        margin-bottom: 0;
+    }
+
+    /* Remove margin in paragraphs */
+
+    p:last-child{
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * Lighter media item
+ */
+
+.media-item--light{
+
+    color: #fff;
+
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+
+    h3{
+        margin-bottom: 0.2em;
+    }
+}
+
+
+/**
+ * Media item overlay
+ */
+
+.media-item--overlay{
+
+    .media-overlay{
+        position: absolute;
+        opacity: 0;
+        @include transition(opacity 0.2s ease-in);
+        left: 0;
+        top: 0;
+        bottom: auto;
+        height: 100%;
+        width: 100%;
+        background: rgba($color-dark, 0.6);
+    }
+
+    figcaption{
+        display: none;
+        z-index: 1;
+    }
+
+    &:hover {
+        figcaption{
+            display: block;
+        }
+        .media-overlay{
+            opacity: 1;
+        }
+    }
+}
+
+/**
+ * Bordered Media
+ */
+
+.media-item--bordered{
+    border: 1px $base-ui-color solid;
+    padding: 5px;
+}

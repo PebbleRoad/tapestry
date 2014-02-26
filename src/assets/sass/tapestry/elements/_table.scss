@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    TABLES.CSS
+\*------------------------------------*/
+
+@mixin table-hover{
+
+    tr:hover > td{
+
+        background: $color-light-grey;
+    }
+}
+
+/**
+ * Table
+ */
+
+table{    
+
+    /* Caption */
+
+    caption{
+        font-style: italic;        
+    }
+}
+
+
+/**
+ * Default table
+ */
+
+.table{
+
+    td, th{
+        border-bottom: 1px $base-ui-color solid    
+    }
+
+    @include table-hover;
+}
+
+
+
+/**
+ * Bordered table
+ */
+
+.table--bordered{
+
+    thead th{
+        background: $color-light-blue;
+        color: #fff;
+        border-color: $color-light-blue;
+        font-weight: 600;
+        
+        &:first-child{
+            border-top-left-radius: $base-radius;
+        }
+
+        &:last-child{
+            border-top-right-radius: $base-radius;
+        }
+    }
+    
+    td, th{
+        border: 1px $base-ui-color solid    
+    }
+    
+}
+
+
+
+
+/**
+ * Simple table
+ */
+
+.table--simple{
+
+    td, th{
+        border-bottom: 1px $base-ui-color solid;
+    }
+
+    @include table-hover;
+}
+
+
+/**
+ * Zebra table
+ */
+
+.table--zebra{
+
+    tr:nth-child(even){
+        background: $color-light-grey;
+    }
+}
