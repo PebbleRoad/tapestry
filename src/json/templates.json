@@ -7,7 +7,7 @@
                 "name": "Article landing",
                 "meta": {
                     "url": "templateurl",
-                    "preview": "patterns/templates/landing/landing.png"
+                    "preview": "patterns/templates/Landing Pages/landing.png"
                 }
             }
         ]
@@ -20,7 +20,7 @@
                 "name": "Article listing",
                 "meta": {
                     "url": "templateurl",
-                    "preview": "patterns/templates/landing/landing.png"
+                    "preview": "patterns/templates/Listing Pages/listing.png"
                 }
             }
         ]
