@@ -184,5 +184,5 @@ gulp.task('server', function(){
  * Main tasks : Default and Build
  */
 
-//gulp.task('build', ['sass', 'jade', 'copy'])
+gulp.task('build', ['sass', 'jade', 'copy'])
 gulp.task('patterns', ['cleanJSON', 'jade', 'sass', 'watch', 'injecter', 'server']);
