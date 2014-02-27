@@ -1,0 +1,14 @@
+{
+  "name": "marked",
+  "homepage": "https://github.com/chjj/marked",
+  "version": "0.3.1",
+  "_release": "0.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.1",
+    "commit": "52e445f6ee41f151e247f9cf8add54786efae88e"
+  },
+  "_source": "git://github.com/chjj/marked.git",
+  "_target": "~0.3.1",
+  "_originalSource": "marked"
+}

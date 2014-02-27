@@ -1,0 +1,32 @@
+{
+  "name": "angular-once",
+  "version": "0.1.5",
+  "main": "once.js",
+  "description": "one time bindings for AngularJS",
+  "homepage": "https://github.com/tadeuszwojcik/angular-once",
+  "author": "Tadeusz Wójcik <tadeuszwojcik@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tadeuszwojcik/angular-once.git"
+  },
+  "license": "WTFPL",
+  "keywords": [
+    "bindings",
+    "binding",
+    "directive",
+    "angularjs",
+    "angular",
+    "watcher",
+    "one time",
+    "watch fighters"
+  ],
+  "_release": "0.1.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.5",
+    "commit": "b0f5bb701583e733d09314c51f5b04fd499025f7"
+  },
+  "_source": "git://github.com/tadeuszwojcik/angular-once.git",
+  "_target": "~0.1.5",
+  "_originalSource": "angular-once"
+}
