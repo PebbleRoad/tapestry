@@ -54,10 +54,10 @@ gulp.task('tree', function(){
 gulp.task('injecter', ['tree'], function(){
 
     gulp.src('./src/index.html')
-        .pipe(prunehtml(['#yamlPath']))
+        .pipe(prunehtml(['#jsonPath']))
         .pipe(scriptInject({
             json: './src/json',
-            varname: 'yamlPath'
+            varname: 'jsonPath'
         }))
         .pipe(gulp.dest('./src'))
 })

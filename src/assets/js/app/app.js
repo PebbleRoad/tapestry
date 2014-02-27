@@ -8,6 +8,8 @@ var version = '1.0.0',
     lastUpdated = '26 Feb 2014';
 
 
+/* jsonPath of the files will be inserted by gulp-script-inject after reading /src/json folder */
+
 /**
  * Tapestry Module
  */
@@ -61,7 +63,7 @@ angular.module('tapestry', [
         
         /* Add new routes based on the Configuration */
 
-        angular.forEach(yamlPath, function(value, key){
+        angular.forEach(jsonPath, function(value, key){
 
             value.slug = value.name.replace(/\s+/g, '-').toLowerCase()
 
@@ -129,7 +131,7 @@ angular.module('tapestry', [
             names = [],
             slug = []
 
-        angular.forEach(yamlPath, function(value , key){
+        angular.forEach(jsonPath, function(value , key){
             
             /* Add Pattern name in array */
 
@@ -253,8 +255,8 @@ angular.module('tapestry', [
 
 /**
  * Flattening Array
- * @param  {[type]} arrr [description]
- * @return {[type]}      [description]
+ * @param  {Object} 
+ * @return {Object} Flattened array
  */
 function flattener(arrr, template, category){
 
