@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     tree = require('gulp-tree'),
     scriptInject = require('gulp-script-inject'),
-    prunehtml = require('gulp-prune-html');
+    prunehtml = require('gulp-prune-html')    
 
 console.log()
 
@@ -131,7 +131,7 @@ gulp.task('cleanJSON', function(){
 
 gulp.task('watch', function(){
 
-    gulp.watch(['src/jade/**/*.jade'], ['jade']); 
+    gulp.watch(['src/jade/**/*.jade'], ['jade', 'injecter']); 
     gulp.watch('src/assets/sass/**/*.scss', ['sass']);
 
     /* Jade patterns */
@@ -139,7 +139,8 @@ gulp.task('watch', function(){
     gulp.watch('src/assets/js/templates/**/*.jade', ['ngtemplatesJade']);
 
 
-    gulp.watch('src/patterns/**/*.md', ['injecter'])
+    gulp.src('src/patterns/**/*.md', ['injecter'])
+
 
 })
 
