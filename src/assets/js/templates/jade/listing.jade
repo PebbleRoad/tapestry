@@ -3,7 +3,7 @@
 	.container
 
 		.tapestry-menu-side
-			ul(once-show="patterns.children.length > 1")
+			ul(ng-show="patterns.children.length > 1")
 				li(ng-repeat="pattern in patterns.children")
 					a(data-target="#{{pattern.name | anchor}}", ng-href="#/{{rootSection}}/{{sectionSlug}}/{{pattern.name | anchor}}", once-text="pattern.name", ng-class="{active: anchor(pattern.name) == subSection}")
 
