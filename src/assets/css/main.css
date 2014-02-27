@@ -5602,6 +5602,15 @@ figure {
     max-width: 100%; } }
 
 /**
+ * Dropzone
+ */
+.dropzone {
+  border: 1px #BFBFBF dashed;
+  padding: 1em;
+  margin-bottom: 24px;
+  margin-bottom: 1.71429rem; }
+
+/**
 * Presentation Mobile First Approach
 */
 /*------------------------------------*\

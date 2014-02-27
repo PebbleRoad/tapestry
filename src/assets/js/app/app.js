@@ -183,7 +183,7 @@ angular.module('tapestry', [
          * Watch changes and add to Autocomplete
          */
         
-        var autoCompleteArray = []
+        
 
         $rootScope.$watch('styles', function(newValue){
             
@@ -192,6 +192,8 @@ angular.module('tapestry', [
                 /**
                  * Creates a flattened version of the array
                  */
+
+                var autoCompleteArray = []
 
                 angular.forEach(newValue, function(value, index){
                     
@@ -206,8 +208,7 @@ angular.module('tapestry', [
                 var data = autoCompleteArray.reduce(function(a, b, index, array){
                     return a.concat(b);
                 })
-                
-
+                                
                 /**
                  * Invokes autocomplete
                  */

@@ -51,7 +51,7 @@ gulp.task('tree', function(){
 })
 
 
-gulp.task('injecter', ['tree'], function(){
+gulp.task('injecter', ['jade', 'tree'], function(){
 
     gulp.src('./src/index.html')
         .pipe(prunehtml(['#jsonPath']))
@@ -185,4 +185,4 @@ gulp.task('server', function(){
  */
 
 gulp.task('build', ['sass', 'jade', 'copy'])
-gulp.task('patterns', ['cleanJSON', 'jade', 'sass', 'watch', 'injecter', 'server']);
+gulp.task('patterns', ['cleanJSON', 'injecter', 'sass', 'watch', 'server']);
