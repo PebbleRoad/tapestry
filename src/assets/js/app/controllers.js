@@ -79,26 +79,32 @@ angular.module('tapestry.controllers', [])
             element = $routeParams.slug            
 
 
+        $rootScope.$watch('styles', function(newValue){
 
-        angular.forEach($rootScope.styles, function(value, key){
+            if(newValue){
+                angular.forEach($rootScope.styles, function(value, key){
             
-            if(value.slug == section){
+                    if(value.slug == section){
 
-                angular.forEach(value.data, function(v, k){
+                        angular.forEach(value.data, function(v, k){
 
-                    if(v.name.replace(/\s+/g, '-').toLowerCase() == element){
-                        
-                        $scope.patterns = value.data[k]
-                        
-                        /* Change to new section */
+                            if(v.name.replace(/\s+/g, '-').toLowerCase() == element){
+                                
+                                $scope.patterns = value.data[k]
+                                
+                                /* Change to new section */
 
-                        $rootScope.$broadcast('sectionChange', v.name, value.name)   
+                                $rootScope.$broadcast('sectionChange', v.name, value.name)   
+                            }
+
+                        })
                     }
 
-                })
+                });
             }
 
-        });
+        })
+        
 
         /**
          * Anchor

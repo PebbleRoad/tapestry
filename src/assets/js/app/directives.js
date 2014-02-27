@@ -60,10 +60,13 @@ angular.module('tapestry.directives', [])
 
 						return function (scope, element) {
 
-							scope.$watch(scope.patterns, function(){
-								if(scope.patterns && scope.patterns.children) totalcount = scope.patterns.children.length
-							})
-							
+							scope.$watch('patterns', function(newValue){
+
+								if(newValue){
+									if(scope.patterns && scope.patterns.children) totalcount = scope.patterns.children.length
+								}
+							}, true)
+
 							var changeCounter = 0
 														
 
