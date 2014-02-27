@@ -38,6 +38,11 @@ angular.module('tapestry.directives', [])
 								<a class="toggle-code" ng-hide="patterns.meta.hidecode" ng-class="{active:patterns.togglecode}" ng-click="patterns.togglecode = !patterns.togglecode"><em class="fa fa-code fa-lg" /></a> \
 								<pre ng-show="patterns.togglecode"><code class="language-markup"></code></pre> \
 							</div> \
+							<div class="block--meta" ng-show="patterns.meta.dependency"> \
+								<div ng-repeat="meta in patterns.meta"> \
+									{{meta}} \
+								</div> \
+							</div>\
 						</div>'
 
 		}

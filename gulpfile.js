@@ -139,7 +139,7 @@ gulp.task('watch', function(){
     gulp.watch('src/assets/js/templates/**/*.jade', ['ngtemplatesJade']);
 
 
-    gulp.watch('src/patterns/**/*.md', ['injecter'])
+    gulp.watch('src/patterns/**/*', ['injecter'])
 
 
 })

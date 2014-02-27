@@ -25,7 +25,7 @@
       <div ng-repeat="style in styles">
         <h3 once-text="style.name" class="menu__header"></h3>
         <ul>
-          <li ng-repeat="element in style.data" ng-class="{&apos;active&apos;: element.slug == sectionSlug}"><a once-href="&apos;#/&apos;+style.slug+&apos;/&apos;+element.slug" once-text="element.name"></a></li>
+          <li ng-repeat="element in style.data" ng-class="{&apos;active&apos;: element.slug == sectionSlug}" once-show="element.children.length"><a once-href="&apos;#/&apos;+style.slug+&apos;/&apos;+element.slug" once-text="element.name"></a></li>
         </ul>
       </div>
     </nav>

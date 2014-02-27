@@ -1638,7 +1638,7 @@ html[ng-app] {
 /**
  * when menu opens
  */
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 1300px) {
   .menu__opened .tapestry-menu-side ul {
     position: absolute; } }
 
@@ -1728,7 +1728,7 @@ html[ng-app] {
       padding-top: 30px; } }
 
 /* Menu opened */
-.menu__opened {
+.menu__opened body {
   overflow-x: hidden; }
 
 /**
@@ -2005,3 +2005,9 @@ code {
     width: 30%;
     margin-right: 2%;
     margin-bottom: 2%; }
+
+/**
+ * Block meta
+ */
+.block--meta {
+  padding: 15px; }

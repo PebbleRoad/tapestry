@@ -7,9 +7,13 @@ html.no-js(lang='en', ng-app="tapestry", class="tapestry")
 		title(ng-bind="'Tapestry - ' + section") Tapestry
 		meta(name='description', content='')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		
+
 		// Your CSS File	
 		link(rel='stylesheet', href='assets/css/main.css')
 		// / Your CSS File
+
+
 		link(rel='stylesheet', href='assets/css/app/tapestry.css')
 		link(rel='stylesheet', href='bower_components/prism/themes/prism.css') 
 		//link(rel='stylesheet', href='bower_components/dropzone/downloads/css/basic.css')       
@@ -30,7 +34,7 @@ html.no-js(lang='en', ng-app="tapestry", class="tapestry")
 			div(ng-repeat="style in styles")
 				h3.menu__header(once-text="style.name")
 				ul
-					li(ng-repeat="element in style.data", ng-class="{'active': element.slug == sectionSlug}") 
+					li(ng-repeat="element in style.data", ng-class="{'active': element.slug == sectionSlug}", once-show="element.children.length") 
 						a(once-href="'#/'+style.slug+'/'+element.slug", once-text="element.name")
 					
 
@@ -98,6 +102,9 @@ html.no-js(lang='en', ng-app="tapestry", class="tapestry")
 		script(src="assets/js/app/scrollspy.js")
 		script(src="assets/js/app/app.js")
 		// / Patterns
+
+		
+
 
 		// Your JS Files
 		script(src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.11/fastclick.min.js")
