@@ -254,6 +254,7 @@ html[ng-app]{
  * Sidemenu
  */
 
+
 .tapestry-menu-side{
     line-height: 1.4;
     display: none;
@@ -316,6 +317,16 @@ html[ng-app]{
     }
 }
 
+
+/**
+ * when menu opens
+ */
+
+@include media-query(desktop){
+    .menu__opened .tapestry-menu-side ul{
+        position: absolute;
+    }
+}
 
 
 /**
