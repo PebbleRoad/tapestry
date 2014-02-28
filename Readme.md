@@ -10,6 +10,13 @@ An app for creating and managing your front-end pattern library.
 
 ## How to use
 
+Dependecy
+
+* [NodeJS](http://nodejs.org/)
+* Bower
+        
+        npm install -g bower
+
 1. Clone the repository
 
         git clone https://github.com/PebbleRoad/tapestry.git
