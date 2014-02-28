@@ -28,6 +28,9 @@ Dependecy
 3. Launch the server
 
         gulp patterns
+4. Open your browser and navigate to
+        
+        http://localhost:8000
 
 
 ## Pattern format

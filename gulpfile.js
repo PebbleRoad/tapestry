@@ -168,7 +168,7 @@ gulp.task('server', function(){
 
     http.createServer(ecstatic({root: './src'})).listen(8000);
 
-    gutil.log(gutil.colors.blue('HTTP server listening on port 8080'));
+    gutil.log(gutil.colors.blue('HTTP server listening on port 8000'));
 
     tlr.listen(35729);
 
