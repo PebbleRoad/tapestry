@@ -38,7 +38,7 @@ angular.module('tapestry.directives', [])
 								<a class="toggle-code" ng-hide="patterns.meta.hidecode" ng-class="{active:patterns.togglecode}" ng-click="patterns.togglecode = !patterns.togglecode"><em class="fa fa-code fa-lg" /></a> \
 								<pre ng-show="patterns.togglecode"><code class="language-markup"></code></pre> \
 							</div> \
-							<div class="block--meta" ng-show="patterns.meta.dependency"> \
+							<div class="block--meta" ng-show="patterns.meta.length"> \
 								<div ng-repeat="meta in patterns.meta"> \
 									{{meta}} \
 								</div> \
@@ -103,47 +103,31 @@ angular.module('tapestry.directives', [])
 						                    meta: {}
 						                };
 
-						                /* Split newlines */
+						                var re = /^(-{3}(?:\n|\r)([\w\W]+?)-{3})?([\w\W]*)*/
+										      , results = re.exec(response.trim())
+										      , conf = {}
+										      , yamlOrJson,
+										      name = "content"
 
-						                var lines = response.split('\n')
+										if((yamlOrJson = results[2])) {
+											
+											if(yamlOrJson.charAt(0) === '{') { 
+												conf = JSON.parse(yamlOrJson);
+											} else {
+												conf = jsyaml.load(yamlOrJson);
+											}
+										}
 
-						                var frontMatter = '';
-						                
-						                /* Get to the end of --- */
-
-						                //if(lines[0]=="") lines.splice(0,1)
-						                
-						                
-
-						                if (lines[0].trim() === '---') {
-						                    var firstFrontMatterMarker = lines.shift();
-						                    var line = '';
-						                    while (line !== '---') {
-						                        frontMatter = frontMatter + line + "\n"; 
-						                        line = lines.shift();
-						                    }
-						                }
-
-						                /* YAML content */
-
-						                parsedContent.yaml = frontMatter;
-
-						                /* YAML parsed content */
-
-						                parsedContent.meta = jsyaml.load(frontMatter);
-
-						                /* HTML content */
-
-						                parsedContent.html = lines.join('\n');
+										conf[name] = results[3] ? results[3] : '';
 
 
 						                /* Add description */
 
 						                var $description = element.parent().next();
 
-						                if(parsedContent.meta && parsedContent.meta.description){
+						                if(conf.description){
 						                	
-						                	parsedContent.markdown = marked(parsedContent.meta.description);					
+						                	parsedContent.markdown = marked(conf.description);					
 						                	
 						                	$description.html(parsedContent.markdown)
 
@@ -153,20 +137,19 @@ angular.module('tapestry.directives', [])
 
 						                	$description.hide()
 						                }
-						                
-
+						                						                
 										/* Element preview */
 
-										element.html(parsedContent.html)
+										element.html(conf.content)
 
 										/* Trigger element added */
 										
 										if(count == totalcount) {
+											
 											$timeout(function(){
 
 												angular.element('body').trigger('tapestry.completed')	
-											},500)
-											
+											},500)											
 											
 										}
 
@@ -178,7 +161,7 @@ angular.module('tapestry.directives', [])
 										
 										/* Adds codes to the code block */
 
-										code.text(parsedContent.html);
+										code.text(conf.content.trim());
 
 										/* Highlighting */
 										
