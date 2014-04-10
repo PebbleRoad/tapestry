@@ -199,11 +199,6 @@
         "slug": "Panels",
         "children": [
             {
-                "path": "patterns/2.components/Panels/panel-light.md",
-                "name": "Panel light",
-                "slug": "panel-light.md"
-            },
-            {
                 "path": "patterns/2.components/Panels/panel.md",
                 "name": "Panel",
                 "slug": "panel.md"
@@ -262,6 +257,11 @@
         "name": "Tabs",
         "slug": "Tabs",
         "children": [
+            {
+                "path": "patterns/2.components/Tabs/tabs-alternate.md",
+                "name": "Tabs alternate",
+                "slug": "tabs-alternate.md"
+            },
             {
                 "path": "patterns/2.components/Tabs/tabs-simple.md",
                 "name": "Tabs",

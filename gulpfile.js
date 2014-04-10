@@ -88,7 +88,7 @@ gulp.task('patternsJade', function(){
         .pipe(rename(function(path){
             path.extname = ".md"
         }))
-        .pipe(gulp.dest('./src/patterns-new'))
+        .pipe(gulp.dest('./src/patterns'))
 })
 
 
@@ -138,6 +138,7 @@ gulp.task('watch', function(){
 
     gulp.watch('src/assets/js/templates/**/*.jade', ['ngtemplatesJade']);
 
+    gulp.watch('src/jade/patterns/**', ['patternsJade'])
 
     gulp.watch('src/patterns/**/*', ['injecter'])
 

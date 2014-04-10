@@ -233,6 +233,13 @@ angular.module('tapestry', [
                 })
 
 
+                /**
+                 * hide Menu
+                 */
+                
+                setTimeout(function(){
+                    angular.element('html').removeClass('menu__opened');
+                }, 1000)
 
             }
 
@@ -248,6 +255,10 @@ angular.module('tapestry', [
             $autocomplete && $autocomplete.autocomplete('fixPosition')
 
         });
+
+
+        
+        
 
     }])
 
