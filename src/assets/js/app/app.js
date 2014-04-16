@@ -239,7 +239,7 @@ angular.module('tapestry', [
                 
                 setTimeout(function(){
                     angular.element('html').removeClass('menu__opened');
-                }, 1000)
+                }, 2000)
 
             }
 
