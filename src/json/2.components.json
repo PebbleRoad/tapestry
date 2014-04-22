@@ -258,11 +258,6 @@
         "slug": "Tabs",
         "children": [
             {
-                "path": "patterns/2.components/Tabs/tabs-alternate.md",
-                "name": "Tabs alternate",
-                "slug": "tabs-alternate.md"
-            },
-            {
                 "path": "patterns/2.components/Tabs/tabs-simple.md",
                 "name": "Tabs",
                 "slug": "tabs-simple.md"
