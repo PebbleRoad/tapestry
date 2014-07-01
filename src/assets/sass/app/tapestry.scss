@@ -692,6 +692,8 @@ $menu-spacing: 20px;
         border-radius: 0 0 5px 5px;
         padding: 1em;
         font-size: 16px;
+        max-height: 400px;
+        overflow: auto;
         white-space: wrap !important;
         border-top: 1px $border solid;
     }
@@ -826,4 +828,23 @@ $menu-spacing: 20px;
 
 .block--meta{
     padding: 15px;
+}
+
+
+
+/**
+ * Comments
+ */
+
+.pattern-comments{
+    padding: 15px;
+
+    > a{
+        cursor: pointer;
+        &:before{
+            font-family: "FontAwesome";
+            content: "\f075";
+            margin-right: 5px;
+        }
+    }
 }

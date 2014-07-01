@@ -71,9 +71,16 @@ angular.module('tapestry.controllers', [])
         '$timeout',
         '$interval',
         '$filter',
-        '$route'
-        , function($scope, $http, $routeParams, $location, $rootScope, $anchorScroll, $timeout, $interval, $filter, $route){
+        '$route',
+        'disqus_shortname'
+        , function($scope, $http, $routeParams, $location, $rootScope, $anchorScroll, $timeout, $interval, $filter, $route, disqus_shortname){
 
+        /**
+         * Disqus Enabled
+         * @type {[boolean]}
+         */
+        
+        $scope.disqus_enabled = disqus_shortname? false: true;
         
         var section = $location.$$path.split('/')[1],
             element = $routeParams.slug            
@@ -163,6 +170,51 @@ angular.module('tapestry.controllers', [])
         }
 
         
+        /**
+         * Load Disqus Comments
+         */        
+        var disqus_identifier;
+        var disqus_url;
+
+        $scope.loadComments = function(event){
+
+            var source = $(event.currentTarget),
+                identifier = source.data('disqusIdentifier'),
+                thread = jQuery('#disqus_thread');
+            
+            if (window.DISQUS) {
+
+                if(thread.length){
+                    thread.insertAfter(source);
+                }else{
+
+                    thread = jQuery('<div id="disqus_thread"></div>').insertAfter(source);
+                }
+                
+                DISQUS.reset({
+                    reload: true,
+                    config: function () {
+                        this.page.identifier = identifier;
+                        this.page.url = window.location.href + '/' + identifier;
+
+                        
+                    }
+                });
+
+
+            }else{
+
+               jQuery('<div id="disqus_thread"></div>').insertAfter(source);
+               disqus_identifier = identifier; 
+               disqus_url = window.location.href + '/' + identifier;               
+               
+               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+            }
+        }
+
 
         /**
          * Scroll to the section

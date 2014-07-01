@@ -29,13 +29,13 @@ html.no-js(lang='en', ng-app="tapestry", class="tapestry menu__opened")
 		nav.tapestry-menu
 			h3.menu__header Introduction
 			ul
-				li(ng-class="{active: section=='Overview'}"): a(href="#/") Overview
+				li(ng-class="{active: section=='Overview'}"): a(href="#!/") Overview
 
 			div(ng-repeat="style in styles")
 				h3.menu__header(once-text="style.name")
 				ul
 					li(ng-repeat="element in style.data", ng-class="{'active': element.slug == sectionSlug}", once-show="element.children.length") 
-						a(once-href="'#/'+style.slug+'/'+element.slug", once-text="element.name")
+						a(once-href="'#!/'+style.slug+'/'+element.slug", once-text="element.name")
 					
 
 		// / Menu
@@ -73,7 +73,7 @@ html.no-js(lang='en', ng-app="tapestry", class="tapestry menu__opened")
 								| . Last Updated on 
 								span(last-updated) 
 								| . 
-								a(href="#/changelog") Changelog
+								a(href="#!/changelog") Changelog
 
 		block footer
 		// jQuery

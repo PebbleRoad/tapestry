@@ -20,12 +20,12 @@
     <nav class="tapestry-menu">
       <h3 class="menu__header">Introduction</h3>
       <ul>
-        <li ng-class="{active: section==&apos;Overview&apos;}"><a href="#/">Overview</a></li>
+        <li ng-class="{active: section==&apos;Overview&apos;}"><a href="#!/">Overview</a></li>
       </ul>
       <div ng-repeat="style in styles">
         <h3 once-text="style.name" class="menu__header"></h3>
         <ul>
-          <li ng-repeat="element in style.data" ng-class="{&apos;active&apos;: element.slug == sectionSlug}" once-show="element.children.length"><a once-href="&apos;#/&apos;+style.slug+&apos;/&apos;+element.slug" once-text="element.name"></a></li>
+          <li ng-repeat="element in style.data" ng-class="{&apos;active&apos;: element.slug == sectionSlug}" once-show="element.children.length"><a once-href="&apos;#!/&apos;+style.slug+&apos;/&apos;+element.slug" once-text="element.name"></a></li>
         </ul>
       </div>
     </nav>
@@ -46,7 +46,7 @@
             <footer class="tapestry__footer">
               <p>Designed and built by the folks at</p>
               <p><a href="http://pebbleroad.com"><img src="assets/images/logo.png" alt="" width="187"></a></p>
-              <p>Code licensed under MIT, documentation under CC BY 3.0. <br>Version <span tapestry-version=""></span>. Last Updated on <span last-updated=""></span>. <a href="#/changelog">Changelog</a></p>
+              <p>Code licensed under MIT, documentation under CC BY 3.0. <br>Version <span tapestry-version=""></span>. Last Updated on <span last-updated=""></span>. <a href="#!/changelog">Changelog</a></p>
             </footer>
           </div>
         </div>

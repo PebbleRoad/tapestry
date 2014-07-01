@@ -5,7 +5,7 @@
 		.tapestry-menu-side
 			ul(ng-show="patterns.children.length > 1")
 				li(ng-repeat="pattern in patterns.children")
-					a(data-target="#{{pattern.name | anchor}}", ng-href="#/{{rootSection}}/{{sectionSlug}}/{{pattern.name | anchor}}", once-text="pattern.name", ng-class="{active: anchor(pattern.name) == subSection}")
+					a(data-target="#{{pattern.name | anchor}}", ng-href="#!/{{rootSection}}/{{sectionSlug}}/{{pattern.name | anchor}}", once-text="pattern.name", ng-class="{active: anchor(pattern.name) == subSection}")
 
 		.main-content
 
@@ -22,3 +22,6 @@
 						h4(id="{{variation.name | anchor}}", once-text="variation.name")
 						
 						div(preview-and-markup patterns="variation")
+					
+					div.pattern-comments(once-show='!disqus_enabled')
+						a(ng-click="loadComments($event)" data-disqus-identifier="{{pattern.name | anchor}}") Comments

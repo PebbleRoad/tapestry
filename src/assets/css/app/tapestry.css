@@ -1912,6 +1912,8 @@ pre {
   border-radius: 0 0 5px 5px;
   padding: 1em;
   font-size: 16px;
+  max-height: 400px;
+  overflow: auto;
   white-space: wrap !important;
   border-top: 1px #d9d9d9 solid; }
 
@@ -2011,3 +2013,15 @@ code {
  */
 .block--meta {
   padding: 15px; }
+
+/**
+ * Comments
+ */
+.pattern-comments {
+  padding: 15px; }
+  .pattern-comments > a {
+    cursor: pointer; }
+    .pattern-comments > a:before {
+      font-family: "FontAwesome";
+      content: "\f075";
+      margin-right: 5px; }
