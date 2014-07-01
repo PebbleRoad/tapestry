@@ -5,6 +5,7 @@ An app for creating and managing your front-end pattern library.
 1. Create patterns in Markdown files
 2. Browseable interface
 3. Free and open source
+4. Comment on each pattern using `disqus`
 
 ### Built with Gulp, Angular and Markdown/YAML
 
@@ -32,6 +33,9 @@ Dependecy
         
         http://localhost:8000
 
+#### Configuring disqus
+
+Create a new discuss account and open `src/assets/js/app/app.js` and set the `disqus_shortname`
 
 ## Pattern format
 
