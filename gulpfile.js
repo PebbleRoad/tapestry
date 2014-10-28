@@ -166,18 +166,22 @@ gulp.task('copy', ['cleaner'], function(){
 
 
 gulp.task('server', function(){
+    var port = process.env.PORT || 8000;
+    var enable_livereload = process.env.ENABLE_LIVERELOAD || 'yes';
 
-    http.createServer(ecstatic({root: './src'})).listen(8000);
+    http.createServer(ecstatic({root: './src'})).listen(port);
 
-    gutil.log(gutil.colors.blue('HTTP server listening on port 8000'));
+    gutil.log(gutil.colors.blue('HTTP server listening on port ' + port));
 
-    tlr.listen(35729);
+    if (enable_livereload == 'yes') {
+        tlr.listen(35729);
 
-    gutil.log(gutil.colors.blue('Livereload server listening on port 35729'));
+        gutil.log(gutil.colors.blue('Livereload server listening on port 35729'));
 
-    /* Add a watcher */
+        /* Add a watcher */
 
-    gulp.watch(['./src/assets/css/*', './src/*.html'])._watcher.on('all', livereload)
+        gulp.watch(['./src/assets/css/*', './src/*.html'])._watcher.on('all', livereload)
+    }
 })
 
 
