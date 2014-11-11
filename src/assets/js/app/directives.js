@@ -81,7 +81,6 @@ angular.module('tapestry.directives', [])
 
 								if (src) {
 
-									// requests.push($http.get(src))
 
 									$http.get(src, { cache: $templateCache }).success(function (response) {
 										
@@ -141,6 +140,10 @@ angular.module('tapestry.directives', [])
 										/* Element preview */
 
 										element.html(conf.content)
+
+										/* Compile Angular directives */
+										
+										$compile(element.contents())(scope);
 
 										/* Trigger element added */
 										
