@@ -11,7 +11,7 @@ An app for creating and managing your front-end pattern library.
 
 ## How to use
 
-Dependecy
+Dependency
 
 * [NodeJS](http://nodejs.org/)
 * Bower
