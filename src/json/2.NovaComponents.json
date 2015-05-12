@@ -1,0 +1,335 @@
+[
+    {
+        "name": "Accordion",
+        "slug": "Accordion",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Accordion/1.accordion.md",
+                "name": "Accordion",
+                "slug": "1.accordion.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Accordion/2.accordion-alternate.md",
+                "name": "Accordion bordered",
+                "slug": "2.accordion-alternate.md"
+            }
+        ]
+    },
+    {
+        "name": "Alerts",
+        "slug": "Alerts",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Alerts/1.alert-success.md",
+                "name": "Alert success",
+                "slug": "1.alert-success.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Alerts/2.alert-error.md",
+                "name": "Alert error",
+                "slug": "2.alert-error.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Alerts/3.alert-info.md",
+                "name": "Alert info",
+                "slug": "3.alert-info.md"
+            }
+        ]
+    },
+    {
+        "name": "Autocomplete",
+        "slug": "Autocomplete",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Autocomplete/1.autocomplete.md",
+                "name": "Autocomplete field",
+                "slug": "1.autocomplete.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Autocomplete/autocomplete-categories.md",
+                "name": "Autocomplete with categories",
+                "slug": "autocomplete-categories.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Autocomplete/autocomplete-noresults.md",
+                "name": "Autocomplete no-result",
+                "slug": "autocomplete-noresults.md"
+            }
+        ]
+    },
+    {
+        "name": "Date",
+        "slug": "Date",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Date/date-display.md",
+                "name": "Date display module",
+                "slug": "date-display.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Date/datepicker-inline.md",
+                "name": "Inline datepicker",
+                "slug": "datepicker-inline.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Date/datepicker-start-end.md",
+                "name": "Datepicker with start/end dates",
+                "slug": "datepicker-start-end.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Date/datepicker.md",
+                "name": "Datepicker",
+                "slug": "datepicker.md"
+            }
+        ]
+    },
+    {
+        "name": "Dropdown",
+        "slug": "Dropdown",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Dropdown/dropdown-buttons.md",
+                "name": "Dropdown buttons",
+                "slug": "dropdown-buttons.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Dropdown/dropdown-click.md",
+                "name": "Dropdown on click",
+                "slug": "dropdown-click.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Dropdown/dropdown-hover.md",
+                "name": "Dropdown on hover",
+                "slug": "dropdown-hover.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Dropdown/dropdown-split.md",
+                "name": "Dropdown split button",
+                "slug": "dropdown-split.md"
+            }
+        ]
+    },
+    {
+        "name": "Hero Content",
+        "slug": "Hero Content",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Hero Content/carousel.md",
+                "name": "Carousel",
+                "slug": "carousel.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Hero Content/hero.md",
+                "name": "Hero content",
+                "slug": "hero.md"
+            }
+        ]
+    },
+    {
+        "name": "Modal",
+        "slug": "Modal",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Modal/modal-ajax.md",
+                "name": "Modal Ajax",
+                "slug": "modal-ajax.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Modal/modal-image.md",
+                "name": "Modal Image",
+                "slug": "modal-image.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Modal/modal-inline.md",
+                "name": "Modal Inline",
+                "slug": "modal-inline.md"
+            }
+        ]
+    },
+    {
+        "name": "Navigation",
+        "slug": "Navigation",
+        "children": [
+            {
+                "name": "Pagination",
+                "slug": "Pagination",
+                "children": [
+                    {
+                        "path": "patterns/2.NovaComponents/Navigation/Pagination/pagination-variations.md",
+                        "name": "Pagination variations",
+                        "slug": "pagination-variations.md"
+                    },
+                    {
+                        "path": "patterns/2.NovaComponents/Navigation/Pagination/pagination.md",
+                        "name": "Pagination",
+                        "slug": "pagination.md"
+                    }
+                ]
+            },
+            {
+                "path": "patterns/2.NovaComponents/Navigation/breadcrumbs.md",
+                "name": "Breadcrumbs",
+                "slug": "breadcrumbs.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Navigation/navbar-dark.md",
+                "name": "Navigation dark",
+                "slug": "navbar-dark.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Navigation/navbar-light.md",
+                "name": "Navigation light",
+                "slug": "navbar-light.md"
+            }
+        ]
+    },
+    {
+        "name": "Page",
+        "slug": "Page",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Page/page.md",
+                "name": "Page title and description",
+                "slug": "page.md"
+            }
+        ]
+    },
+    {
+        "name": "Panels",
+        "slug": "Panels",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Panels/panel.md",
+                "name": "Panel",
+                "slug": "panel.md"
+            }
+        ]
+    },
+    {
+        "name": "Progress bar",
+        "slug": "Progress bar",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Progress bar/progress-bar.md",
+                "name": "Progress bar",
+                "slug": "progress-bar.md"
+            }
+        ]
+    },
+    {
+        "name": "Search",
+        "slug": "Search",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Search/search-facets.md",
+                "name": "Search breadcrumbs",
+                "slug": "search-facets.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Search/search-listing.md",
+                "name": "Search listing",
+                "slug": "search-listing.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Search/search.md",
+                "name": "Keyword search",
+                "slug": "search.md"
+            }
+        ]
+    },
+    {
+        "name": "Slider",
+        "slug": "Slider",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Slider/slider-range.md",
+                "name": "Range slider",
+                "slug": "slider-range.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Slider/slider.md",
+                "name": "Slider",
+                "slug": "slider.md"
+            }
+        ]
+    },
+    {
+        "name": "Tabs",
+        "slug": "Tabs",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Tabs/tabs-simple.md",
+                "name": "Tabs",
+                "slug": "tabs-simple.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Tabs/tabs.md",
+                "name": "Tabs box",
+                "slug": "tabs.md"
+            }
+        ]
+    },
+    {
+        "name": "Tags",
+        "slug": "Tags",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Tags/tags-pointer.md",
+                "name": "Tags pointer",
+                "slug": "tags-pointer.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Tags/tags-soft.md",
+                "name": "Tags soft",
+                "slug": "tags-soft.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Tags/tags.md",
+                "name": "Tags default",
+                "slug": "tags.md"
+            }
+        ]
+    },
+    {
+        "name": "Tooltip",
+        "slug": "Tooltip",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Tooltip/tooltip.md",
+                "name": "Tooltip",
+                "slug": "tooltip.md"
+            }
+        ]
+    },
+    {
+        "name": "Wizard",
+        "slug": "Wizard",
+        "children": [
+            {
+                "path": "patterns/2.NovaComponents/Wizard/wizard-line-inverted.md",
+                "name": "Wizard line inverted",
+                "slug": "wizard-line-inverted.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Wizard/wizard-line.md",
+                "name": "Wizard line",
+                "slug": "wizard-line.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Wizard/wizard-vertical.md",
+                "name": "Wizard vertical",
+                "slug": "wizard-vertical.md"
+            },
+            {
+                "path": "patterns/2.NovaComponents/Wizard/wizard.md",
+                "name": "Wizard",
+                "slug": "wizard.md"
+            }
+        ]
+    },
+    {
+        "path": "patterns/2.NovaComponents/footer.md",
+        "name": "Site footer",
+        "slug": "footer.md"
+    }
+]

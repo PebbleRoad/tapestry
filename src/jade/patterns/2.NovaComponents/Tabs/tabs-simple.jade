@@ -1,0 +1,27 @@
+| ---
+| name: Tabs
+| description: |
+|   ### What
+|   Puts content modules into a tabbed area so that only one module is visible at a time. The user clicks on different tabs to bring different modules on top.
+|   
+|   ### Use when
+|   Content can be grouped into different modules and these modules are mutually exclusive. There should not be more than four modules.
+| ---
+// Tabs
+.ui-tabs
+	nav
+		a.tab__handle.active(href='#Tab-1') POPULAR
+		a.tab__handle(href='#Tab-2') MOST SHARED
+		a.tab__handle(href='#Tab-3') NEWEST
+	#Tab-1.tab
+		h3 Popular
+		p
+			| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the.
+	#Tab-2.tab
+		h3 Most shared
+		p
+			| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the.
+	#Tab-3.tab
+		h3 Newest
+		p
+			| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the.

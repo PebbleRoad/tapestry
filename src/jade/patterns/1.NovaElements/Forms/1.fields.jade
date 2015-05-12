@@ -1,0 +1,49 @@
+| ---
+| name: Form fields
+| ---
+form
+	label Email
+	.row
+		.columns.four
+			input.text-input(type='text', placeholder='Placeholder text')
+			label Password
+	.row
+		.columns.four
+			input.text-input(type='password', placeholder='Placeholder text')
+			label Textarea
+	.row
+		.columns.eight
+			textarea(rows='5', cols='5')
+	label Checkboxes/Radio
+	label.label-checkbox
+		input(type='checkbox')
+		| Checkbox control
+	label.label-radio
+		input(type='radio')
+		| Radio control
+	label Select field
+	.row
+		.columns.five
+			select.js-selecter
+				option Option 1
+				option Option 2
+				option Option 3
+					label Multiple Select
+	.row
+		.columns.five
+			select.js-selecter(multiple='true')
+				option Option 1
+				option Option 2
+				option Option 3
+	label File input
+	.dropzone
+
+	label.label-checkbox
+		input(type='checkbox')
+		| I agree to the
+		a(href='#') Terms of Service
+		|  and
+		a(href='#') Privacy Policy
+
+	button.btn.btn--primary.btn--fix(type='button')
+		| Submit

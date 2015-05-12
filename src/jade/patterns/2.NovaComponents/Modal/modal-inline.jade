@@ -1,0 +1,19 @@
+| ---
+| name: Modal Inline
+| ---
+p
+	a.fancybox(data-fancybox-href='#Modal') Launch inline modal
+	#Modal(style='display:none;')
+		h3 Login form
+		form
+			.input-group
+				input.text-input(type='text', placeholder='Email')
+				input.text-input(type='password', placeholder='Password')
+			button.btn.btn--primary.btn--full
+				em.fa.fa-lock.fa-lg
+				| Log in
+			p
+				a.float--right(href='#') Forgot password?
+				label.label-checkbox
+					input(type='checkbox')
+					| Stay signed in
