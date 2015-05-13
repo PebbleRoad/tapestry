@@ -8,3 +8,4 @@ browserstack.json
 BrowserStackTunnel.jar
 concat.rb
 .rvmrc
+.idea
