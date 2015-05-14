@@ -29,16 +29,16 @@ angular.module('tapestry.directives', [])
 			scope: {
 				patterns: '='
 			}, 
-			template: '<div once-wait-for="patterns" once-show="patterns.path" class="block block--example"> \
-							<div class="block block--preview"><div raw-include="raw-include" patterns="patterns" src="patterns.path"></div></div> \
-							<div class="block block--description"> \
-								<div class="patterns-description"></div> \
+			template: '<div once-wait-for="patterns" once-show="patterns.path" class="block block--example tp"> \
+							<div class="block block--preview tp"><div raw-include="raw-include" patterns="patterns" src="patterns.path"></div></div> \
+							<div class="block block--description tp"> \
+								<div class="patterns-description tp"></div> \
 							</div> \
-							<div once-wait-for="patterns" once-hide="patterns.meta.hidecode" class="example-code"> \
-								<a class="toggle-code" ng-hide="patterns.meta.hidecode" ng-class="{active:patterns.togglecode}" ng-click="patterns.togglecode = !patterns.togglecode"><em class="fa fa-code fa-lg" /></a> \
-								<pre ng-show="patterns.togglecode"><code class="language-markup"></code></pre> \
+							<div once-wait-for="patterns" once-hide="patterns.meta.hidecode" class="example-code tp"> \
+								<a class="toggle-code tp" ng-hide="patterns.meta.hidecode" ng-class="{active:patterns.togglecode}" ng-click="patterns.togglecode = !patterns.togglecode"><em class="fa fa-code fa-lg tp" /></a> \
+								<pre ng-show="patterns.togglecode"><code class="language-markup tp"></code></pre> \
 							</div> \
-							<div class="block--meta" ng-show="patterns.meta.length"> \
+							<div class="block--meta tp" ng-show="patterns.meta.length"> \
 								<div ng-repeat="meta in patterns.meta"> \
 									{{meta}} \
 								</div> \
@@ -55,12 +55,12 @@ angular.module('tapestry.directives', [])
 			scope: {
 				patterns: '='
 			},
-			template: '<div once-wait-for="patterns" once-show="patterns.path" class="block block--example"> \
-							<div class="block block--preview"><div raw-include="raw-include" patterns="patterns" src="patterns.path"></div></div> \
-							<div class="block block--description"> \
-								<div class="patterns-description"></div> \
+			template: '<div once-wait-for="patterns" once-show="patterns.path" class="block block--example tp"> \
+							<div class="block block--preview tp"><div raw-include="raw-include" patterns="patterns" src="patterns.path"></div></div> \
+							<div class="block block--description tp"> \
+								<div class="patterns-description tp"></div> \
 							</div> \
-							<div class="block--meta" ng-show="patterns.meta.length"> \
+							<div class="block--meta tp" ng-show="patterns.meta.length"> \
 								<div ng-repeat="meta in patterns.meta"> \
 									{{meta}} \
 								</div> \

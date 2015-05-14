@@ -3,7 +3,7 @@
 name: Color palette
 hidecode: true
 ---
-<ul class="palette">
+<ul class="palette tp">
   <li>
     <h3>Blue Bayou</h3>
     <div style="background-color: #50597B;" class="color"><span>#50597B</span></div>

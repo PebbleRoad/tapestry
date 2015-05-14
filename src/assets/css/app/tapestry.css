@@ -2,38 +2,38 @@
  * Import
  */
 /*------------------------------------*\
-    $DEBUG
+    $tp-DEBUG
 \*------------------------------------*/
 /**
  * Debug mode will visually highlight any potential markup/accessibility quirks
  * in the browser. Set to `true` or `false`.
  */
 /*------------------------------------*\
-    $OBJECTS AND ABSTRACTIONS FROM INUIT CSS
+    $tp-OBJECTS AND ABSTRACTIONS FROM INUIT CSS
 \*------------------------------------*/
 /**
  * Which objects and abstractions would you like to use?
  */
 /*------------------------------------*\
-    $BASE
+    $tp-BASE
 \*------------------------------------*/
 /*------------------------------------*\
-    $UI ELEMENTS
+    $tp-UI ELEMENTS
 \*------------------------------------*/
 /*------------------------------------*\
-    $TEXT DIRECTION
+    $tp-TEXT DIRECTION
 \*------------------------------------*/
 /*------------------------------------*\
-    $COLOR SWATCHES
+    $tp-COLOR SWATCHES
 \*------------------------------------*/
 /*------------------------------------*\
-    $GRID SETTINGS
+    $tp-GRID SETTINGS
 \*------------------------------------*/
 /*------------------------------------*\
-    $BREAKPOINTS
+    $tp-BREAKPOINTS
 \*------------------------------------*/
 /*------------------------------------*\
-    $TYPOGRAPHY
+    $tp-TYPOGRAPHY
 \*------------------------------------*/
 /**
      * Mobile Sizes     
@@ -46,13 +46,13 @@
  * Optional font sizes
  */
 /*------------------------------------*\
-    $LINKS
+    $tp-LINKS
 \*------------------------------------*/
 /*------------------------------------*\
-    $FORMS
+    $tp-FORMS
 \*------------------------------------*/
 /*------------------------------------*\
-    $BUTTONS
+    $tp-BUTTONS
 \*------------------------------------*/
 /**
      * Button default
@@ -140,8 +140,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../../../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.3.0');
-  src: url('../../../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../../../bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../../../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../../../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../../../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -1852,10 +1852,10 @@
 /*
 Variables
  */
-body {
+body.tp {
   margin: 0; }
 
-html[ng-app] {
+html.tp[ng-app] {
   background: #ecf0f3; }
 
 /**
@@ -1996,8 +1996,8 @@ html[ng-app] {
 
 /*------------------------------------*\
         AUTOCOMPLETE.CSS
-    \*------------------------------------*/
-.autocomplete-suggestions {
+\*------------------------------------*/
+.autocomplete-suggestions.tp {
   border: 1px solid #BFBFBF;
   background: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -2005,26 +2005,26 @@ html[ng-app] {
   overflow: auto;
   font-family: 'Open Sans', Helvetica, Arial; }
 
-.autocomplete-suggestion {
+.autocomplete-suggestion.tp {
   padding: 0.3em 1em;
   overflow: hidden;
   cursor: pointer;
   border-bottom: 1px #BFBFBF solid; }
-  .autocomplete-suggestion:last-child {
+  .autocomplete-suggestion.tp:last-child {
     border-bottom: none; }
 
-.autocomplete-selected {
+.autocomplete-selected.tp {
   background: #EDEEF1; }
 
-.autocomplete-suggestions strong {
+.autocomplete-suggestions.tp strong {
   font-weight: normal;
   color: #1ABC9C;
   font-weight: 600; }
 
 /**
-     * Description
-     */
-.ac__desc {
+ * Description
+ */
+.ac__desc.tp {
   display: block;
   font-size: 12px;
   padding: 5px 0;
@@ -2162,26 +2162,26 @@ html[ng-app] {
  */
 .tapestry-wrapper {
   padding-top: 15px; }
-  .tapestry-wrapper .container {
+  .tapestry-wrapper .container.tp {
     position: relative;
     width: auto;
     margin: 0 20px 0 450px;
     padding: 0; }
   @media only screen and (max-width: 960px) {
-    .tapestry-wrapper > .container {
+    .tapestry-wrapper > .container.tp {
       width: auto;
       margin: 0 auto;
       padding: 15px; } }
   @media only screen and (min-width: 600px) {
     .tapestry-wrapper {
       padding-top: 30px; } }
-  .tapestry-wrapper.ext .container {
+  .tapestry-wrapper.ext.tp .container.tp {
     margin-left: 270px; }
     @media only screen and (max-width: 960px) {
-      .tapestry-wrapper.ext .container {
+      .tapestry-wrapper.ext.tp .container.tp {
         margin: 0 auto;
         width: auto; } }
-  .tapestry-wrapper.ext .block--preview {
+  .tapestry-wrapper.ext.tp .block--preview.tp {
     padding: 0; }
 
 /* Menu opened */
@@ -2239,7 +2239,7 @@ html[ng-app] {
 /**
  * Dark button
  */
-.btn-view, .btn-download {
+.btn-view.tp, .btn-download.tp {
   line-height: normal;
   padding: 1em 2em;
   border: 1px solid transparent;
@@ -2259,37 +2259,37 @@ html[ng-app] {
   display: inline-block;
   margin-bottom: 0; }
 
-.btn-download:hover, .btn-download:active, .btn-download {
+.btn-download.tp:hover, .btn-download.tp:active, .btn-download.tp {
   background: #323A45;
   border-color: #323A45;
   color: #fff; }
 
-.btn-download:hover {
+.btn-download.tp:hover {
   background: #475363;
   border-color: #475363;
   text-decoration: none; }
 
-.btn-download:active, .btn-download:focus {
+.btn-download.tp:active, .btn-download.tp:focus {
   background: #1d2127;
   border-color: #1d2127; }
 
 /**
  * Unstyled button
  */
-.btn-unstyled {
+.btn-unstyled.tp {
   padding: 0;
   margin: 0;
   border: none;
   background: none;
   cursor: pointer; }
 
-.btn-view, .btn-view:hover {
+.btn-view.tp, .btn-view.tp:hover {
   background: transparent;
   border: 1px #1F253D solid;
   color: #1F253D;
   text-decoration: none; }
 
-.btn-view:hover {
+.btn-view.tp:hover {
   opacity: 0.8; }
 
 /**
@@ -2354,23 +2354,23 @@ html[ng-app] {
     background: #fff;
     font-family: 'Open Sans', Helvetica, Arial;
     border-bottom: 1px #d9d9d9 solid; }
-  .pattern-list .block--description {
+  .pattern-list .block--description.tp {
     background: #f9fbfc;
     border-radius: 0 0 5px 5px;
     border-top: 1px #d9d9d9 solid; }
 
-.pattern-variation {
+.pattern-variation.tp {
   margin-bottom: 15px; }
 
-.block--preview {
+.block--preview.tp {
   padding: 15px;
   padding-bottom: 40px; }
 
-.block--example {
+.block--example.tp {
   background: #fff;
   border-radius: 5px; }
 
-pre {
+pre.tp {
   margin: 0 !important;
   background: #f5f7f9 !important;
   border-radius: 0 0 5px 5px;
@@ -2381,16 +2381,16 @@ pre {
   white-space: wrap !important;
   border-top: 1px #d9d9d9 solid; }
 
-code {
+code.tp {
   white-space: pre-wrap !important; }
 
 /**
      * Code
      */
-.example-code {
+.example-code.tp {
   position: relative; }
 
-.toggle-code {
+.toggle-code.tp {
   position: absolute;
   right: 10px;
   top: -40px;
@@ -2402,16 +2402,16 @@ code {
   -ms-user-select: none;
   user-select: none; }
 
-.toggle-code.active {
+.toggle-code.tp.active {
   color: #1ABC9C; }
 
 /**
      * Description
      */
-.block--description {
+.block--description.tp {
   padding: 20px 15px 10px 15px;
   background: #dfe1e6; }
-  .block--description h3 {
+  .block--description.tp h3 {
     margin-bottom: 5px;
     font-size: 16px;
     font-weight: 600; }
@@ -2419,32 +2419,32 @@ code {
 /**
  * Palette
  */
-.palette {
+.palette.tp {
   list-style: none;
   margin-left: 0;
   font-size: 0; }
-  .palette > li {
+  .palette.tp > li {
     margin-right: 1%;
     font-size: 13px;
     font-size: 0.92857rem;
     color: #fff;
     text-align: center; }
     @media only screen and (min-width: 600px) {
-      .palette > li {
+      .palette.tp > li {
         display: inline-block;
         width: 19%; } }
-  .palette span {
+  .palette.tp span {
     display: block; }
-  .palette .color {
+  .palette.tp .color {
     border-radius: 5px 5px 0 0;
     height: 80px;
     padding-top: 1.5em; }
     @media only screen and (min-width: 600px) {
-      .palette .color {
+      .palette.tp .color {
         height: 120px; } }
-  .palette .color:last-child {
+  .palette.tp .color:last-child {
     border-radius: 0 0 5px 5px; }
-  .palette h3 {
+  .palette.tp h3 {
     color: #333;
     font-size: 14px;
     font-weight: 600; }
@@ -2452,10 +2452,10 @@ code {
 /**
  * Row demo
  */
-.row--demo {
+.row--demo.tp {
   margin-left: 0 !important;
   margin-right: 0 !important; }
-  .row--demo > .columns {
+  .row--demo.tp > .columns {
     background: #eee;
     border: 1px #ddd solid; }
 
@@ -2475,26 +2475,26 @@ code {
 /**
  * Block meta
  */
-.block--meta {
+.block--meta.tp {
   padding: 15px; }
 
 /**
  * Comments
  */
-.pattern-comments {
+.pattern-comments.tp {
   padding: 15px; }
-  .pattern-comments > a {
+  .pattern-comments.tp > a {
     cursor: pointer; }
-    .pattern-comments > a:before {
+    .pattern-comments.tp > a:before {
       font-family: "FontAwesome";
       content: "\f075";
       margin-right: 5px; }
 
 @media only screen and (max-width: 960px) {
-  .container.altered {
+  .container.tp.altered {
     width: auto;
     margin: 0; } }
 @media only screen and (min-width: 960px) {
-  .container.altered {
+  .container.tp.altered {
     margin: 0 20px 0 250px;
     width: auto; } }

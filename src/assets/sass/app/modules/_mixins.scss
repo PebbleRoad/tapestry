@@ -11,11 +11,11 @@
  * Thanks to @redclov3r for the `line-height` Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
-@mixin font-size($font-size, $line-height:true){
-    font-size:$font-size;
-    font-size:($font-size / $base-font-size)*1rem;
-    @if $line-height == true{
-        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+@mixin font-size($tp-font-size, $tp-line-height:true){
+    font-size:$tp-font-size;
+    font-size:($tp-font-size / $tp-base-font-size)*1rem;
+    @if $tp-line-height == true{
+        line-height:ceil($tp-font-size / $tp-base-line-height) * ($tp-base-line-height / $tp-font-size);
     }
 }
 
@@ -24,26 +24,26 @@
  * Font size mixin
  */
 
-@mixin font-size-adapt($mobile: false, $tablet: false, $desktop: false){
+@mixin font-size-adapt($tp-mobile: false, $tp-tablet: false, $tp-desktop: false){
 
-		@if $mobile{
+		@if $tp-mobile{
 
-				@include font-size($mobile, false);
+				@include font-size($tp-mobile, false);
 
 		}
 
 
-		@if $tablet{
+		@if $tp-tablet{
 				
 				@include media-query(tablet-desktop){
-						@include font-size($tablet, false);
+						@include font-size($tp-tablet, false);
 				}
 		}
 
-		@if $desktop{
+		@if $tp-desktop{
 				
 				@include media-query(desktop){
-						@include font-size($desktop, false);
+						@include font-size($tp-desktop, false);
 				}
 		}
 }
@@ -53,60 +53,60 @@
  * Media Query Mixin
  */
 
-@mixin media-query($media-query){
+@mixin media-query($tp-media-query){
 
-		@if $media-query == "tablet-desktop"{
+		@if $tp-media-query == "tablet-desktop"{
 
-				@media only screen and (min-width: $tablet-breakpoint-start) { @content; }
-
-		}
-
-		@if $media-query == tablet{
-
-				@media only screen and (min-width: $tablet-breakpoint-start) 
-		and (max-width: $desktop-breakpoint-start) { @content; }
+				@media only screen and (min-width: $tp-tablet-breakpoint-start) { @content; }
 
 		}
 
-		@if $media-query == desktop{
+		@if $tp-media-query == tablet{
 
-				@media only screen and (min-width: $desktop-breakpoint-start) { @content; }
-
-		}
-
-		@if $media-query == phone{
-
-				@media only screen and (max-width: $tablet-breakpoint-start) { @content; }
+				@media only screen and (min-width: $tp-tablet-breakpoint-start) 
+		and (max-width: $tp-desktop-breakpoint-start) { @content; }
 
 		}
 
-		@if $media-query == phone-desk{
+		@if $tp-media-query == desktop{
+
+				@media only screen and (min-width: $tp-desktop-breakpoint-start) { @content; }
+
+		}
+
+		@if $tp-media-query == phone{
+
+				@media only screen and (max-width: $tp-tablet-breakpoint-start) { @content; }
+
+		}
+
+		@if $tp-media-query == phone-desk{
 	
-			@media only screen and (max-width: $desktop-breakpoint-start) { @content; }
+			@media only screen and (max-width: $tp-desktop-breakpoint-start) { @content; }
 	
 		}
 
-		@if $media-query == phone-landscape{
+		@if $tp-media-query == phone-landscape{
 
-				@media only screen and (min-width: $phone-breakpoint-end) and (orientation: landscape){
+				@media only screen and (min-width: $tp-phone-breakpoint-end) and (orientation: landscape){
 						@content;
 				}
 		}
 
-		@if $media-query == tablet-landscape{
+		@if $tp-media-query == tablet-landscape{
 
 				@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape){
 						@content;
 				}
 		}
 
-		@if $media-query == widescreen{
-				@media only screen and (min-width: $widescreen-breakpoint-start){
+		@if $tp-media-query == widescreen{
+				@media only screen and (min-width: $tp-widescreen-breakpoint-start){
 						@content;
 				}
 		}
 
-		@if $media-query == retina{
+		@if $tp-media-query == retina{
 				@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5){
 						@content;
 				}
@@ -122,7 +122,7 @@
 
 @mixin base-box-shadow{
 
-	box-shadow: $base-box-shadow;
+	box-shadow: $tp-base-box-shadow;
 }
 
 
@@ -141,20 +141,20 @@
  * Link Colors: Part of Compass
  */
 
-@mixin link-colors($normal, $hover: false, $active: false, $visited: false, $focus: false) {
-	color: $normal;
-	@if $visited {
+@mixin link-colors($tp-normal, $tp-hover: false, $tp-active: false, $tp-visited: false, $tp-focus: false) {
+	color: $tp-normal;
+	@if $tp-visited {
 	&:visited {
-		color: $visited; } }
-	@if $focus {
+		color: $tp-visited; } }
+	@if $tp-focus {
 	&:focus {
-		color: $focus; } }
-	@if $hover {
+		color: $tp-focus; } }
+	@if $tp-hover {
 	&:hover {
-		color: $hover; } }
-	@if $active {
+		color: $tp-hover; } }
+	@if $tp-active {
 	&:active {
-		color: $active; } } }
+		color: $tp-active; } } }
 
 
 /**
@@ -175,15 +175,15 @@
  * @include rem(padding, 1, 20px);
  */
 
-@mixin rem($property, $multiplier: 1, $unit: $base-spacing-unit){
+@mixin rem($tp-property, $tp-multiplier: 1, $tp-unit: $tp-base-spacing-unit){
 
-	@if type-of($multiplier) != "number"{
+	@if type-of($tp-multiplier) != "number"{
 
-		$unit: $multiplier;
-		$multiplier: 1;
+		$tp-unit: $tp-multiplier;
+		$tp-multiplier: 1;
 	}
 
-	@include rem-full($multiplier, $property, $unit);
+	@include rem-full($tp-multiplier, $tp-property, $tp-unit);
 }
 
 
@@ -192,34 +192,34 @@
  * @include rem-full(padding, 10px 20px 10px 30px);
  */
 
-@mixin rem-full($multiplier, $property, $px-values) {
+@mixin rem-full($tp-multiplier, $tp-property, $tp-px-values) {
 	// Convert the baseline into rems
-	$baseline-rem: $base-font-size / 1rem * 1;
+	$tp-baseline-rem: $tp-base-font-size / 1rem * 1;
 	// Print the first line in pixel values
 
 	// If there is only one (numeric) value, return the property/value line for it.
-	@if type-of($px-values) == "number" {
-		#{$property}: $px-values * $multiplier;
-		#{$property}: $px-values / $baseline-rem * $multiplier; 
+	@if type-of($tp-px-values) == "number" {
+		#{$tp-property}: $tp-px-values * $tp-multiplier;
+		#{$tp-property}: $tp-px-values / $tp-baseline-rem * $tp-multiplier; 
 	}
 	@else {
 		// Create an empty list that we can dump values into
-		$rem-values: ();
-		$pixel-values: ();
-		@each $value in $px-values {
+		$tp-rem-values: ();
+		$tp-pixel-values: ();
+		@each $tp-value in $tp-px-values {
 			// If the value is zero or not a number, return it
-			@if $value == 0 or type-of( $value ) != "number" {
-				$rem-values: append($rem-values, $value); 
-				$pixel-values: append($pixel-values, $value);
+			@if $tp-value == 0 or type-of( $tp-value ) != "number" {
+				$tp-rem-values: append($tp-rem-values, $tp-value); 
+				$tp-pixel-values: append($tp-pixel-values, $tp-value);
 			}
 			@else {
-				$rem-values: append($rem-values, $value / $baseline-rem * $multiplier); 
-				$pixel-values: append($pixel-values, $value * $multiplier);
+				$tp-rem-values: append($tp-rem-values, $tp-value / $tp-baseline-rem * $tp-multiplier); 
+				$tp-pixel-values: append($tp-pixel-values, $tp-value * $tp-multiplier);
 			} 
 		}
 		// Return the property and its list of converted values
-		#{$property}: $pixel-values;
-		#{$property}: $rem-values; 
+		#{$tp-property}: $tp-pixel-values;
+		#{$tp-property}: $tp-rem-values; 
 	} 
 }
 
@@ -232,8 +232,8 @@
  * Calculates Percentage for each column
  */
 
-@function gridCalc($colNumber, $grid-columns) {
-	@return percentage(($colNumber / $grid-columns));
+@function gridCalc($tp-colNumber, $tp-grid-columns) {
+	@return percentage(($tp-colNumber / $tp-grid-columns));
 }
 
 /**
@@ -241,13 +241,13 @@
  * 1 => 'one'
  */
 
-@function convert-number-to-word($num) {
-	$count:1;
-	@each $word in one,two,three,four,five,six,seven,eight,nine,ten,eleven,
+@function convert-number-to-word($tp-num) {
+	$tp-count:1;
+	@each $tp-word in one,two,three,four,five,six,seven,eight,nine,ten,eleven,
 		twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,
 		twenty,twentyone,twentytwo,twentythree,twentyfour{
-		@if ($count == $num) { @return $word; }
-		$count: $count + 1;
+		@if ($tp-count == $tp-num) { @return $tp-word; }
+		$tp-count: $tp-count + 1;
 	}
 	@return "invalid";
 }

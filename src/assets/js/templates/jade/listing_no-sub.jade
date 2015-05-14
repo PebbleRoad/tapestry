@@ -1,17 +1,17 @@
-.tapestry-wrapper.ext
+.tapestry-wrapper.ext.tp
 	
-	.container
+	.container.tp
 		
 		.main-content
 
 			div(preview-only patterns="patterns")
 
-			ul.pattern-list
+			ul.pattern-list.tp
 				li(ng-repeat="pattern in patterns.children")
 					
 					h3(id="{{pattern.name | anchor}}", once-text="pattern.name")
 					
 					div(preview-only patterns="pattern")
 
-					div.pattern-variation(ng-repeat="variation in pattern.children")
+					div.pattern-variation.tp(ng-repeat="variation in pattern.children")
 						h4(id="{{variation.name | anchor}}", once-text="variation.name")

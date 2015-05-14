@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="tapestry" class="no-js tapestry menu__opened">
+<html lang="en" ng-app="tapestry" class="no-js tp tapestry menu__opened">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,7 +15,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">
     <script src="bower_components/modernizr/modernizr.js"></script>
   <script id="jsonPath">var jsonPath = [{name: "Grids", path: "json/0.Grids.json"},{name: "NovaElements", path: "json/1.NovaElements.json"},{name: "NovaComponents", path: "json/2.NovaComponents.json"},{name: "NovaTemplates", path: "json/3.NovaTemplates.json"}]</script></head>
-  <body>
+  <body class="tp">
     <!-- Menu-->
     <nav class="tapestry-menu">
       <h3 class="menu__header">Introduction</h3>
@@ -40,7 +40,7 @@
     <!-- Content-->
     <div class="tapestry-content">
       <div ng-view=""></div>
-      <div class="container altered">
+      <div class="container tp altered">
         <div class="row">
           <div class="columns ten twelve--tablet column--center">
             <footer class="tapestry__footer">
@@ -94,4 +94,6 @@
     <!-- / Your JS Files-->
 <script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
 </body>
-</html>
+</html>  <script src="external/js/app.js"></script>
+    <!-- / Your JS Files-->
+<script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>

@@ -1,6 +1,6 @@
 
 <div class="tapestry-wrapper">
-  <div class="container">
+  <div class="container tp">
     <div class="tapestry-menu-side">
       <ul ng-show="patterns.children.length &gt; 1">
         <li ng-repeat="pattern in patterns.children"><a data-target="#{{pattern.name | anchor}}" ng-href="#!/{{rootSection}}/{{sectionSlug}}/{{pattern.name | anchor}}" once-text="pattern.name" ng-class="{active: anchor(pattern.name) == subSection}"></a></li>
@@ -8,15 +8,15 @@
     </div>
     <div class="main-content">
       <div preview-and-markup="preview-and-markup" patterns="patterns"></div>
-      <ul class="pattern-list">
+      <ul class="pattern-list tp">
         <li ng-repeat="pattern in patterns.children">
           <h3 id="{{pattern.name | anchor}}" once-text="pattern.name"></h3>
           <div preview-and-markup="preview-and-markup" patterns="pattern"></div>
-          <div ng-repeat="variation in pattern.children" class="pattern-variation">
+          <div ng-repeat="variation in pattern.children" class="pattern-variation tp">
             <h4 id="{{variation.name | anchor}}" once-text="variation.name"></h4>
             <div preview-and-markup="preview-and-markup" patterns="variation"></div>
           </div>
-          <div once-show="!disqus_enabled" class="pattern-comments"><a ng-click="loadComments($event)" data-disqus-identifier="{{pattern.name | anchor}}">Comments</a></div>
+          <div once-show="!disqus_enabled" class="pattern-comments tp"><a ng-click="loadComments($event)" data-disqus-identifier="{{pattern.name | anchor}}">Comments</a></div>
         </li>
       </ul>
     </div>

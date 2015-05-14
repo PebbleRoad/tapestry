@@ -1,5 +1,5 @@
 doctype
-html.no-js(lang='en', ng-app="tapestry", class="tapestry menu__opened")
+html.no-js(lang='en', ng-app="tapestry", class="tp tapestry menu__opened")
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
@@ -22,7 +22,7 @@ html.no-js(lang='en', ng-app="tapestry", class="tapestry menu__opened")
 		block meta        
 		script(src='bower_components/modernizr/modernizr.js')
 
-	body
+	body.tp
 
 		// Menu
 		
@@ -57,7 +57,7 @@ html.no-js(lang='en', ng-app="tapestry", class="tapestry menu__opened")
 			block content
 
 
-			.container.altered
+			.container.tp.altered
 				.row
 					.columns.ten.twelve--tablet.column--center
 
