@@ -29,10 +29,10 @@ name: Grid mobile
   <div class="columns four four--phone">four</div>
 </div>
 <div class="row row--demo">
-  <div class="columns three three-tablet">three</div>
-  <div class="columns three three-tablet">three</div>
-  <div class="columns three three-tablet">three</div>
-  <div class="columns three three-tablet">three</div>
+  <div class="columns three three--phone">three</div>
+  <div class="columns three three--phone">three</div>
+  <div class="columns three three--phone">three</div>
+  <div class="columns three three--phone">three</div>
 </div>
 <div class="row row--demo">
   <div class="columns six six--phone">six</div>

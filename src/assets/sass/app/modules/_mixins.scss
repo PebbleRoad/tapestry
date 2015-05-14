@@ -80,6 +80,12 @@
 
 		}
 
+		@if $media-query == phone-desk{
+	
+			@media only screen and (max-width: $desktop-breakpoint-start) { @content; }
+	
+		}
+
 		@if $media-query == phone-landscape{
 
 				@media only screen and (min-width: $phone-breakpoint-end) and (orientation: landscape){

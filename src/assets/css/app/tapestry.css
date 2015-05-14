@@ -1877,12 +1877,10 @@ html[ng-app] {
   min-height: 70px;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 250px;
+  right: 0;
+  width: auto;
   z-index: 2;
-  -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
-  -moz-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
-  transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
   /* Form */
   /* Text input */
   /* Links */
@@ -1893,6 +1891,16 @@ html[ng-app] {
     display: table; }
   .tapestry-header:after {
     clear: both; }
+  @media only screen and (max-width: 960px) {
+    .tapestry-header {
+      left: 0;
+      width: 100%;
+      text-align: left; } }
+  @media only screen and (max-width: 960px) {
+    .tapestry-header {
+      -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
+      -moz-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
+      transition: all 0.2s cubic-bezier(0, 0, 0.25, 1); } }
   .tapestry-header .text-input, .tapestry-header textarea {
     border: 1px #BFBFBF solid;
     padding: 0.6em 1em;
@@ -1949,12 +1957,13 @@ html[ng-app] {
       .tapestry-header .form-control {
         display: block; } }
     @media only screen and (min-width: 600px) and (max-width: 960px) { }
-  .menu__opened .tapestry-header {
-    -webkit-transform: translate3d(250px, 0, 0);
-    -moz-transform: translate3d(250px, 0, 0);
-    -ms-transform: translate3d(250px, 0, 0);
-    -o-transform: translate3d(250px, 0, 0);
-    transform: translate3d(250px, 0, 0); }
+  @media only screen and (max-width: 960px) {
+    .menu__opened .tapestry-header {
+      -webkit-transform: translate3d(250px, 0, 0);
+      -moz-transform: translate3d(250px, 0, 0);
+      -ms-transform: translate3d(250px, 0, 0);
+      -o-transform: translate3d(250px, 0, 0);
+      transform: translate3d(250px, 0, 0); } }
   .tapestry-header a {
     color: #fff; }
     .tapestry-header a:hover {
@@ -1974,8 +1983,11 @@ html[ng-app] {
     border: none;
     padding-left: 20px;
     font-size: 30px;
-    display: block;
+    display: none;
     /* menu opened */ }
+    @media only screen and (max-width: 960px) {
+      .tapestry-header .btn--toggle {
+        display: block; } }
     .tapestry-header .btn--toggle .fa {
       vertical-align: top;
       line-height: 70px; }
@@ -2053,11 +2065,11 @@ html[ng-app] {
     .tapestry-menu-side {
       display: block;
       position: relative; } }
-  @media only screen and (min-width: 1400px) {
+  @media only screen and (min-width: 960px) {
     .tapestry-menu-side {
-      position: absolute;
-      left: -200px;
-      top: 5px;
+      position: fixed;
+      left: 250px;
+      top: 100px;
       width: 200px; }
       .tapestry-menu-side li {
         display: block;
@@ -2087,26 +2099,30 @@ html[ng-app] {
   padding: 20px 20px;
   font-size: 16px;
   font-size: 1.14286rem;
-  -webkit-transform: translate3d(-250px, 0, 0);
-  -moz-transform: translate3d(-250px, 0, 0);
-  -ms-transform: translate3d(-250px, 0, 0);
-  -o-transform: translate3d(-250px, 0, 0);
-  transform: translate3d(-250px, 0, 0);
-  -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
-  -moz-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
-  transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
   font-size: 16px;
   line-height: 1.6;
   /* heading */
   /* UL */ }
+  @media only screen and (max-width: 960px) {
+    .tapestry-menu {
+      -webkit-transform: translate3d(-250px, 0, 0);
+      -moz-transform: translate3d(-250px, 0, 0);
+      -ms-transform: translate3d(-250px, 0, 0);
+      -o-transform: translate3d(-250px, 0, 0);
+      transform: translate3d(-250px, 0, 0);
+      -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
+      -moz-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
+      transition: all 0.2s cubic-bezier(0, 0, 0.25, 1); } }
   .menu__opened .tapestry-menu {
     display: block;
-    -webkit-transform: translate3d(0px, 0, 0);
-    -moz-transform: translate3d(0px, 0, 0);
-    -ms-transform: translate3d(0px, 0, 0);
-    -o-transform: translate3d(0px, 0, 0);
-    transform: translate3d(0px, 0, 0);
     box-shadow: 0px 0 6px 1px rgba(0, 0, 0, 0.1); }
+    @media only screen and (max-width: 960px) {
+      .menu__opened .tapestry-menu {
+        -webkit-transform: translate3d(0px, 0, 0);
+        -moz-transform: translate3d(0px, 0, 0);
+        -ms-transform: translate3d(0px, 0, 0);
+        -o-transform: translate3d(0px, 0, 0);
+        transform: translate3d(0px, 0, 0); } }
   .tapestry-menu .menu__header {
     font-size: 16px;
     font-size: 1.14286rem;
@@ -2136,9 +2152,10 @@ html[ng-app] {
 .tapestry__heading {
   margin: 8px 0 0 0;
   font-family: 'Open Sans', Helvetica, Arial; }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (max-width: 960px) {
     .tapestry__heading {
-      margin-top: 5px; } }
+      margin-top: 9px;
+      padding-left: 50px; } }
 
 /**
  * Static Content
@@ -2146,14 +2163,26 @@ html[ng-app] {
 .tapestry-wrapper {
   padding-top: 15px; }
   .tapestry-wrapper .container {
-    position: relative; }
-  @media only screen and (min-width: 960px) {
+    position: relative;
+    width: auto;
+    margin: 0 20px 0 450px;
+    padding: 0; }
+  @media only screen and (max-width: 960px) {
     .tapestry-wrapper > .container {
-      width: 990px;
-      margin: 0 auto; } }
+      width: auto;
+      margin: 0 auto;
+      padding: 15px; } }
   @media only screen and (min-width: 600px) {
     .tapestry-wrapper {
       padding-top: 30px; } }
+  .tapestry-wrapper.ext .container {
+    margin-left: 270px; }
+    @media only screen and (max-width: 960px) {
+      .tapestry-wrapper.ext .container {
+        margin: 0 auto;
+        width: auto; } }
+  .tapestry-wrapper.ext .block--preview {
+    padding: 0; }
 
 /* Menu opened */
 .menu__opened body {
@@ -2163,17 +2192,20 @@ html[ng-app] {
  * Tapestry content
  */
 .tapestry-content {
-  -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
-  -moz-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
-  transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
   position: relative;
   padding-top: 70px; }
-  .menu__opened .tapestry-content {
-    -webkit-transform: translate3d(250px, 0, 0);
-    -moz-transform: translate3d(250px, 0, 0);
-    -ms-transform: translate3d(250px, 0, 0);
-    -o-transform: translate3d(250px, 0, 0);
-    transform: translate3d(250px, 0, 0); }
+  @media only screen and (max-width: 960px) {
+    .tapestry-content {
+      -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
+      -moz-transition: all 0.2s cubic-bezier(0, 0, 0.25, 1);
+      transition: all 0.2s cubic-bezier(0, 0, 0.25, 1); } }
+  @media only screen and (max-width: 960px) {
+    .menu__opened .tapestry-content {
+      -webkit-transform: translate3d(250px, 0, 0);
+      -moz-transform: translate3d(250px, 0, 0);
+      -ms-transform: translate3d(250px, 0, 0);
+      -o-transform: translate3d(250px, 0, 0);
+      transform: translate3d(250px, 0, 0); } }
 
 /**
  * Tapestry Hero Module
@@ -2181,8 +2213,12 @@ html[ng-app] {
 .ui-module-hero-tapestry {
   color: #fff;
   padding: 30px 0 30px 0;
+  margin: 0 0 0 250px;
   background: #1ABC9C;
   text-align: center; }
+  @media only screen and (max-width: 960px) {
+    .ui-module-hero-tapestry {
+      margin: 0; } }
   @media only screen and (min-width: 960px) {
     .ui-module-hero-tapestry .container {
       width: 800px;
@@ -2453,3 +2489,12 @@ code {
       font-family: "FontAwesome";
       content: "\f075";
       margin-right: 5px; }
+
+@media only screen and (max-width: 960px) {
+  .container.altered {
+    width: auto;
+    margin: 0; } }
+@media only screen and (min-width: 960px) {
+  .container.altered {
+    margin: 0 20px 0 250px;
+    width: auto; } }

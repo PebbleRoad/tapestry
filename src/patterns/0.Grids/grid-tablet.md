@@ -35,6 +35,6 @@ name: Grid tablet
   <div class="columns three three--tablet">three</div>
 </div>
 <div class="row row--demo">
-  <div class="columns six">six--tablet six</div>
-  <div class="columns six">six--tablet six</div>
+  <div class="columns six six--tablet">six</div>
+  <div class="columns six six--tablet">six</div>
 </div>

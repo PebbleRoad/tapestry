@@ -49,10 +49,18 @@ html[ng-app]{
     min-height: 70px;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 250px;
+    right: 0;
+    width: auto;
+    @include media-query(phone-desk){
+        left: 0;
+        width: 100%;
+        text-align: left;
+    }
     z-index: 2;
-    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    @include media-query(phone-desk){
+        @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    }
 
     .text-input,
     textarea{
@@ -152,10 +160,11 @@ html[ng-app]{
         .text-input{
             
         }
-    
 
-    .menu__opened &{
-        @include transform(translate3d(250px, 0, 0));
+    @include media-query(phone-desk){
+        .menu__opened &{
+            @include transform(translate3d(250px, 0, 0));
+        }
     }
 
     
@@ -185,8 +194,10 @@ html[ng-app]{
         border: none;  
         padding-left: 20px;
         font-size: 30px;
-        display: block;
-
+        display: none;
+        @include media-query(phone-desk) {
+            display : block;
+        }
         .fa{
             vertical-align: top;
             line-height: 70px;
@@ -305,10 +316,10 @@ html[ng-app]{
         position: relative;
     }
 
-    @include media-query(widescreen){
-        position: absolute;
-        left: -200px;
-        top: 5px;
+    @include media-query(desktop){
+        position: fixed;
+        left: 250px;
+        top: 100px;
         width: 200px;
         li{
             display: block;
@@ -348,8 +359,10 @@ $menu-spacing: 20px;
     z-index: 1;
     padding: 20px $menu-spacing;        
     @include font-size(16px, false);
-    @include transform(translate3d(-250px, 0, 0));
-    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    @include media-query(phone-desk){
+        @include transform(translate3d(-250px, 0, 0));
+        @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    }
     font-size: 16px;
     line-height: 1.6;
     //border-right: 1px $base-ui-color solid;    
@@ -357,7 +370,9 @@ $menu-spacing: 20px;
 
     .menu__opened &{
         display: block;
-        @include transform(translate3d(0px, 0, 0));
+        @include media-query(phone-desk){
+            @include transform(translate3d(0px, 0, 0));
+        }
         box-shadow: 0px 0 6px 1px rgba(0,0,0,0.1);
     }
 
@@ -410,8 +425,9 @@ $menu-spacing: 20px;
     margin: 8px 0 0 0;     
     font-family: $fontfamily;
 
-    @include media-query(tablet-desktop){
-        margin-top: 5px;
+    @include media-query(phone-desk){
+        margin-top: 9px;
+        padding-left: 50px;
     }
 }
 
@@ -425,18 +441,40 @@ $menu-spacing: 20px;
 
     .container{
         position: relative;
+        width: auto;
+        margin: 0 20px 0 450px;
+        padding: 0;
     }
-    
-    @include media-query(desktop){
+
+
+    @include media-query(phone-desk){
         > .container{
-            width: 990px;
+            width: auto;
             margin: 0 auto;
-        }    
+            //width: auto;
+            //margin: 0 0 0 250px;
+            padding: 15px;
+        }
     }
-    
+
 
     @include media-query(tablet-desktop){
         padding-top: 30px;
+    }
+    
+    
+    &.ext {
+        .container {
+            margin-left: 270px;
+            @include media-query(phone-desk){
+                margin: 0 auto;
+                width: auto;
+            }
+        }
+        .block--preview {
+            //padding-bottom : 15px;
+            padding: 0;
+        }
     }
 }
 
@@ -453,13 +491,18 @@ $menu-spacing: 20px;
  */
 
 .tapestry-content{
-    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    @include media-query(phone-desk){
+
+        @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    }
     position: relative;    
     
     padding-top: 70px;
+    @include media-query(phone-desk){
 
-    .menu__opened &{
-        @include transform(translate3d(250px, 0, 0));
+        .menu__opened &{
+            @include transform(translate3d(250px, 0, 0));
+        }
     }
 }
 
@@ -471,6 +514,10 @@ $menu-spacing: 20px;
 .ui-module-hero-tapestry{
     color: #fff;
     padding: 30px 0 30px 0;
+    margin: 0 0 0 250px;
+    @include media-query(phone-desk){
+        margin: 0;
+    }
     background: $color-primary;
     text-align: center;
     
@@ -846,5 +893,19 @@ $menu-spacing: 20px;
             content: "\f075";
             margin-right: 5px;
         }
+    }
+}
+
+
+.container.altered {
+    @include media-query(phone-desk){
+        
+            width: auto;
+            margin: 0;
+        
+    }
+    @include media-query(desktop){
+        margin: 0 20px 0 250px;
+        width : auto;
     }
 }

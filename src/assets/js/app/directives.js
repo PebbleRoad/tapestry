@@ -47,6 +47,28 @@ angular.module('tapestry.directives', [])
 
 		}
 	})
+	.directive('previewOnly', function(){
+		
+		return {
+			
+			restrict: 'A',
+			scope: {
+				patterns: '='
+			},
+			template: '<div once-wait-for="patterns" once-show="patterns.path" class="block block--example"> \
+							<div class="block block--preview"><div raw-include="raw-include" patterns="patterns" src="patterns.path"></div></div> \
+							<div class="block block--description"> \
+								<div class="patterns-description"></div> \
+							</div> \
+							<div class="block--meta" ng-show="patterns.meta.length"> \
+								<div ng-repeat="meta in patterns.meta"> \
+									{{meta}} \
+								</div> \
+							</div>\
+						</div>'
+			
+		}
+	})
 	.directive('rawInclude', [
 		 '$http', '$templateCache', '$compile', '$q', '$timeout',
 		 	function ($http, $templateCache, $compile, $q, $timeout) {
