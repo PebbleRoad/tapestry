@@ -1,0 +1,17 @@
+[
+    {
+        "path": "patterns/0.Grids/grid-desktop.md",
+        "name": "Grid desktop",
+        "slug": "grid-desktop.md"
+    },
+    {
+        "path": "patterns/0.Grids/grid-mobile.md",
+        "name": "Grid mobile",
+        "slug": "grid-mobile.md"
+    },
+    {
+        "path": "patterns/0.Grids/grid-tablet.md",
+        "name": "Grid tablet",
+        "slug": "grid-tablet.md"
+    }
+]

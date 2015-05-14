@@ -1,0 +1,28 @@
+| ---
+| name: Login form
+| ---
+.row
+	.columns.five
+		form
+			.row
+				.columns.six
+					button.btn.btn--facebook.btn--full.btn--icon-left
+						em.fa.fa-facebook.fa-lg
+						| Sign in
+				.columns.six
+					button.btn.btn--google.btn--full.btn--icon-left
+						em.fa.fa-google-plus.fa-lg
+						| Sign in
+			.ui-this-that
+				span OR
+			.input-group
+				input.text-input(type='text', placeholder='Email')
+				input.text-input(type='password', placeholder='Password')
+			button.btn.btn--primary.btn--full
+				em.fa.fa-lock.fa-lg
+				| Log in
+			p
+				a.float--right(href='#') Forgot password?
+				label.label-checkbox
+					input(type='checkbox')
+					| Stay signed in

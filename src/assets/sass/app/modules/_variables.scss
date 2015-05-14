@@ -1,113 +1,113 @@
 /*------------------------------------*\
-    $DEBUG
+    $tp-DEBUG
 \*------------------------------------*/
 /**
  * Debug mode will visually highlight any potential markup/accessibility quirks
  * in the browser. Set to `true` or `false`.
  */
 
-$debug-mode : false;
+$tp-debug-mode : false;
 
 
 /*------------------------------------*\
-    $OBJECTS AND ABSTRACTIONS FROM INUIT CSS
+    $tp-OBJECTS AND ABSTRACTIONS FROM INUIT CSS
 \*------------------------------------*/
 /**
  * Which objects and abstractions would you like to use?
  */
 
-$use-beautons     : true;
-$use-rules: true;
+$tp-use-beautons     : true;
+$tp-use-rules: true;
 
 
 /*------------------------------------*\
-    $BASE
+    $tp-BASE
 \*------------------------------------*/
 
-$base-color       : #444;
-$base-font-family : 'Open Sans', Helvetica, Arial;
-$base-font-size   : 14px;
-$base-line-height : 24px;
-$base-spacing-unit: $base-line-height;
-$base-ui-color    : #BFBFBF;
-$base-radius: 2px;
-$base-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+$tp-base-color       : #444;
+$tp-base-font-family : 'Open Sans', Helvetica, Arial;
+$tp-base-font-size   : 14px;
+$tp-base-line-height : 24px;
+$tp-base-spacing-unit: $tp-base-line-height;
+$tp-base-ui-color    : #BFBFBF;
+$tp-base-radius: 2px;
+$tp-base-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
 
 /*------------------------------------*\
-    $UI ELEMENTS
+    $tp-UI ELEMENTS
 \*------------------------------------*/
 
-$ui-radius: 2px;
+$tp-ui-radius: 2px;
 
 
 /*------------------------------------*\
-    $TEXT DIRECTION
+    $tp-TEXT DIRECTION
 \*------------------------------------*/
 
-$dir-default : "left";
-$dir-reverse : "right";
-$direction   : "LTR";
+$tp-dir-default : "left";
+$tp-dir-reverse : "right";
+$tp-direction   : "LTR";
 
-@if $direction == "RTL" {
-    $dir-default : "right";
-    $dir-reverse : "left";
+@if $tp-direction == "RTL" {
+    $tp-dir-default : "right";
+    $tp-dir-reverse : "left";
 }
 
 /*------------------------------------*\
-    $COLOR SWATCHES
+    $tp-COLOR SWATCHES
 \*------------------------------------*/
 
-$color-warning: #E74C3C;
-$color-primary: #1ABC9C;
+$tp-color-warning: #E74C3C;
+$tp-color-primary: #1ABC9C;
 
 
-$color-dark: #1F253D;
-$color-light-blue: #272F4D;
+$tp-color-dark: #1F253D;
+$tp-color-light-blue: #272F4D;
 
-$color-nice-blue: #394264;
+$tp-color-nice-blue: #394264;
 
-$color-light-grey: #EDEEF1;
+$tp-color-light-grey: #EDEEF1;
 
-$color-dark-grey: #BDC3C7;
+$tp-color-dark-grey: #BDC3C7;
 
 
 /*------------------------------------*\
-    $GRID SETTINGS
+    $tp-GRID SETTINGS
 \*------------------------------------*/
 
-$grid-columns : 12;
-$grid-spacing : 30px;
-$site-width   : 960px;
+$tp-grid-columns : 12;
+$tp-grid-spacing : 30px;
+$tp-site-width   : 960px;
 
 
 /*------------------------------------*\
-    $BREAKPOINTS
+    $tp-BREAKPOINTS
 \*------------------------------------*/
 
-$phone-breakpoint-end        : 480px;
-$tablet-breakpoint-start     : 600px;
-$desktop-breakpoint-start    : $site-width;
-$widescreen-breakpoint-start : 1400px;
+$tp-phone-breakpoint-end        : 480px;
+$tp-tablet-breakpoint-start     : 600px;
+$tp-desktop-breakpoint-start    : $tp-site-width;
+$tp-widescreen-breakpoint-start : 1400px;
 
 
 /*------------------------------------*\
-    $TYPOGRAPHY
+    $tp-TYPOGRAPHY
 \*------------------------------------*/
 
 
-$heading-font-family: $base-font-family;
+$tp-heading-font-family: $tp-base-font-family;
 
     /**
      * Mobile Sizes     
      */
     
-    $h1-size: 30px; //.alpha
-    $h2-size: 24px; //.beta
-    $h3-size: 20px; //.gamma
-    $h4-size: 18px; //.delta
-    $h5-size: 16px; //.epsilon
-    $h6-size: 14px; //.zeta
+    $tp-h1-size: 30px; //.alpha
+    $tp-h2-size: 24px; //.beta
+    $tp-h3-size: 20px; //.gamma
+    $tp-h4-size: 18px; //.delta
+    $tp-h5-size: 16px; //.epsilon
+    $tp-h6-size: 14px; //.zeta
 
 
     /**
@@ -115,113 +115,113 @@ $heading-font-family: $base-font-family;
      * Both tablets and desktops
      */
     
-    $h1-size-desktop: 48px;
-    $h2-size-desktop: 36px;
-    $h3-size-desktop: 24px;
-    $h4-size-desktop: 20px;
-    $h5-size-desktop: 18px;
-    $h6-size-desktop: 16px;
+    $tp-h1-size-desktop: 48px;
+    $tp-h2-size-desktop: 36px;
+    $tp-h3-size-desktop: 24px;
+    $tp-h4-size-desktop: 20px;
+    $tp-h5-size-desktop: 18px;
+    $tp-h6-size-desktop: 16px;
 
 
 /**
  * Optional font sizes
  */
 
-$giga-size  : 96px;
-$mega-size  : 72px;
-$kilo-size  : 48px;
-$milli-size : 13px;
-$micro-size : 12px;
+$tp-giga-size  : 96px;
+$tp-mega-size  : 72px;
+$tp-kilo-size  : 48px;
+$tp-milli-size : 13px;
+$tp-micro-size : 12px;
 
 /*------------------------------------*\
-    $LINKS
+    $tp-LINKS
 \*------------------------------------*/
 
-$link-color              : $color-primary;
-$link-hover-color        : $color-primary;
-$link-visited-color      : $link-color;
-$link-underline          : false;
-$link-underline-on-hover : true;
+$tp-link-color              : $tp-color-primary;
+$tp-link-hover-color        : $tp-color-primary;
+$tp-link-visited-color      : $tp-link-color;
+$tp-link-underline          : false;
+$tp-link-underline-on-hover : true;
 
 
 /*------------------------------------*\
-    $FORMS
+    $tp-FORMS
 \*------------------------------------*/
 
-$input-border-color  : $base-ui-color;
-$input-background    : #FAFAFA;
-$input-padding       : 0.6em 1em; 
-$input-padding-medium       : 0.8em 1em; 
-$input-padding-large       : 1em 1em; 
-$input-border-radius : $base-radius;
+$tp-input-border-color  : $tp-base-ui-color;
+$tp-input-background    : #FAFAFA;
+$tp-input-padding       : 0.6em 1em; 
+$tp-input-padding-medium       : 0.8em 1em; 
+$tp-input-padding-large       : 1em 1em; 
+$tp-input-border-radius : $tp-base-radius;
 
 /*------------------------------------*\
-    $BUTTONS
+    $tp-BUTTONS
 \*------------------------------------*/
 
-$button-padding            : 0.6em 1.2em;
-$button-padding-desktop    : 0.6em 1.2em;
-$button-border-radius      : $base-radius;
+$tp-button-padding            : 0.6em 1.2em;
+$tp-button-padding-desktop    : 0.6em 1.2em;
+$tp-button-border-radius      : $tp-base-radius;
 
     /**
      * Button default
      */
     
-    $button-default-background : #EDEEF1;
-    $button-default-color: #888;
+    $tp-button-default-background : #EDEEF1;
+    $tp-button-default-color: #888;
 
     /**
      * Button Primary
      */
     
-    $button-primary-background      : $color-primary;
-    $button-primary-border: $color-primary;
+    $tp-button-primary-background      : $tp-color-primary;
+    $tp-button-primary-border: $tp-color-primary;
     
     /**
      * Button Secondary
      */
     
-    $button-secondary-background: #9DA6AF;
-    $button-secondary-border: #9DA6AF;
+    $tp-button-secondary-background: #9DA6AF;
+    $tp-button-secondary-border: #9DA6AF;
 
     /**
      * Button Light
      */
     
-    $button-light-background: #fff;
-    $button-light-color: lighten($base-color, 10%);
-    $button-light-border: darken($base-ui-color,10%);
+    $tp-button-light-background: #fff;
+    $tp-button-light-color: lighten($tp-base-color, 10%);
+    $tp-button-light-border: darken($tp-base-ui-color,10%);
 
     /**
      * Button Dark
      */
     
-    $button-dark-background: #323A45;
-    $button-dark-border: #323A45;
+    $tp-button-dark-background: #323A45;
+    $tp-button-dark-border: #323A45;
 
     /**
      * Button Warning
      */
     
-    $button-warning-background: $color-warning;
-    $button-warning-border: $color-warning;
+    $tp-button-warning-background: $tp-color-warning;
+    $tp-button-warning-border: $tp-color-warning;
 
 
     /**
      * Button facebook
      */
     
-    $button-facebook-background: #5970B3;
-    $button-facebook-border: #5970B3;
+    $tp-button-facebook-background: #5970B3;
+    $tp-button-facebook-border: #5970B3;
 
     /**
      * Button google
      */
     
-    $button-google-background: #EF2213;
-    $button-google-border: #EF2213;
+    $tp-button-google-background: #EF2213;
+    $tp-button-google-border: #EF2213;
 
 
 
-$button-inverted-background     : #000;
-$button-inactive-background     : #ddd;
+$tp-button-inverted-background     : #000;
+$tp-button-inactive-background     : #ddd;

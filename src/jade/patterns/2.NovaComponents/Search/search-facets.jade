@@ -1,0 +1,19 @@
+| ---
+| name: Search breadcrumbs
+| description: |
+|   ### What
+|   Show filter selection with available results number indicator. It also allows user to cancel the filter.
+|   
+|   ### Use when
+|   It complements the facet based search navigation.
+| ---
+dl.ui-search-facets
+	dt Facets:
+	dd
+		a(href='#') Press releases
+		a.remove-facet(href='#')
+			em.fa.fa-times
+	dd
+		a(href='#') Year: 2013
+		a.remove-facet(href='#')
+			em.fa.fa-times

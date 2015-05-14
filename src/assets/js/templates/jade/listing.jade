@@ -1,6 +1,6 @@
 .tapestry-wrapper
 	
-	.container
+	.container.tp
 
 		.tapestry-menu-side
 			ul(ng-show="patterns.children.length > 1")
@@ -11,17 +11,17 @@
 
 			div(preview-and-markup patterns="patterns")
 
-			ul.pattern-list
+			ul.pattern-list.tp
 				li(ng-repeat="pattern in patterns.children")
 					
 					h3(id="{{pattern.name | anchor}}", once-text="pattern.name")
 					
 					div(preview-and-markup patterns="pattern")
 
-					div.pattern-variation(ng-repeat="variation in pattern.children")
+					div.pattern-variation.tp(ng-repeat="variation in pattern.children")
 						h4(id="{{variation.name | anchor}}", once-text="variation.name")
 						
 						div(preview-and-markup patterns="variation")
 					
-					div.pattern-comments(once-show='!disqus_enabled')
+					div.pattern-comments.tp(once-show='!disqus_enabled')
 						a(ng-click="loadComments($event)" data-disqus-identifier="{{pattern.name | anchor}}") Comments

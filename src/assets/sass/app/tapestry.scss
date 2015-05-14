@@ -5,26 +5,26 @@
 @import "../bourbon/bourbon";
 @import "modules/variables";
 @import "modules/mixins";
-$fa-font-path: "../../../bower_components/font-awesome/fonts";
+$tp-fa-font-path: "../../../bower_components/font-awesome/fonts";
 @import "./src/bower_components/font-awesome/scss/font-awesome.scss";
 
 /*
 Variables
  */
 
-$bg: #ecf0f3;
-$link-color: $color-primary;
-$base-ui-color : #BFBFBF;
-$border: lighten($base-ui-color, 10%);
-$fontfamily: 'Open Sans', Helvetica, Arial;
-$color-dark: #1F253D;
+$tp-bg: #ecf0f3;
+$tp-link-color: $tp-color-primary;
+$tp-base-ui-color : #BFBFBF;
+$tp-border: lighten($tp-base-ui-color, 10%);
+$tp-fontfamily: 'Open Sans', Helvetica, Arial;
+$tp-color-dark: #1F253D;
 
-body{
+body.tp{
     margin: 0;
 }
 
-html[ng-app]{
-    background: $bg;
+html.tp[ng-app]{
+    background: $tp-bg;
 }
 
 /**
@@ -40,7 +40,7 @@ html[ng-app]{
  */
 
 .tapestry-header{
-    background: $color-dark;
+    background: $tp-color-dark;
     color: #fff;
     text-align: center;
     padding: 1em;
@@ -49,21 +49,29 @@ html[ng-app]{
     min-height: 70px;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 250px;
+    right: 0;
+    width: auto;
+    @include media-query(phone-desk){
+        left: 0;
+        width: 100%;
+        text-align: left;
+    }
     z-index: 2;
-    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    @include media-query(phone-desk){
+        @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    }
 
     .text-input,
     textarea{
-        border: 1px $input-border-color solid;
-        padding: $input-padding;
-        background: $input-background;
+        border: 1px $tp-input-border-color solid;
+        padding: $tp-input-padding;
+        background: $tp-input-background;
         transition: all 0.1s ease-in;   
         vertical-align: middle;
         outline: none;  
         width: 100%;    
-        border-radius: $input-border-radius;    
+        border-radius: $tp-input-border-radius;    
         @include font-size(14px, false);
         background: transparent;
         border-color: #fff;
@@ -90,7 +98,7 @@ html[ng-app]{
             margin: 0;
             margin-top: -8px;
             height: 15px;
-            color: $base-ui-color;
+            color: $tp-base-ui-color;
         }
 
         
@@ -152,10 +160,11 @@ html[ng-app]{
         .text-input{
             
         }
-    
 
-    .menu__opened &{
-        @include transform(translate3d(250px, 0, 0));
+    @include media-query(phone-desk){
+        .menu__opened &{
+            @include transform(translate3d(250px, 0, 0));
+        }
     }
 
     
@@ -185,8 +194,10 @@ html[ng-app]{
         border: none;  
         padding-left: 20px;
         font-size: 30px;
-        display: block;
-
+        display: none;
+        @include media-query(phone-desk) {
+            display : block;
+        }
         .fa{
             vertical-align: top;
             line-height: 70px;
@@ -204,49 +215,49 @@ html[ng-app]{
 
 /*------------------------------------*\
         AUTOCOMPLETE.CSS
-    \*------------------------------------*/
+\*------------------------------------*/
 
-    .autocomplete-suggestions { 
-        border: 1px solid $base-ui-color; 
-        background: #fff; 
-        @include base-box-shadow;
-        border-radius: $base-radius;
-        overflow: auto; 
-        font-family: $fontfamily;
+.autocomplete-suggestions.tp { 
+    border: 1px solid $tp-base-ui-color; 
+    background: #fff; 
+    @include base-box-shadow;
+    border-radius: $tp-base-radius;
+    overflow: auto; 
+    font-family: $tp-fontfamily;
+}
+
+.autocomplete-suggestion.tp { 
+    padding: 0.3em 1em; 
+    //white-space: nowrap; 
+    overflow: hidden;
+    cursor: pointer; 
+    border-bottom: 1px $tp-base-ui-color solid;
+
+    &:last-child{
+        border-bottom: none;
     }
+}
 
-    .autocomplete-suggestion { 
-        padding: 0.3em 1em; 
-        //white-space: nowrap; 
-        overflow: hidden;
-        cursor: pointer; 
-        border-bottom: 1px $base-ui-color solid;
+.autocomplete-selected.tp { 
+    background: $tp-color-light-grey; 
+}
 
-        &:last-child{
-            border-bottom: none;
-        }
-    }
+.autocomplete-suggestions.tp strong { 
+    font-weight: normal; 
+    color: $tp-color-primary; 
+    font-weight: 600;
+}
 
-    .autocomplete-selected { 
-        background: $color-light-grey; 
-    }
+/**
+ * Description
+ */
 
-    .autocomplete-suggestions strong { 
-        font-weight: normal; 
-        color: $color-primary; 
-        font-weight: 600;
-    }
-
-    /**
-     * Description
-     */
-
-    .ac__desc{
-        display: block;
-        font-size: 12px;
-        padding: 5px 0;
-        text-transform: capitalize;
-    }
+.ac__desc.tp{
+    display: block;
+    font-size: 12px;
+    padding: 5px 0;
+    text-transform: capitalize;
+}
 
 
 
@@ -258,7 +269,7 @@ html[ng-app]{
 .tapestry-menu-side{
     line-height: 1.4;
     display: none;
-    font-family: $fontfamily;
+    font-family: $tp-fontfamily;
     
     ul{
         list-style: none;        
@@ -281,7 +292,7 @@ html[ng-app]{
     }
 
     a{
-        color: darken($base-ui-color, 20%);
+        color: darken($tp-base-ui-color, 20%);
         text-decoration: none;
         padding: 5px 0;
         display: block;
@@ -290,13 +301,13 @@ html[ng-app]{
 
     a:hover{
         
-        color: $base-color;
+        color: $tp-base-color;
         
         
     }
 
     .active, .active:hover, .active >a{
-        color: $color-primary;
+        color: $tp-color-primary;
         //font-weight: 600;
     }
 
@@ -305,10 +316,10 @@ html[ng-app]{
         position: relative;
     }
 
-    @include media-query(widescreen){
-        position: absolute;
-        left: -200px;
-        top: 5px;
+    @include media-query(desktop){
+        position: fixed;
+        left: 250px;
+        top: 100px;
         width: 200px;
         li{
             display: block;
@@ -333,11 +344,11 @@ html[ng-app]{
  * Menu
  */
 
-$menu-spacing: 20px;
+$tp-menu-spacing: 20px;
 
 .tapestry-menu{
-    font-family: $fontfamily;
-    background: $color-light-grey;
+    font-family: $tp-fontfamily;
+    background: $tp-color-light-grey;
     background: #fff;
     position: fixed;
     left: 0;
@@ -346,18 +357,22 @@ $menu-spacing: 20px;
     height: 100%;
     overflow-y: auto;
     z-index: 1;
-    padding: 20px $menu-spacing;        
+    padding: 20px $tp-menu-spacing;        
     @include font-size(16px, false);
-    @include transform(translate3d(-250px, 0, 0));
-    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    @include media-query(phone-desk){
+        @include transform(translate3d(-250px, 0, 0));
+        @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    }
     font-size: 16px;
     line-height: 1.6;
-    //border-right: 1px $base-ui-color solid;    
+    //border-right: 1px $tp-base-ui-color solid;    
 
 
     .menu__opened &{
         display: block;
-        @include transform(translate3d(0px, 0, 0));
+        @include media-query(phone-desk){
+            @include transform(translate3d(0px, 0, 0));
+        }
         box-shadow: 0px 0 6px 1px rgba(0,0,0,0.1);
     }
 
@@ -377,10 +392,10 @@ $menu-spacing: 20px;
 
     ul{
         list-style: none;
-        margin: 0 (-($menu-spacing)) ($menu-spacing) (-($menu-spacing));
+        margin: 0 (-($tp-menu-spacing)) ($tp-menu-spacing) (-($tp-menu-spacing));
         padding: 0;
         padding-bottom: 15px;
-        border-bottom: 1px $base-ui-color solid;
+        border-bottom: 1px $tp-base-ui-color solid;
 
         
     }
@@ -391,15 +406,15 @@ $menu-spacing: 20px;
 
     a{
         display: block;
-        color: $color-primary;
-        padding: 3px $menu-spacing;
+        color: $tp-color-primary;
+        padding: 3px $tp-menu-spacing;
         text-decoration: none;
     }
 
     a:hover, .active > a{
-        background: lighten($color-dark-grey,10%);
+        background: lighten($tp-color-dark-grey,10%);
 
-        background: $color-primary;color: #fff;
+        background: $tp-color-primary;color: #fff;
     }
 }
 
@@ -408,10 +423,11 @@ $menu-spacing: 20px;
 
 .tapestry__heading{
     margin: 8px 0 0 0;     
-    font-family: $fontfamily;
+    font-family: $tp-fontfamily;
 
-    @include media-query(tablet-desktop){
-        margin-top: 5px;
+    @include media-query(phone-desk){
+        margin-top: 9px;
+        padding-left: 50px;
     }
 }
 
@@ -423,20 +439,42 @@ $menu-spacing: 20px;
 .tapestry-wrapper{
     padding-top: 15px;
 
-    .container{
+    .container.tp{
         position: relative;
+        width: auto;
+        margin: 0 20px 0 450px;
+        padding: 0;
     }
-    
-    @include media-query(desktop){
-        > .container{
-            width: 990px;
+
+
+    @include media-query(phone-desk){
+        > .container.tp{
+            width: auto;
             margin: 0 auto;
-        }    
+            //width: auto;
+            //margin: 0 0 0 250px;
+            padding: 15px;
+        }
     }
-    
+
 
     @include media-query(tablet-desktop){
         padding-top: 30px;
+    }
+    
+    
+    &.ext.tp {
+        .container.tp {
+            margin-left: 270px;
+            @include media-query(phone-desk){
+                margin: 0 auto;
+                width: auto;
+            }
+        }
+        .block--preview.tp {
+            //padding-bottom : 15px;
+            padding: 0;
+        }
     }
 }
 
@@ -453,13 +491,18 @@ $menu-spacing: 20px;
  */
 
 .tapestry-content{
-    @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    @include media-query(phone-desk){
+
+        @include transition(all 0.2s cubic-bezier(0,0,0.25,1));
+    }
     position: relative;    
     
     padding-top: 70px;
+    @include media-query(phone-desk){
 
-    .menu__opened &{
-        @include transform(translate3d(250px, 0, 0));
+        .menu__opened &{
+            @include transform(translate3d(250px, 0, 0));
+        }
     }
 }
 
@@ -471,7 +514,11 @@ $menu-spacing: 20px;
 .ui-module-hero-tapestry{
     color: #fff;
     padding: 30px 0 30px 0;
-    background: $color-primary;
+    margin: 0 0 0 250px;
+    @include media-query(phone-desk){
+        margin: 0;
+    }
+    background: $tp-color-primary;
     text-align: center;
     
 
@@ -486,7 +533,7 @@ $menu-spacing: 20px;
 
     h1, .text--lead{
         
-        font-family: $fontfamily;
+        font-family: $tp-fontfamily;
     }
 
     .text--lead{
@@ -510,8 +557,8 @@ $menu-spacing: 20px;
  * Dark button
  */
 
-.btn-view, .btn-download{
-    line-height: normal;
+.btn-view.tp, .btn-download.tp{
+  line-height: normal;
   padding: 1em 2em;
   border: 1px solid transparent;
   background: #EDEEF1;
@@ -525,20 +572,20 @@ $menu-spacing: 20px;
   -moz-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
   text-decoration: none;
-  font-family: $fontfamily;
+  font-family: $tp-fontfamily;
   vertical-align: middle;
   display: inline-block;
   margin-bottom: 0;
 }
-.btn-download:hover, .btn-download:active, .btn-download {
+.btn-download.tp:hover, .btn-download.tp:active, .btn-download.tp {
   background: #323A45;
   border-color: #323A45;
   color: #fff; }
-.btn-download:hover {
+.btn-download.tp:hover {
   background: #475363;
   border-color: #475363;
   text-decoration: none; }
-.btn-download:active, .btn-download:focus {
+.btn-download.tp:active, .btn-download.tp:focus {
   background: #1d2127;
   border-color: #1d2127; }
 
@@ -547,7 +594,7 @@ $menu-spacing: 20px;
  * Unstyled button
  */
 
-.btn-unstyled{
+.btn-unstyled.tp{
     padding: 0;
     margin: 0;
     border: none;
@@ -555,14 +602,14 @@ $menu-spacing: 20px;
     cursor: pointer;
 }
 
-.btn-view, .btn-view:hover{
+.btn-view.tp, .btn-view.tp:hover{
     background: transparent;
-    border: 1px $color-dark solid;
-    color: $color-dark;
+    border: 1px $tp-color-dark solid;
+    color: $tp-color-dark;
     text-decoration: none;
 }
 
-.btn-view:hover{
+.btn-view.tp:hover{
     opacity: 0.8;
 }
 
@@ -576,7 +623,7 @@ $menu-spacing: 20px;
     list-style: none;
     margin: 0 auto;
     padding: 30px 0 0 0;
-    font-family: $fontfamily;
+    font-family: $tp-fontfamily;
     font-size: 0;
 
     @include media-query(desktop){
@@ -611,9 +658,9 @@ $menu-spacing: 20px;
 .tapestry__footer{
     text-align: center;
     margin-top: 2em;
-    border-top: 1px lighten($base-ui-color, 10%) solid;
+    border-top: 1px lighten($tp-base-ui-color, 10%) solid;
     padding-top: 20px;
-    font-family: $fontfamily;
+    font-family: $tp-fontfamily;
     font-size: 12px;
 
     p{
@@ -641,8 +688,8 @@ $menu-spacing: 20px;
     > li > h3{
         padding: 0.5em 15px;
         margin: 0;        
-        font-family: $fontfamily;        
-        border-bottom: 1px $border solid;
+        font-family: $tp-fontfamily;        
+        border-bottom: 1px $tp-border solid;
     }
 
     > li > div > h4{
@@ -650,8 +697,8 @@ $menu-spacing: 20px;
         margin: 0;
         font-weight: 600;
         background: #fff;
-        font-family: $fontfamily;
-        border-bottom: 1px $border solid;
+        font-family: $tp-fontfamily;
+        border-bottom: 1px $tp-border solid;
     }
 
     
@@ -660,45 +707,45 @@ $menu-spacing: 20px;
    
 
    
-    .block--description{
+    .block--description.tp{
         //margin: 0 -15px 0 -15px ;
         background: #f9fbfc;
         border-radius: 0 0 5px 5px;
-        border-top: 1px $border solid;
+        border-top: 1px $tp-border solid;
         
     }
     
 }
-    .pattern-variation{
+    .pattern-variation.tp{
         margin-bottom: 15px;
     }
 
-    .block--preview{
+    .block--preview.tp{
         padding: 15px;
         padding-bottom: 40px;
     }
 
-    .block--example{
+    .block--example.tp{
         background: #fff;
         //padding: 15px;
         
         border-radius: 5px;
-        //border: 1px $base-ui-color solid;
+        //border: 1px $tp-base-ui-color solid;
     }
 
-     pre{
+     pre.tp{
         margin: 0 !important;
-        background: lighten($bg, 3%) !important;
+        background: lighten($tp-bg, 3%) !important;
         border-radius: 0 0 5px 5px;
         padding: 1em;
         font-size: 16px;
         max-height: 400px;
         overflow: auto;
         white-space: wrap !important;
-        border-top: 1px $border solid;
+        border-top: 1px $tp-border solid;
     }
     
-    code{
+    code.tp{
         white-space: pre-wrap !important;
     }
 
@@ -707,11 +754,11 @@ $menu-spacing: 20px;
      * Code
      */
     
-    .example-code{
+    .example-code.tp{
         position: relative;
     }
 
-    .toggle-code{
+    .toggle-code.tp{
         position: absolute;
         right: 10px;
         top: -40px;
@@ -721,17 +768,17 @@ $menu-spacing: 20px;
         @include user-select(none);
     }
 
-    .toggle-code.active{
-        color: $color-primary;
+    .toggle-code.tp.active{
+        color: $tp-color-primary;
     }
 
     /**
      * Description
      */
     
-    .block--description{
+    .block--description.tp{
         padding: 20px 15px 10px 15px;        
-        background: darken($color-light-grey, 5%);
+        background: darken($tp-color-light-grey, 5%);
         
         h3{
             margin-bottom: 5px;
@@ -746,7 +793,7 @@ $menu-spacing: 20px;
  * Palette
  */
 
-.palette{
+.palette.tp{
     list-style: none;
     margin-left: 0;
     font-size: 0;
@@ -754,7 +801,7 @@ $menu-spacing: 20px;
     > li{
         
         margin-right: 1%;
-        @include font-size($milli-size, false);        
+        @include font-size($tp-milli-size, false);        
         color: #fff;
         text-align: center;
 
@@ -794,7 +841,7 @@ $menu-spacing: 20px;
  * Row demo
  */
 
-.row--demo{
+.row--demo.tp{
     margin-left: 0 !important;
     margin-right: 0 !important;
     > .columns{
@@ -826,7 +873,7 @@ $menu-spacing: 20px;
  * Block meta
  */
 
-.block--meta{
+.block--meta.tp{
     padding: 15px;
 }
 
@@ -836,7 +883,7 @@ $menu-spacing: 20px;
  * Comments
  */
 
-.pattern-comments{
+.pattern-comments.tp{
     padding: 15px;
 
     > a{
@@ -846,5 +893,19 @@ $menu-spacing: 20px;
             content: "\f075";
             margin-right: 5px;
         }
+    }
+}
+
+
+.container.tp.altered {
+    @include media-query(phone-desk){
+        
+            width: auto;
+            margin: 0;
+        
+    }
+    @include media-query(desktop){
+        margin: 0 20px 0 250px;
+        width : auto;
     }
 }

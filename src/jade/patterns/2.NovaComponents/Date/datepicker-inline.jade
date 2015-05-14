@@ -1,0 +1,26 @@
+| ---
+| name: Inline datepicker
+| ---
+.dropdown.float--right
+	button.btn.btn--unstyled(type='button', data-toggle='dropdown')
+		em.fa.fa-ellipsis-h.fa-lg.fa-lone
+	ul.ui-dropdown
+		li
+			a(href='#')
+				em.fa.fa-circle.fa-fw
+				| Birthdays
+		li
+			a(href='#')
+				em.fa.fa-circle.fa-fw
+				| Public holidays
+		li
+			a(href='#')
+				em.fa.fa-circle.fa-fw
+				| Meetings
+		li.seperator
+		li
+			a(href='#')
+				em.fa.fa-plus.fa-fw
+				| Add a calendar
+h2 My calendar
+.js-datepicker-inline

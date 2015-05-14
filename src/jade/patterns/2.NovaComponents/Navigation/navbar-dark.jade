@@ -1,0 +1,63 @@
+| ---
+| name: Navigation dark
+| ---
+header.nav-bar.nav-bar--inverted
+	.container
+		a.brand-logo(href='#') Logo
+		// Toggle Menu
+		button.btn.btn--unstyled.btn--toggle
+			em.fa.fa-bars
+		nav.nav-primary
+			ul
+				li.has-dropdown
+					a(href='#') Products
+					ul.ui-dropdown
+						li
+							a(href='#') Open
+						li
+							a(href='#') Edit
+						li.has-dropdown
+							a(href='#') Move to a list
+							ul.ui-dropdown
+								li
+									a(href='#') List 1
+								li
+									a(href='#') List 1
+								li
+									a(href='#') List 1
+								li
+									a(href='#') List 1
+								li.has-dropdown
+									a(href='#') Another nested dropdown
+									ul.ui-dropdown
+										li
+											a(href='#') List 1
+										li
+											a(href='#') List 1
+										li
+											a(href='#') List 1
+										li
+											a(href='#') List 1
+										li
+											a(href='#') List 1
+						li.seperator
+						li
+							a(href='#') Delete
+				li
+					a(href='#') Business
+				li
+					a(href='#') Pricing
+				li
+					a(href='#') Customers
+		nav.nav-secondary
+			ul
+				li
+					a.btn.btn--light(href='#') Try for free
+				li
+					a(href='#') Login
+				li
+					form
+						.form-control
+							input.text-input.input-soft(type='text', placeholder='Search')
+							button.btn.btn--unstyled
+								em.fa.fa-search.fa-lg

@@ -1,0 +1,17 @@
+
+<div class="tapestry-wrapper ext tp">
+  <div class="container tp">
+    <div class="main-content">
+      <div preview-only="preview-only" patterns="patterns"></div>
+      <ul class="pattern-list tp">
+        <li ng-repeat="pattern in patterns.children">
+          <h3 id="{{pattern.name | anchor}}" once-text="pattern.name"></h3>
+          <div preview-only="preview-only" patterns="pattern"></div>
+          <div ng-repeat="variation in pattern.children" class="pattern-variation tp">
+            <h4 id="{{variation.name | anchor}}" once-text="variation.name"></h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

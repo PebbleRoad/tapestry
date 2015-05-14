@@ -68,14 +68,25 @@ angular.module('tapestry', [
 
             value.slug = value.name.replace(/\s+/g, '-').toLowerCase()
 
-            if(value.slug == "templates"){
+            if((value.slug == "templates") || (value.slug == "novatemplates")){
 
                 $routeProvider.when('/' + value.slug + '/:slug', {
                     templateUrl: 'assets/js/templates/listing-template.html',
                     controller: 'templateController'
                 })
 
-            }else{
+            }
+            
+            else if (value.slug == "grids") {
+    
+                $routeProvider.when('/' + value.slug + '/:slug', {
+                    templateUrl: 'assets/js/templates/listing_no-sub.html',
+                    controller: 'listingController'
+                })
+            }
+            
+            
+            else{
 
                 $routeProvider.when('/' + value.slug + '/:slug', {
                     templateUrl: 'assets/js/templates/listing.html',

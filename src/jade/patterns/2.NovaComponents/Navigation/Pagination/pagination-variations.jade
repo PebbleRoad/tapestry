@@ -1,0 +1,33 @@
+| ---
+| name: Pagination variations
+| ---
+ul.ui-pagination
+	li.pagination__box
+		a(href='#book-a')
+			em.fa.fa-long-arrow-left.fa-lg
+			| Prev
+	li.pagination__box
+		a(href='#book-b')
+			| Next
+			em.fa.fa-long-arrow-right.fa-lg.fa-right
+ul.ui-pagination.ui-pagination--constrict
+	li.pagination__box
+		a(href='#book-a')
+			em.fa.fa-angle-left.fa-2x.fa-fw
+	li.pagination__box
+		a(href='#book-b')
+			em.fa.fa-angle-right.fa-2x.fa-fw
+ul.ui-pagination.ui-pagination--constrict
+	li.pagination__box
+		a(href='#book-a')
+			em.fa.fa-long-arrow-left.fa-lg
+	li.pagination__box
+		a(href='#book-b')
+			em.fa.fa-long-arrow-right.fa-lg
+ul.ui-pagination
+	li.pagination__box.box--circular
+		a(href='#book-a')
+			em.fa.fa-angle-left.fa-2x
+	li.pagination__box.box--circular
+		a(href='#book-b')
+			em.fa.fa-angle-right.fa-2x

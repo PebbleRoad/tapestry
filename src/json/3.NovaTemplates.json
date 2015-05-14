@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Landing Pages",
+        "slug": "Landing Pages",
+        "children": [
+            {
+                "path": "patterns/3.NovaTemplates/Landing Pages/landing.md",
+                "name": "Article landing",
+                "slug": "landing.md",
+                "meta": {
+                    "url": "templateurl",
+                    "preview": "patterns/3.templates/Landing Pages/landing.png"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Listing Pages",
+        "slug": "Listing Pages",
+        "children": [
+            {
+                "path": "patterns/3.NovaTemplates/Listing Pages/listing.md",
+                "name": "Article listing",
+                "slug": "listing.md",
+                "meta": {
+                    "url": "templateurl",
+                    "preview": "patterns/3.templates/Listing Pages/listing.png"
+                }
+            }
+        ]
+    }
+]

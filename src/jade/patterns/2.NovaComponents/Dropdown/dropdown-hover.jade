@@ -1,0 +1,38 @@
+| ---
+| name: Dropdown on hover
+| ---
+.dropdown.dropdown--hover
+	a(href='#', data-toggle='dropdown') Dropdown link
+	em.caret
+	ul.ui-dropdown
+		li
+			a(href='#') Open
+		li
+			a(href='#') Edit
+		li.dropdown.dropdown--hover
+			a(href='#') Move to a list
+			ul.ui-dropdown
+				li
+					a(href='#') List 1
+				li
+					a(href='#') List 1
+				li
+					a(href='#') List 1
+				li
+					a(href='#') List 1
+				li.dropdown.dropdown--hover
+					a(href='#') Another nested dropdown
+					ul.ui-dropdown
+						li
+							a(href='#') List 1
+						li
+							a(href='#') List 1
+						li
+							a(href='#') List 1
+						li
+							a(href='#') List 1
+						li
+							a(href='#') List 1
+		li.seperator
+		li
+			a(href='#') Delete

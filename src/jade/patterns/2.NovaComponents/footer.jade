@@ -1,0 +1,26 @@
+| ---
+| name: Site footer
+| description: |
+|   ### What
+|   Consists of site navigation, contact information, feedback, report and link to social channels. Treat this as part of the global navigation, complementary to the header.
+|   
+|   ### Use when
+|   Place the sitemap in the footer of every page in the site.
+| ---
+.container
+	.row
+		.columns.ten.twelve--tablet.column--center
+			footer.tapestry__footer
+				p Designed and built by the folks at
+				p
+					a(href='http://pebbleroad.com')
+						img(src='assets/images/logo.png', alt='', width='187')
+				p
+					| Code licensed under MIT, documentation under CC BY 3.0.
+					br
+					| Version
+					span(tapestry-version='tapestry-version')
+					| . Last Updated on
+					span(last-updated='last-updated')
+					| .
+					a(href='#/changelog') Changelog
