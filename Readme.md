@@ -7,16 +7,15 @@ An app for creating and managing your front-end pattern library.
 3. Free and open source
 4. Comment on each pattern using `disqus`
 
-### Built with Gulp, Angular and Markdown/YAML
+Built with Gulp, Angular and Markdown/YAML.
 
-## How to use
-
-Dependecy
+## Dependencies
 
 * [NodeJS](http://nodejs.org/)
-* Bower
-        
-        npm install -g bower
+* [Bower](http://bower.io/)
+* [Gulp](http://gulpjs.com/)
+
+## How to use
 
 1. Clone the repository
 
@@ -29,6 +28,7 @@ Dependecy
 3. Launch the server
 
         gulp patterns
+        
 4. Open your browser and navigate to
         
         http://localhost:8000
