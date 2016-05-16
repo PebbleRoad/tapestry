@@ -11,66 +11,40 @@
 /**
  * 600px
  */
-
-@include media-query(tablet-desktop){
-
-	@import "tablets-desktops";
-  
-}
+@import "tablets-desktops";
 
 
 /**
  * 992px
  */
+@import "desktop";
 
-@include media-query(desktop){
-  
-  @import "desktop";
-
-}
 
 /**
  * Target Specific Devices Only 
  */
+@import "phone";
 
-
-@include media-query(phone){
-  @import "phone";
-}
 
 /**
  * Iphone Landscape
  */
  
-@include media-query(phone-landscape){
-
- 	@import "phone-landscape";
- 	
-}
- 
+@import "phone-landscape";
 
 
 /**
  * 768px : For Ipad
  */
 
-@include media-query(tablet){
+@import "tablet";
 
-  @import "tablet";
-}
 
 /**
  * iPads (landscape)
  */
 
-
-@include media-query(tablet-landscape) {
-	
-	@import "tablet-landscape";
-}
-
-
-
+@import "tablet-landscape";
 
 
 /**
@@ -81,10 +55,10 @@
   
 }
 
+
 /**
  * Retina
  */
-
 
 @include media-query(retina){
 

@@ -3,16 +3,19 @@
 \*------------------------------------*/
 
 /*
- * Show Hide Sections
- */
-
-.hide-for-phone{
-  display:none;
-}
-
-
-/*
- * Add Grids for Phones only
+ * Add Grids for Phones
  */
 
 @import "../grids/grid-phone";
+
+@include media-query(phone){
+
+	/*
+	 * Show Hide Sections
+	 */
+
+	.hide-for-phone{
+	  display:none;
+	}
+
+}
