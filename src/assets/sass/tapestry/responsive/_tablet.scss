@@ -12,7 +12,8 @@
 /*
  * Show Hide Sections
  */
-
-.hide-for-tablet{
-  display:none;
+@include media-query(tablet){
+	.hide-for-tablet{
+	  display:none;
+	}
 }
