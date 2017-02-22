@@ -3,211 +3,210 @@
  */
 
 angular.module('tapestry.directives', [])
-		
-	.directive('compile', ['$compile', function ($compile) {
-			return function(scope, element, attrs) {
-					scope.$watch(
-						function(scope) {
-							return scope.$eval(attrs.compile);
-						},
-						function(value) {
 
-							var v = value? marked(value): value;
-							
-							element.html(v);
-							
-							$compile(element.contents())(scope);
-						}
-					);
-			}
-		}])
-	.directive('previewAndMarkup', function(){
+  .directive('compile', ['$compile', function ($compile) {
+      return function(scope, element, attrs) {
+          scope.$watch(
+            function(scope) {
+              return scope.$eval(attrs.compile);
+            },
+            function(value) {
 
-		return {
+              var v = value? marked(value): value;
 
-			restrict: 'A',
-			scope: {
-				patterns: '='
-			}, 
-			template: '<div once-wait-for="patterns" once-show="patterns.path" class="block block--example"> \
-							<div class="block block--preview"><div raw-include="raw-include" patterns="patterns" src="patterns.path"></div></div> \
-							<div class="block block--description"> \
-								<div class="patterns-description"></div> \
-							</div> \
-							<div once-wait-for="patterns" once-hide="patterns.meta.hidecode" class="example-code"> \
-								<a class="toggle-code" ng-hide="patterns.meta.hidecode" ng-class="{active:patterns.togglecode}" ng-click="patterns.togglecode = !patterns.togglecode"><em class="fa fa-code fa-lg" /></a> \
-								<pre ng-show="patterns.togglecode"><code class="language-markup"></code></pre> \
-							</div> \
-							<div class="block--meta" ng-show="patterns.meta.length"> \
-								<div ng-repeat="meta in patterns.meta"> \
-									{{meta}} \
-								</div> \
-							</div>\
-						</div>'
+              element.html(v);
 
-		}
-	})
-	.directive('rawInclude', [
-		 '$http', '$templateCache', '$compile', '$q', '$timeout',
-		 	function ($http, $templateCache, $compile, $q, $timeout) {
+              $compile(element.contents())(scope);
+            }
+          );
+      }
+    }])
+  .directive('previewAndMarkup', function(){
 
-		 		var totalcount = 0		 			
+    return {
 
-				return {
-					restrict: 'A',
-					terminal: true,
-					scope: {
-						patterns: '='
-					},
-					compile: function (telement, attr) {
+      restrict: 'A',
+      scope: {
+        patterns: '='
+      },
+      template: '<div once-wait-for="patterns" once-show="patterns.path" class="block block--example"> \
+              <div class="block block--preview"><div raw-include="raw-include" patterns="patterns" src="patterns.path"></div></div> \
+              <div class="block block--description"> \
+                <div class="patterns-description"></div> \
+              </div> \
+              <div once-wait-for="patterns" once-hide="patterns.meta.hidecode" class="example-code"> \
+                <a class="toggle-code" ng-hide="patterns.meta.hidecode" ng-class="{active:patterns.togglecode}" ng-click="patterns.togglecode = !patterns.togglecode"><em class="fa fa-code fa-lg" /></a> \
+                <pre ng-show="patterns.togglecode"><code class="language-markup"></code></pre> \
+              </div> \
+              <div class="block--meta" ng-show="patterns.meta.length"> \
+                <div ng-repeat="meta in patterns.meta"> \
+                  {{meta}} \
+                </div> \
+              </div>\
+            </div>'
 
-						var srcExp = attr.src, count = 0;
+    }
+  })
+  .directive('rawInclude', [
+     '$http', '$templateCache', '$compile', '$q', '$timeout',
+       function ($http, $templateCache, $compile, $q, $timeout) {
 
-						return function (scope, element) {
+         var totalcount = 0
 
-							scope.$watch('patterns', function(newValue){
+        return {
+          restrict: 'A',
+          terminal: true,
+          scope: {
+            patterns: '='
+          },
+          compile: function (telement, attr) {
 
-								if(newValue){
-									if(scope.patterns && scope.patterns.children) totalcount = scope.patterns.children.length
-								}
-							}, true)
+            var srcExp = attr.src, count = 0;
 
-							var changeCounter = 0
-														
+            return function (scope, element) {
 
-							scope.$watch(srcExp, function (src) {
+              scope.$watch('patterns', function(newValue){
 
-								var thisChangeId = ++changeCounter;								
+                if(newValue){
+                  if(scope.patterns && scope.patterns.children) totalcount = scope.patterns.children.length
+                }
+              }, true)
 
-								if (src) {
+              var changeCounter = 0
 
 
-									$http.get(src, { cache: $templateCache }).success(function (response) {
-										
-										if (thisChangeId !== changeCounter) return;
+              scope.$watch(srcExp, function (src) {
 
-										/* Increment counter */
-										
-										count++;
+                var thisChangeId = ++changeCounter;
 
-										/**
-										 * Parsing Markdown files
-										 * @type {Object}
-										 */
-										
-										var parsedContent = {                    
-						                    yaml: '',
-						                    markdown: '', 
-						                    html: '',
-						                    meta: {}
-						                };
-
-						                var re = /^(-{3}(?:\n|\r)([\w\W]+?)-{3})?([\w\W]*)*/
-										      , results = re.exec(response.trim())
-										      , conf = {}
-										      , yamlOrJson,
-										      name = "content"
-
-										if((yamlOrJson = results[2])) {
-											
-											if(yamlOrJson.charAt(0) === '{') { 
-												conf = JSON.parse(yamlOrJson);
-											} else {
-												conf = jsyaml.load(yamlOrJson);
-											}
-										}
-
-										conf[name] = results[3] ? results[3] : '';
+                if (src) {
 
 
-						                /* Add description */
+                  $http.get(src, { cache: $templateCache }).success(function (response) {
 
-						                var $description = element.parent().next();
+                    if (thisChangeId !== changeCounter) return;
 
-						                if(conf.description){
-						                	
-						                	parsedContent.markdown = marked(conf.description);					
-						                	
-						                	$description.html(parsedContent.markdown)
+                    /* Increment counter */
 
-						                }else{
-						                	
-						                	/* If there is no description: Hide it */
+                    count++;
 
-						                	$description.hide()
-						                }
-						                						                
-										/* Element preview */
+                    /**
+                     * Parsing Markdown files
+                     * @type {Object}
+                     */
 
-										element.html(conf.content)
+                    var parsedContent = {
+                                yaml: '',
+                                markdown: '',
+                                html: '',
+                                meta: {}
+                            };
 
-										/* Compile Angular directives */
-										
-										$compile(element.contents())(scope);
+                            var re = /^(-{3}(?:\n|\r)([\w\W]+?)-{3})?([\w\W]*)*/
+                          , results = re.exec(response.trim())
+                          , conf = {}
+                          , yamlOrJson,
+                          name = "content"
 
-										/* Trigger element added */
-										
-										if(count == totalcount) {
-											
-											$timeout(function(){
+                    if((yamlOrJson = results[2])) {
 
-												angular.element('body').trigger('tapestry.completed')	
-											},500)											
-											
-										}
+                      if(yamlOrJson.charAt(0) === '{') {
+                        conf = JSON.parse(yamlOrJson);
+                      } else {
+                        conf = jsyaml.load(yamlOrJson);
+                      }
+                    }
 
-
-										/* Element Syntax highlight */
-
-										var code = element.closest('.block--example').find('code'),
-												$element = element.clone();
-										
-										/* Adds codes to the code block */
-
-										code.text(conf.content.trim());
-
-										/* Highlighting */
-										
-										Prism.highlightElement(code[0]);
+                    conf[name] = results[3] ? results[3] : '';
 
 
-									}).error(function () {
-											
-										if (thisChangeId === changeCounter) element.html('');
+                            /* Add description */
 
-									});
-								}
-						
-								else element.html('');
-					
-							});
+                            var $description = element.parent().next();
 
-														
-						};
+                            if(conf.description){
+
+                              parsedContent.markdown = marked(conf.description);
+
+                              $description.html(parsedContent.markdown)
+
+                            }else{
+
+                              /* If there is no description: Hide it */
+
+                              $description.hide()
+                            }
+
+                    /* Element preview */
+
+                    element.html(conf.content)
+
+                    /* Compile Angular directives */
+
+                    $compile(element.contents())(scope);
+
+                    /* Trigger element added */
+
+                    if(count == totalcount) {
+
+                      $timeout(function(){
+
+                        angular.element('body').trigger('tapestry.completed')
+                      },500)
+
+                    }
+
+
+                    /* Element Syntax highlight */
+                    var code = element.parent().parent().find('.example-code code'),
+                        $element = element.clone();
+
+                    /* Adds codes to the code block */
+
+                    code.text(conf.content.trim());
+
+                    /* Highlighting */
+
+                    Prism.highlightElement(code[0]);
+
+
+                  }).error(function () {
+
+                    if (thisChangeId === changeCounter) element.html('');
+
+                  });
+                }
+
+                else element.html('');
+
+              });
+
+
+            };
 
 
 
-						
-					 },
 
-					 link: function(scope, element, attrs){
-						
-						if(scope.$last){
-							console.log("hey")	
-						}
+           },
 
-					 }
-				};
-		 }])
-	
-	.directive('tapestryVersion', ['version', function(version) {
-		return function(scope, elm, attrs) {
-		  elm.text(version);
-		};
-	}])
-	.directive('lastUpdated', ['lastUpdated', function(version) {
-		return function(scope, elm, attrs) {
-		  elm.text(version);
-		};
-	}])
+           link: function(scope, element, attrs){
+
+            if(scope.$last){
+              console.log("hey")
+            }
+
+           }
+        };
+     }])
+
+  .directive('tapestryVersion', ['version', function(version) {
+    return function(scope, elm, attrs) {
+      elm.text(version);
+    };
+  }])
+  .directive('lastUpdated', ['lastUpdated', function(version) {
+    return function(scope, elm, attrs) {
+      elm.text(version);
+    };
+  }])
 ;
